@@ -22,7 +22,7 @@ process.on("unhandledRejection", errorHandler);
  console.log(`
 
  `);
- console.log(`Usage: node BYPASS-TZyoxC.js target time rate thread proxyfile`);
+ console.log(`Usage: node bypassv2.js target time rate thread proxyfile`);
  process.exit();}
  const headers = {};
   function readLines(filePath) {
