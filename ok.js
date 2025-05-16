@@ -18,7 +18,7 @@ const proxyChain = require('proxy-chain');
 var request = require('request');
 
 process.env.REBROWSER_PATCHES_RUNTIME_FIX_MODE = "alwaysIsolated"
-process.env.CHROME_PATH = '/home/codespace/.cache/puppeteer/chrome/linux-136.0.71063.94/chrome-linux64/chrone';  // Updated Path ✅
+process.env.CHROME_PATH = '/home/codespace/.cache/puppeteer/chrome/linux-136.0.71063.94/chrome-linux64/chrome';  // Updated Path ✅
 // process.env.CHROME_PATH = '/root/.cache/puppeteer/chrome/linux-129.0.6668.58/chrome-linux64/chrome';
 
 EventEmitter.setMaxListeners(0)
