@@ -13,7 +13,7 @@ let USERS = [
 
 const SETTINGS = {
     BOT_NAME: "deathbbos_bot",
-    TOKEN: "6304740874:AAH9WKzlNy6FH56I_m3apm22kuMUWEaUzIQ",
+    TOKEN: "TOKEN_BOT_TELE_LU",
     OWNER_TAG: "winterkeith",
     TELEGRAM_LINK: "https://t.me/jestcabin", // TELEGRAM LINK
     TELEGRAM_CHANNEL_ID: -1002026356494 // TELEGRAM CHANNEL ID
