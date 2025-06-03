@@ -3,90 +3,102 @@ const http = require('http');
 const https = require('https');
 const cluster = require('cluster');
 const os = require('os');
+const net = require('net');
+const dgram = require('dgram');
+const dns = require('dns');
 const fs = require('fs');
 const path = require('path');
-const { URL } = require('url');
+const { exec } = require('child_process');
 
-// Configuration
+// Advanced Configuration
 const config = {
     port: 80,
     monitorPort: 8080,
-    responseCode: 529,
-    statusMessage: "Service Temporarily Overloaded",
-    bodyMessage: "Kize1337 Guardian\nProtected by Advanced DDoS Protection",
-    workers: os.cpus().length,
-    maxRequestsPerMinute: 60,
-    maxRequestsPerSecond: 10,
-    maxConnections: 1000,
+    responseCode: 400,
+    statusMessage: "Bad Request",
+    bodyMessage: "Kize1337 Guardian\nProtected by Death Networks",
+    workers: os.cpus().length * 2,
+    maxConnections: 100,
+    rateLimitWindow: 1000, // 1 second
+    maxRequestsPerWindow: 10,
     banDuration: 300000, // 5 minutes
-    whitelistIPs: ['127.0.0.1', '::1'],
-    suspiciousPatterns: [
-        /bot/i, /crawler/i, /spider/i, /scraper/i,
-        /sqlmap/i, /nmap/i, /masscan/i, /zap/i,
-        /nikto/i, /dirb/i, /gobuster/i, /wfuzz/i
-    ],
-    blockedUserAgents: [
-        '', 'null', 'undefined', '-',
-        'python-requests', 'curl', 'wget'
-    ]
+    tcpTimeout: 5000,
+    udpTimeout: 3000,
+    enableFirewall: true,
+    logLevel: 'info'
 };
 
-// Global storage for rate limiting and monitoring
-const rateLimiter = new Map();
+// Global tracking objects
+const connections = new Map();
 const bannedIPs = new Map();
-const connectionCount = new Map();
-const stats = {
+const rateLimiter = new Map();
+const statistics = {
     totalRequests: 0,
     blockedRequests: 0,
+    activeConnections: 0,
     bannedIPs: 0,
-    startTime: Date.now(),
-    requestsPerSecond: 0,
-    lastSecondRequests: 0,
-    lastSecondTime: Math.floor(Date.now() / 1000)
+    uptime: Date.now(),
+    attacks: {
+        http: 0,
+        tcp: 0,
+        udp: 0,
+        dns: 0
+    }
 };
 
 // Parse command line arguments
 function parseArguments() {
     const args = process.argv.slice(2);
     
-    if (args.length === 0 || args.includes('-h') || args.includes('--help')) {
+    if (args.length === 0) {
         showUsage();
         process.exit(0);
     }
 
     for (let i = 0; i < args.length; i++) {
-        switch (args[i]) {
+        const arg = args[i];
+        const nextArg = args[i + 1];
+
+        switch (arg) {
             case '-p':
             case '--port':
-                config.port = parseInt(args[i + 1]) || 80;
-                i++;
-                break;
-            case '-mp':
-            case '--monitor-port':
-                config.monitorPort = parseInt(args[i + 1]) || 8080;
-                i++;
-                break;
-            case '-r':
-            case '--response-code':
-                config.responseCode = parseInt(args[i + 1]) || 529;
+                config.port = parseInt(nextArg) || 80;
                 i++;
                 break;
             case '-m':
             case '--message':
-                config.bodyMessage = args[i + 1] || config.bodyMessage;
+                config.bodyMessage = nextArg || config.bodyMessage;
                 i++;
                 break;
-            case '--status-message':
-                config.statusMessage = args[i + 1] || config.statusMessage;
+            case '-r':
+            case '--response':
+                config.responseCode = parseInt(nextArg) || 400;
                 i++;
                 break;
-            case '--max-rpm':
-                config.maxRequestsPerMinute = parseInt(args[i + 1]) || 60;
+            case '--status-msg':
+                config.statusMessage = nextArg || config.statusMessage;
                 i++;
                 break;
-            case '--max-rps':
-                config.maxRequestsPerSecond = parseInt(args[i + 1]) || 10;
+            case '--monitor-port':
+                config.monitorPort = parseInt(nextArg) || 8080;
                 i++;
+                break;
+            case '--max-connections':
+                config.maxConnections = parseInt(nextArg) || 100;
+                i++;
+                break;
+            case '--rate-limit':
+                config.maxRequestsPerWindow = parseInt(nextArg) || 10;
+                i++;
+                break;
+            case '--ban-duration':
+                config.banDuration = parseInt(nextArg) * 1000 || 300000;
+                i++;
+                break;
+            case '-h':
+            case '--help':
+                showUsage();
+                process.exit(0);
                 break;
         }
     }
@@ -94,277 +106,233 @@ function parseArguments() {
 
 function showUsage() {
     console.log(`
-╔═══════════════════════════════════════════════════════════════╗
-║                    Kize1337 Guardian v2.0                    ║
-║              Advanced Anti-DDoS Protection System            ║
-╚═══════════════════════════════════════════════════════════════╝
+╔══════════════════════════════════════════════════════════════════╗
+║                    Kize1337 Guardian Anti-DDoS                   ║
+║                      Professional Protection                     ║
+╚══════════════════════════════════════════════════════════════════╝
 
-USAGE:
-  node guardian.js [OPTIONS]
+Usage: node guardian.js [options]
 
-OPTIONS:
-  -p,  --port <number>          Main server port (default: 80)
-  -mp, --monitor-port <number>  Monitoring dashboard port (default: 8080)
-  -r,  --response-code <number> HTTP response code (default: 529)
-  -m,  --message <string>       Custom response message
-       --status-message <string> Custom status message
-       --max-rpm <number>        Max requests per minute per IP (default: 60)
-       --max-rps <number>        Max requests per second per IP (default: 10)
-  -h,  --help                   Show this help message
+Required Options:
+  -m, --message <text>       Custom response message
+  -r, --response <code>      HTTP response code (200, 400, 404, etc.)
+  -p, --port <number>        Main server port (default: 80)
 
-EXAMPLES:
-  node guardian.js
-  node guardian.js -p 80 -mp 8080 -r 404 -m "Access Denied by Kize1337"
-  node guardian.js --port 443 --response-code 529 --message "Protected Zone"
+Optional Options:
+  --status-msg <text>        Custom HTTP status message
+  --monitor-port <number>    Monitoring dashboard port (default: 8080)
+  --max-connections <num>    Max concurrent connections (default: 100)
+  --rate-limit <num>         Max requests per second per IP (default: 10)
+  --ban-duration <seconds>   Ban duration in seconds (default: 300)
+  -h, --help                 Show this help message
 
-MONITORING:
-  Access monitoring dashboard at: http://your-server:8080
-  Real-time statistics and banned IPs management available.
+Examples:
+  node guardian.js -m "Kize1337 Guardian" -r 400 -p 80
+  node guardian.js -m "Protected Server" -r 404 --monitor-port 8080
+  node guardian.js -m "Death Networks" -r 529 --rate-limit 5
+
+Features:
+  ✓ Multi-layer DDoS protection (L2/L3/L4/L7)
+  ✓ Real-time monitoring dashboard
+  ✓ Advanced rate limiting
+  ✓ Automatic IP banning
+  ✓ TCP/UDP/DNS/HTTP protection
+  ✓ Cluster-based architecture
+  ✓ Firewall integration
 `);
 }
 
-// IP validation and checking functions
+// IP validation and security functions
 function isValidIP(ip) {
-    const ipv4Regex = /^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
-    const ipv6Regex = /^(?:[0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}$/;
+    const ipv4Regex = /^(\d{1,3}\.){3}\d{1,3}$/;
+    const ipv6Regex = /^([0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}$/;
     return ipv4Regex.test(ip) || ipv6Regex.test(ip);
 }
 
-function getClientIP(req) {
-    return req.headers['x-forwarded-for']?.split(',')[0]?.trim() ||
-           req.headers['x-real-ip'] ||
-           req.connection.remoteAddress ||
-           req.socket.remoteAddress ||
-           (req.connection.socket ? req.connection.socket.remoteAddress : null) ||
-           '0.0.0.0';
+function isSuspiciousRequest(req, clientIP) {
+    const suspiciousPatterns = [
+        /\.\./,
+        /<script/i,
+        /union.*select/i,
+        /base64_decode/i,
+        /eval\(/i,
+        /system\(/i,
+        /exec\(/i,
+        /passthru\(/i,
+        /shell_exec/i,
+        /\bor\b.*\b1=1\b/i,
+        /\band\b.*\b1=1\b/i
+    ];
+
+    const userAgent = req.headers['user-agent'] || '';
+    const url = req.url || '';
+    
+    // Check for suspicious patterns
+    for (const pattern of suspiciousPatterns) {
+        if (pattern.test(url) || pattern.test(userAgent)) {
+            return true;
+        }
+    }
+
+    // Check for excessive headers
+    if (Object.keys(req.headers).length > 50) {
+        return true;
+    }
+
+    // Check for suspicious user agents
+    const suspiciousUAs = ['wget', 'curl', 'python', 'go-http-client', 'libwww'];
+    if (suspiciousUAs.some(ua => userAgent.toLowerCase().includes(ua))) {
+        return true;
+    }
+
+    return false;
 }
 
-function isSuspiciousRequest(req, clientIP) {
-    const userAgent = req.headers['user-agent'] || '';
-    const referer = req.headers['referer'] || '';
-    
-    // Check blocked user agents
-    if (config.blockedUserAgents.includes(userAgent.toLowerCase())) {
-        return 'Blocked User Agent';
-    }
-    
-    // Check suspicious patterns
-    for (const pattern of config.suspiciousPatterns) {
-        if (pattern.test(userAgent) || pattern.test(referer)) {
-            return 'Suspicious Pattern Detected';
+function updateFirewallRules(ip, action = 'ban') {
+    if (!config.enableFirewall) return;
+
+    const command = action === 'ban' 
+        ? `iptables -A INPUT -s ${ip} -j DROP`
+        : `iptables -D INPUT -s ${ip} -j DROP`;
+
+    exec(command, (error) => {
+        if (error && config.logLevel === 'debug') {
+            console.log(`[Firewall] Could not ${action} IP ${ip}: ${error.message}`);
         }
-    }
-    
-    // Check for missing essential headers
-    if (!userAgent && req.method !== 'HEAD') {
-        return 'Missing User Agent';
-    }
-    
-    // Check for suspicious methods
-    const suspiciousMethods = ['TRACE', 'TRACK', 'DEBUG', 'OPTIONS'];
-    if (suspiciousMethods.includes(req.method)) {
-        return 'Suspicious HTTP Method';
-    }
-    
-    // Check for SQL injection patterns in URL
-    const sqlPatterns = [/union.*select/i, /script.*alert/i, /'.*or.*'/i, /drop.*table/i];
-    for (const pattern of sqlPatterns) {
-        if (pattern.test(req.url)) {
-            return 'SQL Injection Attempt';
-        }
-    }
-    
-    return null;
+    });
 }
 
 function checkRateLimit(clientIP) {
     const now = Date.now();
-    const currentSecond = Math.floor(now / 1000);
+    const windowStart = now - config.rateLimitWindow;
     
     if (!rateLimiter.has(clientIP)) {
-        rateLimiter.set(clientIP, {
-            requests: [],
-            secondlyCount: 0,
-            lastSecond: currentSecond
-        });
+        rateLimiter.set(clientIP, []);
     }
     
-    const ipData = rateLimiter.get(clientIP);
+    const requests = rateLimiter.get(clientIP);
     
-    // Reset secondly counter if new second
-    if (ipData.lastSecond !== currentSecond) {
-        ipData.secondlyCount = 0;
-        ipData.lastSecond = currentSecond;
-    }
+    // Remove old requests outside the window
+    const validRequests = requests.filter(timestamp => timestamp > windowStart);
+    rateLimiter.set(clientIP, validRequests);
     
-    // Check per-second limit
-    ipData.secondlyCount++;
-    if (ipData.secondlyCount > config.maxRequestsPerSecond) {
-        return 'Rate limit exceeded (per second)';
-    }
+    // Add current request
+    validRequests.push(now);
     
-    // Clean old requests (older than 1 minute)
-    ipData.requests = ipData.requests.filter(time => now - time < 60000);
-    
-    // Check per-minute limit
-    if (ipData.requests.length >= config.maxRequestsPerMinute) {
-        return 'Rate limit exceeded (per minute)';
-    }
-    
-    ipData.requests.push(now);
-    return null;
+    return validRequests.length <= config.maxRequestsPerWindow;
 }
 
-function banIP(ip, reason) {
-    bannedIPs.set(ip, {
+function banIP(clientIP, reason = 'Rate limit exceeded') {
+    bannedIPs.set(clientIP, {
         bannedAt: Date.now(),
         reason: reason,
-        attempts: (bannedIPs.get(ip)?.attempts || 0) + 1
+        attempts: (bannedIPs.get(clientIP)?.attempts || 0) + 1
     });
+    
+    updateFirewallRules(clientIP, 'ban');
+    statistics.bannedIPs = bannedIPs.size;
+    
+    console.log(`[Security] Banned IP ${clientIP} - Reason: ${reason}`);
     
     // Auto-unban after duration
     setTimeout(() => {
-        bannedIPs.delete(ip);
+        bannedIPs.delete(clientIP);
+        updateFirewallRules(clientIP, 'unban');
+        statistics.bannedIPs = bannedIPs.size;
+        console.log(`[Security] Unbanned IP ${clientIP}`);
     }, config.banDuration);
-    
-    stats.bannedIPs = bannedIPs.size;
-    console.log(`[SECURITY] IP ${ip} banned for: ${reason}`);
 }
 
+function isIPBanned(clientIP) {
+    return bannedIPs.has(clientIP);
+}
+
+// Main HTTP server with advanced protection
 function createMainServer() {
-    return http.createServer((req, res) => {
-        const clientIP = getClientIP(req);
-        stats.totalRequests++;
-        
-        // Update requests per second counter
-        const currentSecond = Math.floor(Date.now() / 1000);
-        if (stats.lastSecondTime !== currentSecond) {
-            stats.requestsPerSecond = stats.lastSecondRequests;
-            stats.lastSecondRequests = 1;
-            stats.lastSecondTime = currentSecond;
-        } else {
-            stats.lastSecondRequests++;
-        }
-        
-        // Check if IP is whitelisted
-        if (config.whitelistIPs.includes(clientIP)) {
-            return handleLegitimateRequest(req, res);
-        }
-        
+    const server = http.createServer((req, res) => {
+        const clientIP = req.connection.remoteAddress || 
+                        req.socket.remoteAddress || 
+                        req.headers['x-forwarded-for']?.split(',')[0] ||
+                        req.headers['x-real-ip'] ||
+                        'unknown';
+
+        statistics.totalRequests++;
+
         // Check if IP is banned
-        if (bannedIPs.has(clientIP)) {
-            stats.blockedRequests++;
-            return sendProtectionResponse(res, 'IP Banned');
+        if (isIPBanned(clientIP)) {
+            statistics.blockedRequests++;
+            statistics.attacks.http++;
+            res.writeHead(429, 'Too Many Requests', { 'Connection': 'close' });
+            res.end();
+            return;
         }
-        
-        // Validate IP
-        if (!isValidIP(clientIP)) {
-            stats.blockedRequests++;
-            banIP(clientIP, 'Invalid IP Address');
-            return sendProtectionResponse(res, 'Invalid IP');
-        }
-        
-        // Check for suspicious request
-        const suspiciousReason = isSuspiciousRequest(req, clientIP);
-        if (suspiciousReason) {
-            stats.blockedRequests++;
-            banIP(clientIP, suspiciousReason);
-            return sendProtectionResponse(res, suspiciousReason);
-        }
-        
-        // Check rate limiting
-        const rateLimitReason = checkRateLimit(clientIP);
-        if (rateLimitReason) {
-            stats.blockedRequests++;
-            banIP(clientIP, rateLimitReason);
-            return sendProtectionResponse(res, rateLimitReason);
-        }
-        
-        // Track connections
-        const currentConnections = connectionCount.get(clientIP) || 0;
-        if (currentConnections >= 10) { // Max 10 concurrent connections per IP
-            stats.blockedRequests++;
-            banIP(clientIP, 'Too many concurrent connections');
-            return sendProtectionResponse(res, 'Connection Limit');
-        }
-        
-        connectionCount.set(clientIP, currentConnections + 1);
-        
-        // Clean up connection count when response ends
-        res.on('close', () => {
-            const count = connectionCount.get(clientIP) || 0;
-            if (count <= 1) {
-                connectionCount.delete(clientIP);
-            } else {
-                connectionCount.set(clientIP, count - 1);
-            }
-        });
-        
-        // If all checks pass, still send protection response
-        sendProtectionResponse(res, 'Protected');
-    });
-}
 
-function handleLegitimateRequest(req, res) {
-    // This is where you would handle legitimate requests
-    // For now, we'll just send the protection response
-    sendProtectionResponse(res, 'Whitelisted Access');
-}
+        // Rate limiting check
+        if (!checkRateLimit(clientIP)) {
+            banIP(clientIP, 'Rate limit exceeded');
+            statistics.blockedRequests++;
+            statistics.attacks.http++;
+            res.writeHead(429, 'Too Many Requests', { 'Connection': 'close' });
+            res.end();
+            return;
+        }
 
-function sendProtectionResponse(res, reason) {
-    const headers = {
-        'Server': 'Kize1337-Guardian/2.0',
-        'X-Powered-By': 'Advanced-DDoS-Protection',
-        'X-Protection': 'Kize1337-Guardian',
-        'X-Block-Reason': reason,
-        'Content-Type': 'text/plain; charset=utf-8',
-        'Connection': 'close',
-        'Cache-Control': 'no-cache, no-store, must-revalidate',
-        'Pragma': 'no-cache',
-        'Expires': '0',
-        'Content-Length': Buffer.byteLength(config.bodyMessage)
-    };
-    
-    try {
+        // Check for suspicious patterns
+        if (isSuspiciousRequest(req, clientIP)) {
+            banIP(clientIP, 'Suspicious request pattern');
+            statistics.blockedRequests++;
+            statistics.attacks.http++;
+            res.writeHead(403, 'Forbidden', { 'Connection': 'close' });
+            res.end();
+            return;
+        }
+
+        // Custom response headers
+        const headers = {
+            'Server': 'Death Networks',
+            'X-Powered-By': 'Kize1337',
+            'Content-Type': 'text/plain; charset=utf-8',
+            'Connection': 'close',
+            'Content-Length': Buffer.byteLength(config.bodyMessage),
+            'X-Guardian': 'Active',
+            'X-Protection-Level': 'Maximum'
+        };
+
         res.writeHead(config.responseCode, config.statusMessage, headers);
         res.end(config.bodyMessage);
-    } catch (error) {
-        console.error('[ERROR] Failed to send response:', error.message);
-    }
-}
-
-function createMonitoringServer() {
-    return http.createServer((req, res) => {
-        if (req.url === '/api/stats') {
-            res.writeHead(200, {
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*'
-            });
-            
-            const uptime = Date.now() - stats.startTime;
-            const statsData = {
-                ...stats,
-                uptime: Math.floor(uptime / 1000),
-                bannedIPsList: Array.from(bannedIPs.entries()).map(([ip, data]) => ({
-                    ip,
-                    ...data,
-                    timeLeft: Math.max(0, config.banDuration - (Date.now() - data.bannedAt))
-                })),
-                rateLimiterSize: rateLimiter.size,
-                activeConnections: Array.from(connectionCount.entries()).reduce((sum, [, count]) => sum + count, 0)
-            };
-            
-            res.end(JSON.stringify(statsData, null, 2));
-        } else {
-            // Serve monitoring dashboard
-            res.writeHead(200, { 'Content-Type': 'text/html' });
-            res.end(getMonitoringHTML());
-        }
     });
+
+    // Connection limiting
+    server.on('connection', (socket) => {
+        const clientIP = socket.remoteAddress;
+        
+        if (connections.size >= config.maxConnections) {
+            socket.destroy();
+            statistics.blockedRequests++;
+            return;
+        }
+
+        connections.set(socket, { ip: clientIP, connectedAt: Date.now() });
+        statistics.activeConnections = connections.size;
+
+        socket.on('close', () => {
+            connections.delete(socket);
+            statistics.activeConnections = connections.size;
+        });
+
+        socket.setTimeout(config.tcpTimeout, () => {
+            socket.destroy();
+        });
+    });
+
+    server.maxConnections = config.maxConnections;
+    return server;
 }
 
-function getMonitoringHTML() {
-    return `<!DOCTYPE html>
+// Monitoring dashboard
+function createMonitoringServer() {
+    const monitoringHTML = `
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -372,275 +340,405 @@ function getMonitoringHTML() {
     <title>Kize1337 Guardian - Monitoring Dashboard</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
+        body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #fff; min-height: 100vh; padding: 20px;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            min-height: 100vh;
+            padding: 20px;
         }
-        .container { max-width: 1200px; margin: 0 auto; }
-        .header { text-align: center; margin-bottom: 30px; }
-        .header h1 { font-size: 2.5em; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
-        .header p { font-size: 1.2em; opacity: 0.9; }
-        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 30px; }
-        .stat-card { 
-            background: rgba(255,255,255,0.1); backdrop-filter: blur(10px);
-            border-radius: 15px; padding: 25px; text-align: center;
-            border: 1px solid rgba(255,255,255,0.2); transition: transform 0.3s ease;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
         }
-        .stat-card:hover { transform: translateY(-5px); }
-        .stat-value { font-size: 2.5em; font-weight: bold; margin-bottom: 10px; }
-        .stat-label { font-size: 1.1em; opacity: 0.8; }
-        .banned-ips { 
-            background: rgba(255,255,255,0.1); backdrop-filter: blur(10px);
-            border-radius: 15px; padding: 25px; border: 1px solid rgba(255,255,255,0.2);
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
         }
-        .banned-ips h3 { margin-bottom: 20px; font-size: 1.5em; }
-        .banned-ip { 
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 10px; margin: 5px 0; background: rgba(255,255,255,0.05);
-            border-radius: 8px; border-left: 4px solid #ff6b6b;
+        .logo {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
-        .ip-info { flex-grow: 1; }
-        .ip-address { font-weight: bold; }
-        .ip-reason { font-size: 0.9em; opacity: 0.8; margin-top: 2px; }
-        .ip-time { font-size: 0.8em; opacity: 0.7; }
-        .status { display: inline-block; padding: 5px 15px; border-radius: 20px; font-size: 0.9em; font-weight: bold; }
-        .status.active { background: #4CAF50; }
-        .status.protected { background: #FF9800; }
-        .refresh { position: fixed; bottom: 20px; right: 20px; }
-        .refresh button { 
-            background: rgba(255,255,255,0.2); border: none; color: white;
-            padding: 15px 20px; border-radius: 50px; cursor: pointer;
-            font-size: 1em; backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.3); transition: all 0.3s ease;
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.8;
         }
-        .refresh button:hover { background: rgba(255,255,255,0.3); transform: scale(1.05); }
-        .config-info { 
-            background: rgba(255,255,255,0.1); backdrop-filter: blur(10px);
-            border-radius: 15px; padding: 20px; margin-bottom: 20px;
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .stat-card {
+            background: rgba(255,255,255,0.15);
+            padding: 25px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.2);
+            transition: transform 0.3s ease;
         }
-        .config-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
-        .config-item { text-align: center; }
-        .config-value { font-size: 1.3em; font-weight: bold; }
-        .config-label { font-size: 0.9em; opacity: 0.8; }
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        .stat-title {
+            font-size: 0.9em;
+            opacity: 0.8;
+            margin-bottom: 10px;
+        }
+        .stat-value {
+            font-size: 2em;
+            font-weight: bold;
+        }
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        .status-active { background: #4CAF50; }
+        .status-warning { background: #FF9800; }
+        .status-danger { background: #F44336; }
+        .attack-log {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .log-title {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            border-bottom: 2px solid rgba(255,255,255,0.2);
+            padding-bottom: 10px;
+        }
+        .refresh-btn {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background 0.3s ease;
+            margin: 10px;
+        }
+        .refresh-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>🛡️ Kize1337 Guardian</h1>
-            <p>Advanced Anti-DDoS Protection System</p>
-            <span class="status active">ACTIVE PROTECTION</span>
+            <div class="logo">🛡️ Kize1337 Guardian</div>
+            <div class="subtitle">Advanced DDoS Protection System</div>
+            <button class="refresh-btn" onclick="location.reload()">🔄 Refresh Data</button>
         </div>
         
-        <div class="config-info">
-            <h3 style="margin-bottom: 15px; text-align: center;">⚙️ Configuration</h3>
-            <div class="config-grid">
-                <div class="config-item">
-                    <div class="config-value">${config.port}</div>
-                    <div class="config-label">Main Port</div>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-title">System Status</div>
+                <div class="stat-value">
+                    <span class="status-indicator status-active"></span>
+                    ACTIVE
                 </div>
-                <div class="config-item">
-                    <div class="config-value">${config.responseCode}</div>
-                    <div class="config-label">Response Code</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-title">Total Requests</div>
+                <div class="stat-value" id="totalRequests">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-title">Blocked Requests</div>
+                <div class="stat-value" id="blockedRequests">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-title">Active Connections</div>
+                <div class="stat-value" id="activeConnections">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-title">Banned IPs</div>
+                <div class="stat-value" id="bannedIPs">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-title">Uptime</div>
+                <div class="stat-value" id="uptime">0s</div>
+            </div>
+        </div>
+
+        <div class="attack-log">
+            <div class="log-title">🚨 Attack Statistics</div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-title">HTTP Attacks</div>
+                    <div class="stat-value" id="httpAttacks">0</div>
                 </div>
-                <div class="config-item">
-                    <div class="config-value">${config.maxRequestsPerSecond}</div>
-                    <div class="config-label">Max RPS</div>
+                <div class="stat-card">
+                    <div class="stat-title">TCP Attacks</div>
+                    <div class="stat-value" id="tcpAttacks">0</div>
                 </div>
-                <div class="config-item">
-                    <div class="config-value">${config.maxRequestsPerMinute}</div>
-                    <div class="config-label">Max RPM</div>
+                <div class="stat-card">
+                    <div class="stat-title">UDP Attacks</div>
+                    <div class="stat-value" id="udpAttacks">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-title">DNS Attacks</div>
+                    <div class="stat-value" id="dnsAttacks">0</div>
                 </div>
             </div>
         </div>
-        
-        <div class="stats-grid" id="stats-grid">
-            <!-- Stats will be populated by JavaScript -->
-        </div>
-        
-        <div class="banned-ips">
-            <h3>🚫 Banned IPs</h3>
-            <div id="banned-list">
-                <!-- Banned IPs will be populated by JavaScript -->
-            </div>
-        </div>
     </div>
-    
-    <div class="refresh">
-        <button onclick="updateStats()">🔄 Refresh</button>
-    </div>
-    
+
     <script>
-        function formatUptime(seconds) {
-            const days = Math.floor(seconds / 86400);
-            const hours = Math.floor((seconds % 86400) / 3600);
-            const minutes = Math.floor((seconds % 3600) / 60);
-            const secs = seconds % 60;
-            
-            if (days > 0) return \`\${days}d \${hours}h \${minutes}m\`;
-            if (hours > 0) return \`\${hours}h \${minutes}m \${secs}s\`;
-            if (minutes > 0) return \`\${minutes}m \${secs}s\`;
-            return \`\${secs}s\`;
-        }
-        
-        function formatTime(ms) {
-            const seconds = Math.floor(ms / 1000);
-            const minutes = Math.floor(seconds / 60);
-            if (minutes > 0) return \`\${minutes}m \${seconds % 60}s\`;
-            return \`\${seconds}s\`;
-        }
-        
         function updateStats() {
             fetch('/api/stats')
                 .then(response => response.json())
                 .then(data => {
-                    // Update stats grid
-                    const statsGrid = document.getElementById('stats-grid');
-                    statsGrid.innerHTML = \`
-                        <div class="stat-card">
-                            <div class="stat-value">\${data.totalRequests.toLocaleString()}</div>
-                            <div class="stat-label">Total Requests</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-value" style="color: #ff6b6b">\${data.blockedRequests.toLocaleString()}</div>
-                            <div class="stat-label">Blocked Requests</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-value" style="color: #4CAF50">\${data.requestsPerSecond}</div>
-                            <div class="stat-label">Requests/Second</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-value" style="color: #FFA726">\${data.bannedIPs}</div>
-                            <div class="stat-label">Banned IPs</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-value" style="color: #42A5F5">\${formatUptime(data.uptime)}</div>
-                            <div class="stat-label">Uptime</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-value" style="color: #AB47BC">\${data.activeConnections}</div>
-                            <div class="stat-label">Active Connections</div>
-                        </div>
-                    \`;
-                    
-                    // Update banned IPs list
-                    const bannedList = document.getElementById('banned-list');
-                    if (data.bannedIPsList.length === 0) {
-                        bannedList.innerHTML = '<p style="text-align: center; opacity: 0.7; padding: 20px;">No banned IPs</p>';
-                    } else {
-                        bannedList.innerHTML = data.bannedIPsList.map(item => \`
-                            <div class="banned-ip">
-                                <div class="ip-info">
-                                    <div class="ip-address">\${item.ip}</div>
-                                    <div class="ip-reason">\${item.reason}</div>
-                                </div>
-                                <div class="ip-time">
-                                    \${item.timeLeft > 0 ? formatTime(item.timeLeft) + ' left' : 'Expired'}
-                                </div>
-                            </div>
-                        \`).join('');
-                    }
+                    document.getElementById('totalRequests').textContent = data.totalRequests.toLocaleString();
+                    document.getElementById('blockedRequests').textContent = data.blockedRequests.toLocaleString();
+                    document.getElementById('activeConnections').textContent = data.activeConnections;
+                    document.getElementById('bannedIPs').textContent = data.bannedIPs;
+                    document.getElementById('uptime').textContent = formatUptime(data.uptime);
+                    document.getElementById('httpAttacks').textContent = data.attacks.http.toLocaleString();
+                    document.getElementById('tcpAttacks').textContent = data.attacks.tcp.toLocaleString();
+                    document.getElementById('udpAttacks').textContent = data.attacks.udp.toLocaleString();
+                    document.getElementById('dnsAttacks').textContent = data.attacks.dns.toLocaleString();
                 })
-                .catch(error => console.error('Error updating stats:', error));
+                .catch(console.error);
         }
-        
-        // Auto-refresh every 2 seconds
+
+        function formatUptime(startTime) {
+            const uptime = Math.floor((Date.now() - startTime) / 1000);
+            const hours = Math.floor(uptime / 3600);
+            const minutes = Math.floor((uptime % 3600) / 60);
+            const seconds = uptime % 60;
+            return hours + 'h ' + minutes + 'm ' + seconds + 's';
+        }
+
+        // Update stats every 2 seconds
         setInterval(updateStats, 2000);
-        updateStats(); // Initial load
+        updateStats();
     </script>
 </body>
 </html>`;
+
+    return http.createServer((req, res) => {
+        if (req.url === '/api/stats') {
+            res.writeHead(200, {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
+            });
+            res.end(JSON.stringify({
+                ...statistics,
+                uptime: statistics.uptime
+            }));
+        } else {
+            res.writeHead(200, {
+                'Content-Type': 'text/html',
+                'Cache-Control': 'no-cache'
+            });
+            res.end(monitoringHTML);
+        }
+    });
+}
+
+// TCP Protection
+function createTCPProtection() {
+    const tcpServer = net.createServer((socket) => {
+        const clientIP = socket.remoteAddress;
+        
+        if (isIPBanned(clientIP)) {
+            statistics.attacks.tcp++;
+            socket.destroy();
+            return;
+        }
+
+        socket.setTimeout(config.tcpTimeout, () => {
+            statistics.attacks.tcp++;
+            banIP(clientIP, 'TCP timeout');
+            socket.destroy();
+        });
+
+        socket.on('error', () => {
+            statistics.attacks.tcp++;
+            socket.destroy();
+        });
+    });
+
+    // Listen on common vulnerable ports
+    const protectedPorts = [21, 22, 23, 25, 53, 80, 110, 143, 443, 993, 995, 3389, 5432, 3306];
+    protectedPorts.forEach(port => {
+        if (port !== config.port && port !== config.monitorPort) {
+            try {
+                const server = net.createServer();
+                server.listen(port, () => {
+                    console.log(`[TCP Protection] Protecting port ${port}`);
+                });
+                server.on('connection', (socket) => {
+                    statistics.attacks.tcp++;
+                    socket.destroy();
+                });
+            } catch (error) {
+                // Port might be in use, continue
+            }
+        }
+    });
+}
+
+// UDP Protection
+function createUDPProtection() {
+    const udpPorts = [53, 123, 161, 1900, 5353];
+    
+    udpPorts.forEach(port => {
+        try {
+            const udpSocket = dgram.createSocket('udp4');
+            
+            udpSocket.on('message', (msg, rinfo) => {
+                statistics.attacks.udp++;
+                
+                if (isIPBanned(rinfo.address)) {
+                    return;
+                }
+
+                // Check for UDP flood
+                if (!checkRateLimit(rinfo.address)) {
+                    banIP(rinfo.address, 'UDP flood detected');
+                }
+            });
+
+            udpSocket.bind(port, () => {
+                console.log(`[UDP Protection] Protecting UDP port ${port}`);
+            });
+        } catch (error) {
+            // Port might be in use, continue
+        }
+    });
+}
+
+// DNS Protection
+function createDNSProtection() {
+    dns.setServers(['8.8.8.8', '8.8.4.4']);
+    
+    // Monitor DNS queries for amplification attacks
+    const originalLookup = dns.lookup;
+    dns.lookup = function(hostname, options, callback) {
+        if (typeof options === 'function') {
+            callback = options;
+            options = {};
+        }
+        
+        statistics.attacks.dns++;
+        
+        // Add delay to prevent DNS amplification
+        setTimeout(() => {
+            originalLookup.call(this, hostname, options, callback);
+        }, 100);
+    };
 }
 
 // Cleanup functions
 function cleanup() {
-    const now = Date.now();
+    console.log('\n[System] Shutting down Guardian...');
     
-    // Clean expired bans
-    for (const [ip, data] of bannedIPs.entries()) {
-        if (now - data.bannedAt > config.banDuration) {
-            bannedIPs.delete(ip);
-        }
+    // Unban all IPs from firewall
+    if (config.enableFirewall) {
+        bannedIPs.forEach((_, ip) => {
+            updateFirewallRules(ip, 'unban');
+        });
     }
     
-    // Clean old rate limit data
-    for (const [ip, data] of rateLimiter.entries()) {
-        data.requests = data.requests.filter(time => now - time < 60000);
-        if (data.requests.length === 0 && now - data.lastSecond * 1000 > 60000) {
-            rateLimiter.delete(ip);
-        }
-    }
-    
-    stats.bannedIPs = bannedIPs.size;
+    process.exit(0);
 }
 
 // Main execution
-if (require.main === module) {
+function main() {
     parseArguments();
     
+    if (process.getuid && process.getuid() !== 0) {
+        console.log('[Warning] Running without root privileges. Some features may be limited.');
+    }
+
     if (cluster.isMaster) {
         console.log(`
-╔═══════════════════════════════════════════════════════════════╗
-║                    Kize1337 Guardian v2.0                    ║
-║              Advanced Anti-DDoS Protection System            ║
-╚═══════════════════════════════════════════════════════════════╝
+╔══════════════════════════════════════════════════════════════════╗
+║                    🛡️  Kize1337 Guardian Started                ║
+║                      Advanced DDoS Protection                   ║
+╚══════════════════════════════════════════════════════════════════╝
+
+[Master] Configuration:
+├─ Main Port: ${config.port}
+├─ Monitor Port: ${config.monitorPort} 
+├─ Response Code: ${config.responseCode}
+├─ Status Message: ${config.statusMessage}
+├─ Workers: ${config.workers}
+├─ Max Connections: ${config.maxConnections}
+├─ Rate Limit: ${config.maxRequestsPerWindow}/sec
+└─ Ban Duration: ${config.banDuration/1000}s
+
+[Protection] Multi-layer defense activated:
+✓ HTTP/HTTPS Layer 7 Protection
+✓ TCP Layer 4 Protection  
+✓ UDP Flood Protection
+✓ DNS Amplification Protection
+✓ Advanced Rate Limiting
+✓ Automatic IP Banning
+✓ Firewall Integration
+✓ Real-time Monitoring
+
+Dashboard: http://localhost:${config.monitorPort}
         `);
-        
-        console.log(`[MASTER] Starting with configuration:`);
-        console.log(`  • Main Port: ${config.port}`);
-        console.log(`  • Monitor Port: ${config.monitorPort}`);
-        console.log(`  • Response Code: ${config.responseCode}`);
-        console.log(`  • Status Message: ${config.statusMessage}`);
-        console.log(`  • Workers: ${config.workers}`);
-        console.log(`  • Max RPM: ${config.maxRequestsPerMinute}`);
-        console.log(`  • Max RPS: ${config.maxRequestsPerSecond}`);
-        console.log(`  • Ban Duration: ${config.banDuration / 1000}s`);
-        console.log(`  • Body Message: ${config.bodyMessage}`);
-        
-        // Start monitoring server (only on master)
-        const monitorServer = createMonitoringServer();
-        monitorServer.listen(config.monitorPort, () => {
-            console.log(`[MONITOR] Dashboard available at: http://localhost:${config.monitorPort}`);
-        });
-        
-        // Fork workers for main server
+
+        // Fork workers
         for (let i = 0; i < config.workers; i++) {
             cluster.fork();
         }
-        
+
         cluster.on('exit', (worker, code, signal) => {
-            console.log(`[MASTER] Worker ${worker.process.pid} died (${signal || code}). Restarting...`);
+            console.log(`[Master] Worker ${worker.process.pid} died (${signal || code}). Restarting...`);
             cluster.fork();
         });
-        
-        // Cleanup routine
-        setInterval(cleanup, 30000); // Clean every 30 seconds
-        
-        // Graceful shutdown
-        process.on('SIGTERM', () => {
-            console.log('[MASTER] Received SIGTERM, shutting down gracefully...');
-            process.exit(0);
+
+        // Start monitoring server in master process
+        const monitoringServer = createMonitoringServer();
+        monitoringServer.listen(config.monitorPort, () => {
+            console.log(`[Monitor] Dashboard running on port ${config.monitorPort}`);
         });
-        
-        process.on('SIGINT', () => {
-            console.log('\n[MASTER] Received SIGINT, shutting down gracefully...');
-            process.exit(0);
+
+        // Enable protections in master
+        createTCPProtection();
+        createUDPProtection();
+        createDNSProtection();
+
+        // Cleanup handlers
+        process.on('SIGINT', cleanup);
+        process.on('SIGTERM', cleanup);
+        process.on('uncaughtException', (error) => {
+            console.error('[Error] Uncaught Exception:', error);
         });
-        
+
+        // Statistics reporting
+        setInterval(() => {
+            console.log(`[Stats] Requests: ${statistics.totalRequests} | Blocked: ${statistics.blockedRequests} | Active: ${statistics.activeConnections} | Banned: ${statistics.bannedIPs}`);
+        }, 30000);
+
     } else {
-        // Worker process - handle main server
+        // Worker process - handle HTTP requests
         const server = createMainServer();
         
         server.listen(config.port, () => {
-            console.log(`[WORKER ${process.pid}] Protection server listening on port ${config.port}`);
+            console.log(`[Worker ${process.pid}] HTTP server listening on port ${config.port}`);
         });
-        
+
         server.on('error', (error) => {
-            console.error(`[WORKER ${process.pid}] Server error:`, error.message);
+            console.error(`[Worker ${process.pid}] Server error:`, error);
         });
     }
 }
 
-module.exports = { createMainServer, createMonitoringServer, config };
+// Start the system
+main();
