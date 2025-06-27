@@ -674,13 +674,12 @@ img {
 </style>
 </head>
 <body>
-
-<img src="https://raw.githubusercontent.com/qeize/tools/refs/heads/main/logo.gif" draggable="false">
-
-<div id="typedtext"></div>
 <div id="contact" style="margin-top: 10px; font-size: 16px; color: green;">
     CONTACT: <a href="https://t.me/deathbase" target="_blank" style="color: green; text-decoration: underline;">t.me/deathbase</a>
 </div>
+<img src="https://raw.githubusercontent.com/qeize/tools/refs/heads/main/logo.gif" draggable="false">
+
+<div id="typedtext"></div>
 <div id="loginbox" style="display: none;">
     <form method="post">
         <input type="hidden" name="action" value="login">
