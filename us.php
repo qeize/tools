@@ -671,6 +671,19 @@ img {
     0%, 100% { border-color: green; }
     50% { border-color: transparent; }
 }
+
+#contact {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    color: green;
+}
+#contact a {
+    color: #0f0;
+    text-decoration: underline;
+}
 </style>
 </head>
 <body>
@@ -695,9 +708,9 @@ img {
     </form>
 </div>
 
-<!-- Tambahan: Kontak di bawah login box -->
-<div id="contact" style="margin-top: 30px; font-size: 14px; color: green; text-align: center;">
-    CONTACT: <a href="https://t.me/deathbase" target="_blank" style="color: #0f0; text-decoration: underline;">t.me/deathbase</a>
+<!-- Contact info tetap di bawah layar -->
+<div id="contact">
+    CONTACT: <a href="https://t.me/deathbase" target="_blank">t.me/deathbase</a>
 </div>
 
 <script>
