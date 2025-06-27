@@ -674,18 +674,16 @@ img {
 </style>
 </head>
 <body>
-<div id="contact" style="margin-top: 10px; font-size: 16px; color: green;">
-    CONTACT: <a href="https://t.me/deathbase" target="_blank" style="color: green; text-decoration: underline;">t.me/deathbase</a>
-</div>
+
 <img src="https://raw.githubusercontent.com/qeize/tools/refs/heads/main/logo.gif" draggable="false">
 
 <div id="typedtext"></div>
+
 <div id="loginbox" style="display: none;">
     <form method="post">
         <input type="hidden" name="action" value="login">
         <input type="hidden" name="hide" value="">
         <table align="center">
-
             <tr>
                 <td align="right"><font size="3" color="green"><big>Password:</big></font></td>
                 <td><input type="password" name="password" placeholder="password"></td>
@@ -695,6 +693,11 @@ img {
             </tr>
         </table>
     </form>
+</div>
+
+<!-- Tambahan: Kontak di bawah login box -->
+<div id="contact" style="margin-top: 30px; font-size: 14px; color: green; text-align: center;">
+    CONTACT: <a href="https://t.me/deathbase" target="_blank" style="color: #0f0; text-decoration: underline;">t.me/deathbase</a>
 </div>
 
 <script>
