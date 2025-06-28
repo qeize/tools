@@ -1,0 +1,16 @@
+    .--.
+   |o_o |
+   |:_/ |
+  //   \ \
+ (|     | )
+/'\_   _/`\
+\___)=(___/
+
+Backdoor successfully planted.
+
+Privilege  : root
+Status     : active
+PID        : 1337
+
+Operator   : Kize1337  
+Contact    : t.me/deathbase
