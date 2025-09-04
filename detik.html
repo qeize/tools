@@ -1,0 +1,4996 @@
+<!DOCTYPE html>
+<html lang="id-ID">
+
+  <head>
+    <style>
+    a,
+    html {
+      color: #000
+    }
+
+    button,
+    sup {
+      vertical-align: baseline
+    }
+
+    body,
+    button,
+    figure {
+      margin: 0
+    }
+
+    body,
+    html {
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%
+    }
+
+    .icon-twitter:before,
+    .lqd {
+      background-repeat: no-repeat
+    }
+
+    .copy_url .notif,
+    .media__link:before,
+    .navbar-first .nav__item,
+    .navbar-second .nav__item,
+    .table-wrap td {
+      white-space: nowrap
+    }
+
+    .btn,
+    .navbar-second .nav a,
+    table td {
+      vertical-align: top
+    }
+
+    a,
+    ins {
+      text-decoration: none
+    }
+
+    article,
+    figcaption,
+    figure,
+    footer,
+    header,
+    nav {
+      display: block
+    }
+
+    html {
+      background: #fff
+    }
+
+    button,
+    html {
+      font-family: Arial
+    }
+
+    a {
+      background: 0 0;
+      -webkit-transition: color .3s ease-in-out, background .3s ease-in-out, opacity .3s ease-in-out;
+      -moz-transition: color .3s ease-in-out, background .3s ease-in-out, opacity .3s ease-in-out;
+      -ms-transition: color .3s ease-in-out, background .3s ease-in-out, opacity .3s ease-in-out;
+      -o-transition: color .3s ease-in-out, background .3s ease-in-out, opacity .3s ease-in-out;
+      transition: color .3s ease-in-out, background .3s ease-in-out, opacity .3s ease-in-out
+    }
+
+    a:active,
+    a:focus,
+    a:hover,
+    button:focus {
+      outline: 0
+    }
+
+    .linksisip strong,
+    .megabillboard-close,
+    .quotesisip blockquote,
+    strong {
+      font-weight: 700
+    }
+
+    sup {
+      font-size: 75%;
+      line-height: 0;
+      position: relative;
+      top: -.5em
+    }
+
+    img {
+      border: 0;
+      vertical-align: middle
+    }
+
+    button {
+      font-family: inherit;
+      font-size: 100%;
+      line-height: normal;
+      text-transform: none;
+      -webkit-appearance: button
+    }
+
+    .detail__date,
+    .detail__media-caption,
+    .footer .nav,
+    .profile__box__bottom,
+    .quotesisip,
+    body {
+      font-family: Helvetica-FF, Arial, Tahoma, sans-serif
+    }
+
+    .btn,
+    body {
+      line-height: 1.4
+    }
+
+    button::-moz-focus-inner {
+      border: 0;
+      padding: 0
+    }
+
+    table {
+      border-collapse: collapse;
+      border-spacing: 0
+    }
+
+    :root {
+      --kuler-1: #21409a;
+      --kuler-2: #007cbd;
+      --kuler-3: #ef672f;
+      --kuler-1: #562b77;
+      --kuler-2: #812e88;
+      --kuler-3: #aa248c
+    }
+
+    body {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeSpeed
+    }
+
+    *,
+    :after,
+    :before {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box
+    }
+
+    .clearfix:after,
+    .clearfix:before {
+      content: " ";
+      display: table
+    }
+
+    .clearfix:after {
+      clear: both
+    }
+
+    a:hover {
+      color: var(--kuler-1)
+    }
+
+    p {
+      margin-top: 0;
+      margin-bottom: 16px
+    }
+
+    ins {
+      display: contents
+    }
+
+    ul {
+      padding: 0 0 0 24px;
+      margin-top: 12px;
+      margin-bottom: 12px
+    }
+
+    ul li {
+      padding: 8px 0
+    }
+
+    footer,
+    header {
+      display: table;
+      width: 100%
+    }
+
+    @media (min-width:1024px) {
+
+      footer,
+      header {
+        display: block
+      }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 8px;
+      line-height: 1.3
+    }
+
+    h1 {
+      font-size: 40px
+    }
+
+    .icon--md,
+    h2 {
+      font-size: 32px
+    }
+
+    h3 {
+      font-size: 28px
+    }
+
+    h4 {
+      font-size: 24px
+    }
+
+    h5 {
+      font-size: 20px
+    }
+
+    h6 {
+      font-size: 16px
+    }
+
+    .font-xxs {
+      font-size: 12px !important
+    }
+
+    .container {
+      width: 100%;
+      padding-left: calc(26px / 1.444444444444);
+      padding-right: calc(26px / 1.444444444444);
+      margin-right: auto;
+      margin-left: auto
+    }
+
+    .grid-row {
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: calc(-26px / 4.3333333333);
+      margin-right: calc(-26px / 4.3333333333)
+    }
+
+    .ratiobox,
+    .table-wrap {
+      display: block;
+      position: relative
+    }
+
+    .no-gutter {
+      margin-right: 0;
+      margin-left: 0
+    }
+
+    .no-gutter>[class*=column-] {
+      padding-right: 0;
+      padding-left: 0
+    }
+
+    .column-6,
+    .column-auto {
+      position: relative;
+      width: 100%;
+      padding-left: calc(26px / 4.3333333333);
+      padding-right: calc(26px / 4.3333333333)
+    }
+
+    .column-auto {
+      -ms-flex: 0 0 auto;
+      flex: 0 0 auto;
+      width: auto;
+      max-width: 100%
+    }
+
+    .column-6 {
+      -ms-flex: calc(6 / 12);
+      flex: 0 0 calc(100% / (12 / 6));
+      max-width: calc(100% / (12 / 6))
+    }
+
+    table td {
+      border: 1px solid #b3b3b3;
+      padding: 5px 10px
+    }
+
+    .table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch
+    }
+
+    .lqd {
+      background-size: cover;
+      background-position: center center
+    }
+
+    .btn--default,
+    button {
+      background: #f0f0f0;
+      color: #000
+    }
+
+    .lqd img {
+      display: none
+    }
+
+    .ratiobox {
+      height: 0;
+      overflow: hidden;
+      padding-bottom: 100%;
+      -webkit-transition: .4s ease-in-out;
+      -moz-transition: .4s ease-in-out;
+      -ms-transition: .4s ease-in-out;
+      -o-transition: .4s ease-in-out;
+      transition: .4s ease-in-out
+    }
+
+    .btn,
+    .icon {
+      display: inline-flex
+    }
+
+    .ratiobox--16-9,
+    .ratiobox.ratio_16_9 {
+      padding-bottom: 56.25%
+    }
+
+    .ratiobox iframe {
+      position: absolute;
+      width: 100%;
+      height: 100%
+    }
+
+    .ratiobox--4-3 {
+      padding-bottom: 75%
+    }
+
+    button {
+      cursor: pointer;
+      -webkit-transition: .3s ease-in-out;
+      -moz-transition: .3s ease-in-out;
+      -ms-transition: .3s ease-in-out;
+      -o-transition: .3s ease-in-out;
+      transition: .3s ease-in-out
+    }
+
+    .btn {
+      position: relative;
+      font-size: 16px;
+      align-items: center;
+      padding: 8px 16px;
+      justify-content: center;
+      cursor: pointer;
+      border: 1px solid transparent;
+      border-radius: 4px
+    }
+
+    .icon,
+    .icon-item {
+      vertical-align: middle
+    }
+
+    .btn--sm {
+      font-size: 12px;
+      padding: calc(12px / 3) 12px
+    }
+
+    .btn--md {
+      font-size: 14px;
+      padding-top: 6px;
+      padding-bottom: 6px
+    }
+
+    .btn:hover {
+      color: #000;
+      opacity: .8
+    }
+
+    .btn--outline {
+      border: 1px solid #000;
+      color: #000;
+      background: 0 0 !important
+    }
+
+    .icon {
+      line-height: 0
+    }
+
+    .icon--xs {
+      font-size: 16px
+    }
+
+    .btn .icon {
+      margin: 0 4px
+    }
+
+    .list-content,
+    .list-content__item:last-child {
+      margin-bottom: 0
+    }
+
+    .icon-arrow-right:before {
+      content: "\69"
+    }
+
+    .icon-chevron-down:before {
+      content: "\6d"
+    }
+
+    .icon-arrow-up:before {
+      content: "\6f"
+    }
+
+    .icon-live-tv:before {
+      content: "\75"
+    }
+
+    .icon-close:before {
+      content: "\4f"
+    }
+
+    .icon-notification-bg:before {
+      content: "\22"
+    }
+
+    .icon-comment:before {
+      content: "\2d"
+    }
+
+    .icon-link:before {
+      content: "\7e"
+    }
+
+    .icon-facebook:before {
+      content: "\61"
+    }
+
+    .icon-twitter:before {
+      content: "";
+      width: 20px;
+      height: 18px;
+      background-image: url("data:image/svg+xml,%3Csvg width='18' height='17' viewBox='0 0 18 17' fill='none' xmlns='https://www.w3.org/2000/svg'%3E%3Cpath d='M0.425986 0.877441L6.99437 9.65591L0.390625 16.7901H1.8758L7.65739 10.5399L12.3339 16.7901H17.3906L10.4598 7.51655L16.6038 0.877441H15.1187L9.79676 6.63251L5.49151 0.877441H0.434827H0.425986ZM2.60955 1.97364H4.93457L15.1982 15.6939H12.8732L2.60955 1.97364Z' fill='white'/%3E%3C/svg%3E%0A");
+      background-position: center
+    }
+
+    .icon-instagram:before {
+      content: "\e006"
+    }
+
+    .icon-linkedin:before {
+      content: "\e007"
+    }
+
+    .icon-youtube:before {
+      content: "\e008"
+    }
+
+    .icon-whatsapp:before {
+      content: "\e00c"
+    }
+
+    .icon-telegram:before {
+      content: "\e00e"
+    }
+
+    .copy_url {
+      position: relative
+    }
+
+    .breaking-detikpagi,
+    .breaking-sticky {
+      left: -100%;
+      position: fixed;
+      visibility: hidden;
+      opacity: 0
+    }
+
+    .copy_url .notif {
+      display: inline-block;
+      padding: 8px;
+      margin: 0;
+      position: absolute;
+      z-index: 5;
+      bottom: 0;
+      left: 50%;
+      width: auto;
+      font-size: 14px;
+      background: red;
+      color: #fff;
+      opacity: 0;
+      -webkit-transform: translateX(-50%) scale(0);
+      -moz-transform: translateX(-50%) scale(0);
+      -ms-transform: translateX(-50%) scale(0);
+      -o-transform: translateX(-50%) scale(0);
+      transform: translateX(-50%) scale(0);
+      -webkit-transition: .3s ease-in-out;
+      -moz-transition: .3s ease-in-out;
+      -ms-transition: .3s ease-in-out;
+      -o-transition: .3s ease-in-out;
+      transition: .3s ease-in-out
+    }
+
+    .copy_url .notif:before {
+      position: absolute;
+      content: "";
+      border: 3px solid;
+      right: 50%;
+      margin: 0 -7px 0 0;
+      top: 100%;
+      border-top: 8px solid red;
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      border-bottom: none
+    }
+
+    .breaking-sticky {
+      z-index: 5;
+      right: 0;
+      height: 0;
+      top: 88px;
+      -webkit-transition: .2s ease-in-out;
+      -moz-transition: .2s ease-in-out;
+      -ms-transition: .2s ease-in-out;
+      -o-transition: .2s ease-in-out;
+      transition: .2s ease-in-out
+    }
+
+    .breaking-detikpagi,
+    .breaking-detikpagi .media--left {
+      height: 62px !important
+    }
+
+    .breaking-sticky .media__text {
+      overflow: hidden
+    }
+
+    .breaking-sticky .media__title {
+      white-space: nowrap;
+      margin-left: -10px;
+      overflow: hidden;
+      padding: 10px 0;
+      line-height: normal;
+      font-size: 14px
+    }
+
+    .breaking-sticky .media__link {
+      color: #fff
+    }
+
+    .breaking-sticky .media__label {
+      background: red;
+      border-radius: 0;
+      -webkit-transform: skew(-15deg, 0deg);
+      -moz-transform: skew(-15deg, 0deg);
+      -ms-transform: skew(-15deg, 0deg);
+      -o-transform: skew(-15deg, 0deg);
+      transform: skew(-15deg, 0deg);
+      left: -8px;
+      top: auto;
+      padding: 10px 20px 10px 24px;
+      position: relative;
+      box-shadow: 0 6px 16px 0 rgba(0, 0, 0, .8)
+    }
+
+    .breaking-detikpagi {
+      width: 100%;
+      background: url("images/bg-detikpagi.webp") top/101% no-repeat #ff4c05;
+      bottom: 100px;
+      z-index: 10;
+      -webkit-transition: .2s ease-in-out;
+      -moz-transition: .2s ease-in-out;
+      -ms-transition: .2s ease-in-out;
+      -o-transition: .2s ease-in-out;
+      transition: .2s ease-in-out
+    }
+
+    .breaking-detikpagi__content {
+      border-radius: 10px 50px 50px 10px
+    }
+
+    .breaking-detikpagi__close {
+      position: absolute;
+      z-index: 5;
+      width: 27px;
+      height: 27px;
+      right: 0;
+      top: -13px;
+      background: #000;
+      color: #fff
+    }
+
+    .breaking-detikpagi .media--left .media__image {
+      width: 110px;
+      height: 80px;
+      z-index: 3
+    }
+
+    .detikpagi-live {
+      margin-top: 8px
+    }
+
+    .detikpagi-live span {
+      position: relative;
+      background: #ffe600;
+      display: inline-block;
+      padding: 0 8px 0 20px;
+      color: #ee4023;
+      font-size: 9px;
+      border-radius: 12px
+    }
+
+    .detikpagi-live span:before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      position: absolute;
+      top: 3px;
+      left: 7px;
+      overflow: hidden;
+      animation: 1s live-detikpagi;
+      -moz-animation: 1s infinite live-detikpagi;
+      -webkit-animation: 1s infinite live-detikpagi;
+      background: #c72026
+    }
+
+    .detikpagi-live__body {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-left: 12px
+    }
+
+    .detikpagi-live__body__left {
+      margin-top: 5px
+    }
+
+    .detikpagi-live__body__right {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      margin-right: 5px;
+      width: 100%
+    }
+
+    .detikpagi-live__body__right__text {
+      font-weight: 600;
+      font-size: 11px;
+      color: #fff;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      width: 80%;
+      margin-top: -7px
+    }
+
+    .detikpagi-live__body__right__button {
+      width: 20%
+    }
+
+    .detikpagi-live__body__right__button__play {
+      display: block;
+      padding-bottom: 10px
+    }
+
+    .detikpagi-live__body__right__button__pause {
+      display: none;
+      padding-bottom: 10px
+    }
+
+    @keyframes live-detikpagi {
+
+      0%,
+      100% {
+        background: #fcc43f
+      }
+
+      50% {
+        background: #c72026
+      }
+    }
+
+    .header {
+      display: flex;
+      padding: 8px 0 0;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .15);
+      position: sticky;
+      position: -webkit-sticky;
+      top: 0;
+      z-index: 26;
+      width: 100%;
+      line-height: 1
+    }
+
+    .icon-item__yt,
+    .js-menu-active .menu-button span,
+    .notif__balon {
+      background: red
+    }
+
+    .header__left {
+      display: flex;
+      align-items: center;
+      left: -12px
+    }
+
+    .header__right {
+      display: flex;
+      height: 41px
+    }
+
+    .header__brand {
+      height: 24px
+    }
+
+    .header__brand img {
+      height: 100%
+    }
+
+    .header__icon {
+      width: 43px;
+      font-size: 35px;
+      padding: 0 0 0 8px;
+      position: relative
+    }
+
+    .header__icon--live {
+      color: #21409a
+    }
+
+    .header__icon--notif {
+      color: #999
+    }
+
+    .menu-button {
+      cursor: pointer;
+      height: 45px;
+      width: 40px;
+      position: relative
+    }
+
+    .menu-button__wrap {
+      position: absolute;
+      top: 15px;
+      left: 12px
+    }
+
+    .menu-button span {
+      cursor: pointer;
+      height: 2px;
+      width: 20px;
+      background: #21409a;
+      position: absolute;
+      display: block;
+      border-radius: 10px;
+      opacity: 1;
+      left: 0;
+      -webkit-transform: rotate(0);
+      -moz-transform: rotate(0);
+      -ms-transform: rotate(0);
+      -o-transform: rotate(0);
+      transform: rotate(0);
+      -webkit-transition: .3s ease-in-out;
+      -moz-transition: .3s ease-in-out;
+      -ms-transition: .3s ease-in-out;
+      -o-transition: .3s ease-in-out;
+      transition: .3s ease-in-out;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden
+    }
+
+    .menu-button span:first-child,
+    .top-0 {
+      top: 0
+    }
+
+    .menu-button span:nth-child(2) {
+      top: 7px
+    }
+
+    .menu-button span:nth-child(3) {
+      top: 14px;
+      width: 14px
+    }
+
+    .js-menu-active .menu-button span:first-child {
+      top: 8px;
+      -webkit-transform: rotate(135deg);
+      -moz-transform: rotate(135deg);
+      -ms-transform: rotate(135deg);
+      -o-transform: rotate(135deg);
+      transform: rotate(135deg)
+    }
+
+    .js-menu-active .menu-button span:nth-child(2) {
+      opacity: 0;
+      left: -60px
+    }
+
+    .js-menu-active .menu-button span:nth-child(3) {
+      top: 8px;
+      width: 20px;
+      -webkit-transform: rotate(-135deg);
+      -moz-transform: rotate(-135deg);
+      -ms-transform: rotate(-135deg);
+      -o-transform: rotate(-135deg);
+      transform: rotate(-135deg)
+    }
+
+    .notif__balon {
+      position: absolute;
+      width: 22px;
+      height: 22px;
+      padding: 4px;
+      right: -4px;
+      top: 0;
+      z-index: 1;
+      border-radius: 50%;
+      color: #fff;
+      font-size: 12px
+    }
+
+    .media__date,
+    .media__text {
+      color: #666;
+      font-size: 12px
+    }
+
+    .list-content {
+      padding-left: 0;
+      margin-top: 0
+    }
+
+    .list-content--column,
+    .list-content__item:first-child {
+      margin-top: 8px
+    }
+
+    .list-content__item {
+      position: relative;
+      width: 100%;
+      padding-top: 0;
+      padding-bottom: 8px;
+      margin-bottom: 8px
+    }
+
+    .list-content--column .list-content__item:first-child {
+      margin-top: 0
+    }
+
+    .list-content--column .list-content__item:last-child,
+    .media__image {
+      margin-bottom: 12px
+    }
+
+    .list-content--column .list-content__item {
+      padding-bottom: 12px;
+      margin-bottom: 12px
+    }
+
+    .media {
+      position: relative;
+      overflow: hidden;
+      flex: 1
+    }
+
+    .media__image {
+      position: relative;
+      overflow: hidden;
+      -webkit-mask-image: -webkit-radial-gradient(white, black);
+      background: #f0f0f0
+    }
+
+    .linksisip .lihatjg a,
+    .media__image a,
+    .nav a {
+      display: block
+    }
+
+    .media__text {
+      flex: 1;
+      position: static
+    }
+
+    .media__title {
+      margin: 0;
+      flex: 1
+    }
+
+    .detail__subtitle,
+    .media__subtitle {
+      display: inline-block;
+      margin-top: 0;
+      margin-bottom: 4px
+    }
+
+    .media__date {
+      display: inline-block;
+      margin-top: 4px;
+      line-height: 1.5
+    }
+
+    .media__author {
+      position: relative;
+      z-index: 3;
+      margin-top: 8px;
+      font-size: 12px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      align-items: center;
+      color: #333
+    }
+
+    .media__author-image-avatar {
+      position: relative;
+      width: 25px;
+      height: 25px;
+      display: inline-flex;
+      overflow: hidden;
+      margin-right: 8px;
+      background: #f0f0f0
+    }
+
+    .media__author a:hover {
+      text-decoration: underline
+    }
+
+    .media__link {
+      position: static
+    }
+
+    .media__link:before {
+      position: absolute;
+      content: "";
+      bottom: 0;
+      left: 0;
+      top: 0;
+      right: 0;
+      overflow: hidden;
+      z-index: 2
+    }
+
+    .media__label {
+      display: inline-block;
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      z-index: 1;
+      color: #fff
+    }
+
+    .media--left,
+    .text-list {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex
+    }
+
+    .ads-slot,
+    .box-ads,
+    .text-list {
+      position: relative
+    }
+
+    .media--left {
+      display: flex;
+      align-items: flex-start
+    }
+
+    .text-list {
+      display: flex;
+      align-items: baseline;
+      font-size: 16px
+    }
+
+    .text-list__data {
+      margin-right: 8px
+    }
+
+    .box-ads {
+      margin-top: 16px;
+      margin-bottom: 24px;
+      z-index: 1;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      justify-content: center
+    }
+
+    .box-ads--container {
+      margin-left: calc(-26px / 1.444444444444);
+      margin-right: calc(-26px / 1.444444444444)
+    }
+
+    .ads-slot {
+      z-index: 1;
+      margin: 0 auto;
+      background: #f7f7f7
+    }
+
+    .ads-slot>* {
+      flex: 1 100%
+    }
+
+    .ads-slot img {
+      max-width: 100%;
+      height: auto
+    }
+
+    .ads-slot:before {
+      position: absolute;
+      content: "Advertisement";
+      left: 50%;
+      top: 50%;
+      height: 50px;
+      z-index: -1;
+      letter-spacing: 2px;
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Crect opacity='0.2' width='32' height='32' fill='url(%23pattern0)'/%3E%3Cdefs%3E%3Cpattern id='pattern0' patternContentUnits='objectBoundingBox' width='1' height='1'%3E%3Cuse xlink:href='%23image0' transform='scale(0.015625)'/%3E%3C/pattern%3E%3Cimage id='image0' width='64' height='64' xlink:href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAZ5QTFRFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlvQmPgAAAIp0Uk5TABVTfqXL3+z5M43S/v8Nc9UQgO4BYeoexDvpYgOOsVgqODcR/cx0FgJHieYxBV/oZBPyRPs8dcCVwb2MKD2SfJ6BPyYayKvUQSWyhGebh7yflq9/rZDJNg4H4NNRXqb8tAnWoGzO+PbFXUsMHdgf5DC/w1BPLecc3MY6YwSK6yPtD3LQi8qnfVIYuEyKDwAAAuxJREFUeJylV+d/0zAQVbaTSHH2bimQQtgUwggtAVoopexSaEvZo+y9wgplw39NbDmOrHF2ftzHl/deLOl0ukNIET5/IBgKRzQtEg4FA36fiiePaCyOiSNwPBb1qk7oSSKNpJ7wIE+lM3K5EZl0ykWezeXVciPyuSykLxRhuRHFglpfKrvrCSmXVPqK5kVPiFaRyqtD3uRGDFUl+mHvekKGRYcB/t/8BmH9EHvNiBlrWYzbhxK4f+soaT2LaY6zKMDnJzMgZSYfsi75IzUgxX5O5mC9woDkevqUS/6rDPK9m5V20asMSJriCeD+wgYZWh90N73SgOgmrqg/XgySBhxVC7WaiwEx6mRMLh7dEN2Yrfs2bd4CGcS6cFwmL261k2Tb9h1qg3i3/mMR1nY6Cl9qTGmAfcgvort2I2lIDIgfBQSssUeulxoEUFDA9ir0UoMgGuWhfb31R/c3D4xPuBiEUJiHDlJ2tWXubuMQbBBGEf4DLPbhHnAENIggvpZZtW7SBhpTkIEmGByl5GN9ZBo24JZwnHJnWOwEuARuE2cp9ySLnQI3MeQETlPuNIvFwGPkEukM5Z5lsXNgInGpfJ5y51isBRhc4C/TPOVeZDEdMPDz1/kS5TpsF9QG3evMFZTGoslduix4Sg2WkVDSrlDy1T4yAxgYB8QV1WuUXLdTcR66C2bz6Szr1628G7McbtwEDG6ZOPew3Lbo1Tt3V+7df4AQYEDPh3va8ENbwfWU4tP2iP7APa6Rx0geqsdVeN6fPPVmULYbZ77BePbcqVySG9gNhtjiNMaZxn7ihfxleslskdhk5Vsl8/fUq9kaeV0w442D8fYd+5GyNm+l3Xzfrom49esH5zLBRlMWH/ktHrDVbfH6AZvtuU/iKQ/Q7uPPdVGP/nvgQF5Hns6kSu9p6MLNL2q9MfZ1YHmnAo59CB488Wrgq4vcCNXoi5e/LXqQm8EP3xjj7z8W3HVs9Mb/2mr756/ff/6qeP8AIJG7VASH5AAAAAAASUVORK5CYII='/%3E%3C/defs%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center 4px;
+      background-size: 24px;
+      padding: 3px 0;
+      -webkit-transform: translate3d(-50%, -50%, 0);
+      -moz-transform: translate3d(-50%, -50%, 0);
+      -ms-transform: translate3d(-50%, -50%, 0);
+      -o-transform: translate3d(-50%, -50%, 0);
+      transform: translate3d(-50%, -50%, 0);
+      color: #999;
+      font-size: 12px;
+      align-items: flex-end
+    }
+
+    .ads-slot__name {
+      display: none;
+      position: absolute;
+      top: calc(50% - 40px);
+      padding: 8px 12px;
+      z-index: -1;
+      font-size: 14px;
+      color: #ccc
+    }
+
+    .ads-slot--smb {
+      height: 50px;
+      z-index: 2;
+      box-shadow: 0 calc(4px / 2) 4px 0 rgba(0, 0, 0, .15);
+      position: sticky;
+      position: -webkit-sticky;
+      top: 0
+    }
+
+    .ads-slot-mb-container {
+      width: 100%;
+      height: 506px;
+      position: absolute;
+      background-attachment: scroll;
+      background-position: left top;
+      background-size: cover;
+      clip: rect(auto, auto, auto, auto);
+      justify-content: center
+    }
+
+    .ads-slot--bb,
+    .ads-slot--mb {
+      background-repeat: no-repeat;
+      background-position: center center
+    }
+
+    .ads-slot--mb {
+      width: 320px;
+      height: 480px;
+      margin-top: 26px !important;
+      position: fixed !important;
+      z-index: 1 !important;
+      background-image: url("https://awscdn.detik.net.id/assets/images/ads/mega-billboard-placeholder.webp")
+    }
+
+    .ads-slot--bb {
+      width: 100%;
+      height: 156px;
+      background-image: url("https://awscdn.detik.net.id/assets/images/ads/billboard-placeholder.webp");
+      position: relative;
+      z-index: 1;
+      margin: 0 auto;
+      background-color: #f7f7f7
+    }
+
+    .ads-slot--sb {
+      width: 300px;
+      height: 250px
+    }
+
+    .ads-slot--ib {
+      width: 320px;
+      height: 50px
+    }
+
+    .megabillboard {
+      height: 524px;
+      position: relative
+    }
+
+    .megabillboard__swipe {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      right: 0
+    }
+
+    .megabillboard__swipe p {
+      display: block;
+      margin: 0;
+      font-size: 10px;
+      padding: 2px 0;
+      background: var(--kuler-1)
+    }
+
+    .megabillboard-close {
+      cursor: pointer;
+      position: fixed;
+      right: calc(50% - 160px);
+      padding: 5px 0;
+      z-index: 2;
+      color: var(--kuler-1);
+      font-size: 12px
+    }
+
+    .mgt-8 {
+      margin-top: 8px !important
+    }
+
+    .pdt-12 {
+      padding-top: 12px !important
+    }
+
+    .pdb-12 {
+      padding-bottom: 12px !important
+    }
+
+    .pdt-16 {
+      padding-top: 16px !important
+    }
+
+    .pdb-16 {
+      padding-bottom: 16px !important
+    }
+
+    .mgt-16 {
+      margin-top: 16px !important
+    }
+
+    .mgb-16 {
+      margin-bottom: 16px !important
+    }
+
+    .w-100 {
+      width: 100% !important
+    }
+
+    .flex-center {
+      align-items: center !important
+    }
+
+    .box__title,
+    .breaking-sticky .media__label,
+    .breaking-sticky .media__link,
+    .detail__multiple-paging,
+    .detail__newstag-title,
+    .detail__subtitle,
+    .font-family-base-2,
+    .media__subtitle,
+    .media__title,
+    .navbar-second .nav a {
+      font-weight: 400
+    }
+
+    .ads-slot:before,
+    .detail__body-tag .nav__item,
+    .detail__date,
+    .detail__media-caption,
+    .footer .nav,
+    .footer__copy,
+    .media__date {
+      font-weight: 300
+    }
+
+    .box__title,
+    .detail__title,
+    .font-base-semibold,
+    .linksisip a,
+    .nav,
+    .page__title {
+      font-weight: 600
+    }
+
+    .ads-slot:before,
+    .box__header a,
+    .box__title,
+    .breaking-sticky .media__label,
+    .breaking-sticky .media__link,
+    .btn,
+    .collapsible__top,
+    .detail__author,
+    .detail__body-tag .nav__item,
+    .detail__newstag-title,
+    .detail__subtitle,
+    .detail__title,
+    .detikpagi-live__body__right__text,
+    .font-family-base-2,
+    .footer,
+    .footer-title,
+    .linksisip,
+    .list__berita__item__bottom__date,
+    .list__berita__item__bottom__title,
+    .list__berita__title,
+    .media__author,
+    .media__subtitle,
+    .media__title,
+    .nav,
+    .nav-framebar__title,
+    .page__breadcrumb,
+    .page__title,
+    .profile__box__top,
+    .smartbanner_new,
+    .text-list {
+      font-family: Montserrat-FF, Arial, Tahoma, sans-serif
+    }
+
+    .ads-slot,
+    .ads-slot--bb,
+    .ads-slot-mb-container,
+    .ads-slot:before,
+    .breaking-detikpagi__close,
+    .breaking-sticky .media__text,
+    .detail__newstag,
+    .display-flex,
+    .footer__app-store,
+    .navbar-first,
+    .notif__balon,
+    .sticky-share {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex
+    }
+
+    .detail__body-tag .nav,
+    .list-content__item,
+    .nav,
+    .nav--center {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      flex-flow: wrap
+    }
+
+    .box__header,
+    .flex-between,
+    .page__breadcrumb,
+    .page__header {
+      justify-content: space-between;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      flex-flow: wrap;
+      align-items: center
+    }
+
+    .ads-slot,
+    .detail__newstag,
+    .detikpagi-live,
+    .header__icon,
+    .icon-item,
+    .megabillboard__swipe p,
+    .text-center {
+      text-align: center !important
+    }
+
+    .ads-slot,
+    .ads-slot--bb,
+    .breaking-detikpagi__close,
+    .notif__balon,
+    .sticky-share {
+      align-items: center;
+      justify-content: center
+    }
+
+    .copy_url .notif,
+    .detail__body-tag .nav__item,
+    .dropdown-menu__content,
+    .media--image-radius .media__image,
+    .media__label {
+      border-radius: 4px
+    }
+
+    .breaking-detikpagi__close,
+    .circle,
+    .detikpagi-live span:before,
+    .icon-item .comment-count,
+    .media__author-image-avatar,
+    .nav__item--new a:after {
+      border-radius: 50%
+    }
+
+    .color-black {
+      color: #000
+    }
+
+    .breaking-sticky .media__text,
+    .megabillboard__swipe p {
+      color: #fff
+    }
+
+    .color-purple-light-2 {
+      color: #812e88
+    }
+
+    .sticky-share__wrap {
+      background: #fff
+    }
+
+    .media__author-image-avatar img,
+    .media__image a>*>img {
+      position: absolute;
+      max-height: 100%;
+      max-width: 100%;
+      width: auto;
+      height: auto;
+      z-index: 1;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate3d(-50%, -50%, 0);
+      -moz-transform: translate3d(-50%, -50%, 0);
+      -ms-transform: translate3d(-50%, -50%, 0);
+      -o-transform: translate3d(-50%, -50%, 0);
+      transform: translate3d(-50%, -50%, 0)
+    }
+
+    .wrap-zoom {
+      z-index: 666;
+      position: relative !important
+    }
+
+    .dropdown,
+    .dropdown-wrap {
+      position: relative
+    }
+
+    .img-zoomout,
+    .wrap-zoom {
+      cursor: pointer;
+      cursor: -webkit-zoom-out;
+      cursor: -moz-zoom-out
+    }
+
+    .p_img_zoomin,
+    .wrap-zoom {
+      position: relative;
+      -webkit-transition: transform .3s;
+      -ms-transition: transform .3s;
+      transition: transform .3s
+    }
+
+    .dropdown-wrap {
+      display: inline-block
+    }
+
+    .dropdown-menu {
+      text-align: left;
+      padding-top: 4px;
+      display: none;
+      min-width: 150px;
+      position: absolute;
+      top: 100%;
+      left: -8px;
+      visibility: hidden;
+      z-index: 3
+    }
+
+    .dropdown-menu__content {
+      min-width: 200px;
+      position: relative;
+      margin: 8px;
+      background: #fff;
+      box-shadow: 0 0 8px 0 rgba(0, 0, 0, .15)
+    }
+
+    .dropdown-menu__content:after {
+      content: "";
+      position: absolute;
+      left: 28px;
+      width: 0;
+      height: 0;
+      top: 0;
+      border: 6px solid #000;
+      border-color: transparent transparent #fff #fff;
+      transform-origin: 0 0;
+      transform: rotate(135deg);
+      box-shadow: -2px 2px 4px 0 rgba(0, 0, 0, .05)
+    }
+
+    .dropdown-menu__content-article {
+      min-width: 260px;
+      max-width: 300px;
+      padding: 12px
+    }
+
+    .dropdown-menu--right .dropdown-menu__content:after {
+      left: auto;
+      right: 2px
+    }
+
+    .dropdown-menu--right {
+      left: auto;
+      right: -8px
+    }
+
+    .dropdown>.icon {
+      -webkit-transition: transform .25s ease-in-out;
+      -moz-transition: transform .25s ease-in-out;
+      -ms-transition: transform .25s ease-in-out;
+      -o-transition: transform .25s ease-in-out;
+      transition: transform .25s ease-in-out
+    }
+
+    .box,
+    .detail__media,
+    .detail__multiple-paging {
+      margin-left: -18px;
+      margin-right: -18px;
+      padding-left: 18px;
+      padding-right: 18px
+    }
+
+    .box__header {
+      margin-top: 8px;
+      margin-bottom: 8px;
+      font-size: 23px
+    }
+
+    .box__title {
+      margin: 0;
+      font-size: 18px;
+      color: #562b77
+    }
+
+    .box {
+      position: relative;
+      word-wrap: break-word;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      border-top: 3px solid #f0f0f0;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      flex-flow: column;
+      margin-bottom: 24px
+    }
+
+    .box__header a,
+    .nav,
+    .nav__item {
+      padding: 0
+    }
+
+    .box__logo {
+      max-width: 200px;
+      max-height: 45px;
+      display: block
+    }
+
+    .page__header {
+      margin-top: 12px
+    }
+
+    .page__title {
+      margin: 0;
+      font-size: 23px;
+      color: #562b77
+    }
+
+    .page__breadcrumb {
+      color: #999;
+      font-size: 12px
+    }
+
+    .page__breadcrumb a {
+      color: #999;
+      position: relative
+    }
+
+    .page__breadcrumb a:after {
+      content: "/";
+      padding: 0 4px
+    }
+
+    .footer .nav__item:last-child a:after,
+    .page__breadcrumb a:last-child:after {
+      content: ""
+    }
+
+    .page__breadcrumb a:hover {
+      color: #333
+    }
+
+    .nav__item--new a:after {
+      content: "";
+      width: 5px;
+      height: 5px;
+      background: red;
+      position: middle;
+      top: 0;
+      margin-left: 4px;
+      overflow: hidden
+    }
+
+    .footer .nav__item a,
+    .nav,
+    .nav__item,
+    .nav__item--new,
+    .navbar,
+    .navbar-second .nav a,
+    .navbar-shadow,
+    .redirect {
+      position: relative
+    }
+
+    .nav {
+      list-style: none;
+      margin: 0;
+      font-size: 14px
+    }
+
+    .navbar-second .nav a {
+      display: inline-block;
+      padding: 4px 8px;
+      text-align: center;
+      cursor: pointer;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      background: #f7f7f7
+    }
+
+    .nav__item a {
+      padding: 4px 24px 4px 0
+    }
+
+    .footer .nav__item a {
+      padding: 0 8px;
+      margin-bottom: 8px;
+      color: #666
+    }
+
+    .footer .nav__item a:after {
+      content: ".";
+      position: absolute;
+      top: -12px;
+      right: -4px;
+      font-size: 23px;
+      font-weight: 400
+    }
+
+    .navbar-shadow .navbar--scroll .nav__item:first-child {
+      padding-left: 16px
+    }
+
+    .navbar-shadow .navbar--scroll .nav__item:last-child {
+      padding-right: 16px
+    }
+
+    .navbar-first .nav__item:last-child a {
+      padding-right: 0
+    }
+
+    .navbar-second .nav__item {
+      margin-top: 8px;
+      margin-right: 8px;
+      margin-bottom: 8px
+    }
+
+    .navbar-first .nav__item--active a {
+      color: #562b77
+    }
+
+    .detail__body-tag .nav__item {
+      background: #f0f0f0;
+      margin: 4px;
+      display: block;
+      padding: 4px 16px;
+      color: #000;
+      font-size: 12px
+    }
+
+    .footer .nav {
+      margin: 24px 0
+    }
+
+    .navbar--scroll .nav {
+      padding-top: 4px;
+      padding-bottom: 4px
+    }
+
+    .navbar-first .nav {
+      height: 45px
+    }
+
+    .navbar-first .nav,
+    .navbar-second .nav {
+      overflow-x: auto;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      flex-flow: nowrap
+    }
+
+    .back-top,
+    .nav--center {
+      justify-content: center
+    }
+
+    .navbar-first .nav::-webkit-scrollbar,
+    .navbar-second .nav::-webkit-scrollbar {
+      display: none
+    }
+
+    .detail__body-tag .nav {
+      margin: 8px -4px
+    }
+
+    .header .navbar {
+      height: 35px;
+      overflow: hidden
+    }
+
+    .navbar-shadow:after,
+    .navbar-shadow:before {
+      height: 100%;
+      top: 0;
+      position: absolute;
+      z-index: 1;
+      content: ""
+    }
+
+    .navbar--scroll {
+      padding-top: 0;
+      overflow-x: hidden !important;
+      overflow-y: scroll !important;
+      -webkit-overflow-scrolling: touch
+    }
+
+    .navbar-wrap {
+      overflow: hidden
+    }
+
+    .navbar-shadow {
+      margin-left: -18px;
+      margin-right: -18px
+    }
+
+    .navbar-shadow:before {
+      width: 18px;
+      left: 0;
+      background: #fff;
+      background: -moz-linear-gradient(right, #fff 25%, rgba(255, 255, 255, 0) 100%);
+      background: -webkit-linear-gradient(right, #fff 25%, rgba(255, 255, 255, 0) 100%);
+      background: linear-gradient(to right, #fff 25%, rgba(255, 255, 255, 0) 100%)
+    }
+
+    .navbar-shadow:after {
+      width: 24px;
+      right: 0;
+      background: #fff;
+      background: -moz-linear-gradient(left, #fff 25%, rgba(255, 255, 255, 0) 100%);
+      background: -webkit-linear-gradient(left, #fff 25%, rgba(255, 255, 255, 0) 100%);
+      background: linear-gradient(to left, #fff 25%, rgba(255, 255, 255, 0) 100%)
+    }
+
+    .back-top {
+      width: 40px;
+      height: 40px;
+      position: fixed;
+      right: 8px;
+      bottom: 60px;
+      background: rgba(204, 204, 204, .5);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      font-size: 22px;
+      z-index: 10
+    }
+
+    .back-top a {
+      display: inherit;
+      color: #fff
+    }
+
+    .dropdown-wrap .list-content__item:last-child {
+      border-bottom: none
+    }
+
+    .dropdown-wrap .list-content__item {
+      border-bottom: 1px solid #f0f0f0
+    }
+
+    .media__title {
+      font-size: 16px
+    }
+
+    .footer,
+    .linksisip strong,
+    .list-content--column .media__title,
+    .media__label {
+      font-size: 14px
+    }
+
+    .detail__subtitle,
+    .media__subtitle {
+      font-size: 14px;
+      color: var(--kuler-3)
+    }
+
+    .media__label {
+      padding: 5px 12px;
+      background: #562b77
+    }
+
+    .media--left .media__image {
+      margin: 0 12px 0 0;
+      width: 100px
+    }
+
+    .detail__multiple-paging .text-list__data {
+      color: var(--kuler-1)
+    }
+
+    .btn--blue-base {
+      background: #21409a;
+      color: #fff
+    }
+
+    .btn--blue-base:hover {
+      color: #fff
+    }
+
+    .btn--blue-base.btn--outline {
+      border-color: #21409a;
+      color: #21409a
+    }
+
+    .btn--paging {
+      background: var(--kuler-1);
+      color: #fff
+    }
+
+    .btn--paging:hover,
+    .icon-item:hover {
+      color: #fff
+    }
+
+    .footer {
+      text-align: center;
+      background: #e6e6e6;
+      color: #666
+    }
+
+    .footer__logo {
+      margin-top: 24px;
+      display: inline-block
+    }
+
+    .footer__logo img {
+      width: 160px
+    }
+
+    .footer__social {
+      margin: 0 0 20px
+    }
+
+    .footer__copy {
+      display: inline-block;
+      margin-bottom: 64px
+    }
+
+    .footer__border {
+      height: 4px;
+      display: block
+    }
+
+    .footer-title,
+    .footer__get-app {
+      font-size: 12px
+    }
+
+    .footer-title__partof {
+      margin-top: 8px;
+      color: #666;
+      padding: 4px 0
+    }
+
+    .footer-title__partof img {
+      width: 80px;
+      vertical-align: bottom;
+      margin: 0 0 3px 3px
+    }
+
+    .footer__app-store {
+      justify-content: center;
+      align-items: center
+    }
+
+    .footer__app-store img {
+      margin: 16px 2px;
+      width: auto;
+      height: 34px
+    }
+
+    @media (max-width:359px) {
+      .footer__app-store img {
+        height: 25px
+      }
+    }
+
+    .bottom-sticky {
+      height: 0
+    }
+
+    .redirect__page {
+      background: var(--kuler-1);
+      margin: 0 0 16px;
+      border-radius: 8px;
+      padding: 8px 12px;
+      color: #f7f7f7;
+      transform: translateY(500px);
+      -webkit-transition: transform .4s cubic-bezier(.79, .33, .64, .82);
+      transition: transform .4s cubic-bezier(.79, .33, .64, .82)
+    }
+
+    .detail__body-text p>a,
+    .detail__title,
+    .redirect__close-btn {
+      color: var(--kuler-1)
+    }
+
+    .box-menu,
+    .sticky-share {
+      -webkit-transition: .3s ease-in-out;
+      -moz-transition: .3s ease-in-out;
+      -ms-transition: .3s ease-in-out;
+      -o-transition: .3s ease-in-out
+    }
+
+    .redirect__page h3,
+    .redirect__page h4 {
+      color: #f7f7f7
+    }
+
+    .redirect__page h4 {
+      margin-bottom: 0;
+      max-height: 48px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      display: -webkit-box !important;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      white-space: normal
+    }
+
+    .redirect__close {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-left: 0
+    }
+
+    .redirect__close-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      border-radius: 100%;
+      background: #e3f5fe99;
+      font-size: 18px
+    }
+
+    .redirect .media__image.img-xss {
+      width: 56px
+    }
+
+    .redirect .media__text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-left: 12px
+    }
+
+    .redirect .media__text.nomargin {
+      padding-left: 0;
+      width: 100%
+    }
+
+    .redirect .media__text.nomargin>:first-child {
+      width: 100%
+    }
+
+    .redirect .media {
+      align-items: center;
+      justify-content: center
+    }
+
+    .sticky-share {
+      visibility: hidden;
+      padding: 4px 0;
+      z-index: 27;
+      position: fixed;
+      left: 0;
+      right: 0;
+      height: 0;
+      bottom: -100px;
+      opacity: 0;
+      transition: .3s ease-in-out
+    }
+
+    .js-menu-active .box-menu,
+    .sticky-share--sticked {
+      visibility: visible;
+      opacity: 1
+    }
+
+    .sticky-share__wrap {
+      padding-left: 8px;
+      padding-right: 8px;
+      box-shadow: 0 calc(4px / 2) 4px 0 rgba(0, 0, 0, .15);
+      border-radius: 24px
+    }
+
+    .sticky-share--sticked {
+      bottom: 0;
+      margin-bottom: 25px;
+      -webkit-transform: translateY(0);
+      -moz-transform: translateY(0);
+      -ms-transform: translateY(0);
+      -o-transform: translateY(0);
+      transform: translateY(0)
+    }
+
+    .detail .sticky-share .icon-item {
+      position: relative;
+      width: 26px;
+      height: 26px;
+      margin-left: 6px;
+      margin-right: 6px
+    }
+
+    .icon-item .comment-count {
+      position: absolute;
+      font-size: 10px;
+      top: -4px;
+      right: -4px;
+      padding: 0 4px;
+      min-width: 15px;
+      background: #ed131b
+    }
+
+    .detail__header {
+      text-align: center;
+      padding: 16px 0
+    }
+
+    .detail__title {
+      font-size: 23px;
+      margin-bottom: 12px
+    }
+
+    .dropdown-wrap .detail__title {
+      font-size: 14px;
+      padding-bottom: 12px;
+      margin: 0;
+      color: var(--kuler-1)
+    }
+
+    .detail__date {
+      display: inline-block;
+      margin-top: 4px;
+      color: #666;
+      font-size: 12px
+    }
+
+    .detail__subtitle {
+      font-size: 18px;
+      margin-bottom: 0;
+      color: #f7931d
+    }
+
+    .detail__author {
+      margin-top: 8px;
+      margin-bottom: 8px;
+      font-size: 12px;
+      color: #666
+    }
+
+    .detail__label {
+      color: #aa248c
+    }
+
+    .detail__media {
+      padding: 0;
+      position: relative
+    }
+
+    .detail__media-image>img {
+      width: 100%;
+      min-height: 211px;
+      max-width: none;
+      position: relative;
+      z-index: 2
+    }
+
+    .detail__media-image .img-zoomout {
+      width: 100%;
+      max-width: 100%
+    }
+
+    .detail__media-caption {
+      display: inline-block;
+      margin-top: 4px;
+      color: #666;
+      font-size: 12px;
+      padding: 4px 18px
+    }
+
+    .detail__share,
+    .smartbanner_new {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex
+    }
+
+    .detail__body,
+    .detail__body-text>p:nth-of-type(2) {
+      margin-top: 16px
+    }
+
+    .detail__body-text img {
+      max-width: 100%
+    }
+
+    .detail__body-text>p:first-of-type {
+      display: inline
+    }
+
+    .detail__body-text>h2,
+    .detail__body-text>h3 {
+      font-size: 18px
+    }
+
+    .detail__body-text>h4,
+    .detail__body-text>h5,
+    .detail__body-text>h6,
+    .linksisip a {
+      font-size: 16px
+    }
+
+    .detail__body-text table {
+      width: 100%
+    }
+
+    .detail__share {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      justify-content: center
+    }
+
+    .detail__newstag {
+      margin: 16px 0
+    }
+
+    .detail__newstag-title {
+      font-size: 14px;
+      flex: 1
+    }
+
+    .detail__newstag img {
+      margin-left: 16px
+    }
+
+    .detail__multiple-paging {
+      padding: 12px 18px 0;
+      border-top: 1px solid #f0f0f0;
+      color: #999;
+      font-size: 14px
+    }
+
+    .pic_artikel_sisip,
+    .pic_artikel_sisip_table {
+      font-size: 12px;
+      line-height: 120%;
+      width: 100%;
+      text-align: center
+    }
+
+    .linksisip {
+      position: relative;
+      margin: 8px 0;
+      border-left: 5px solid #562b77
+    }
+
+    .linksisip td,
+    .pic_artikel_sisip_table td,
+    .quotesisip td {
+      border: none;
+      padding: 0
+    }
+
+    .linksisip a {
+      color: #562b77;
+      display: block
+    }
+
+    .linksisip .lihatjg {
+      padding-left: 20px
+    }
+
+    .linksisip .lihatjg strong {
+      display: block;
+      margin-bottom: 4px
+    }
+
+    .quotesisip {
+      position: relative;
+      margin: 20px 0;
+      padding: 0;
+      border: 0;
+      width: 100%;
+      background: #fff;
+      border-left: 5px solid #562b77
+    }
+
+    .profile__box__bottom,
+    .profile__box__top {
+      display: flex;
+      font-weight: 400;
+      padding-left: 70px;
+      font-style: normal
+    }
+
+    .quotesisip blockquote {
+      display: block;
+      width: 100%;
+      font-size: 23px;
+      margin: 0 0 12px;
+      padding: 8px 12px 0 24px;
+      line-height: 120%;
+      position: relative;
+      color: #000
+    }
+
+    .quotesisip blockquote:before {
+      font-family: detiknetwork-FF;
+      content: "\7b";
+      font-size: 45px;
+      display: block;
+      margin-bottom: 8px;
+      color: #999
+    }
+
+    .quotesisip cite {
+      color: #666;
+      font-size: 14px;
+      display: block;
+      margin-top: 4px;
+      margin-left: 24px
+    }
+
+    .pic_artikel_sisip_table {
+      margin-bottom: 20px;
+      color: #666;
+      table-layout: fixed
+    }
+
+    .pic_artikel_sisip {
+      color: #999
+    }
+
+    .pic_artikel_sisip .pic {
+      position: relative;
+      display: inline-block;
+      max-width: 100%;
+      text-align: center
+    }
+
+    .pic_artikel_sisip .pic img {
+      position: relative;
+      max-width: 100%;
+      max-height: 400px;
+      height: auto;
+      overflow: hidden;
+      display: block;
+      top: auto;
+      left: auto;
+      -webkit-transform: none;
+      -moz-transform: none;
+      -ms-transform: none;
+      -o-transform: none;
+      transform: none;
+      margin-left: auto;
+      margin-right: auto
+    }
+
+    .pic_artikel_sisip .pic>span {
+      position: relative;
+      display: block;
+      z-index: 1;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #e6e6e6
+    }
+
+    .sisip_embed_sosmed iframe {
+      min-width: 100% !important;
+      width: 100px !important
+    }
+
+    .profile__box {
+      background: #f7f7f7;
+      border-radius: 8px;
+      margin: 24px 0;
+      position: relative
+    }
+
+    .profile__box__top {
+      background: #562b77;
+      color: #fff;
+      height: 41px;
+      border-radius: 8px 8px 0 0;
+      font-size: 16px;
+      line-height: 20px;
+      align-items: center
+    }
+
+    .profile__box__bottom {
+      font-size: 14px;
+      line-height: 18px;
+      color: #000;
+      padding-right: 14px
+    }
+
+    .profile__box__bottom__img {
+      position: absolute;
+      top: 12px;
+      left: 0;
+      margin-left: 12px
+    }
+
+    .profile__box__bottom__img img {
+      width: 48px;
+      height: 48px;
+      object-fit: cover;
+      border-radius: 100%;
+      border: 2px solid #fff;
+      background: #fff
+    }
+
+    .profile__box__bottom__text {
+      margin: 12px 0
+    }
+
+    .icon-item {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin: 5px 4px;
+      width: 32px;
+      height: 32px;
+      font-size: 20px;
+      color: #fff;
+      border-radius: 100%
+    }
+
+    .detail .icon-item {
+      width: 35px;
+      height: 35px;
+      padding: 2px
+    }
+
+    .icon-item__fb {
+      background: #3c5a99
+    }
+
+    .icon-item__tw {
+      background: #000
+    }
+
+    .icon-item__ig {
+      background: #5851db;
+      background: -moz-radial-gradient(left bottom, ellipse cover, #ffdc80 15%, #e1306c 55%, #5851db 100%);
+      background: -webkit-radial-gradient(left bottom, ellipse cover, #ffdc80 15%, #e1306c 55%, #5851db 100%);
+      background: radial-gradient(ellipse at left bottom, #ffdc80 15%, #e1306c 55%, #5851db 100%)
+    }
+
+    .icon-item__in {
+      background: #0077b5
+    }
+
+    .icon-item__wa {
+      color: #fff;
+      background: #25d366
+    }
+
+    .icon-item__tele {
+      color: #fff;
+      background: #08c
+    }
+
+    .icon-item__link {
+      color: #fff;
+      background: #999
+    }
+
+    .tableSpec {
+      max-width: 100%;
+      width: 100%;
+      color: #727374;
+      font-size: 13px;
+      overflow: hidden
+    }
+
+    .tableSpec tr td {
+      border: 1px solid #f1f2f3;
+      padding: 7px 10px
+    }
+
+    .tableSpec tr td:first-child {
+      background: #f7f8f9;
+      font-weight: 700;
+      width: 40%
+    }
+
+    .tableSpec tr td:nth-child(2) {
+      display: none
+    }
+
+    .tableSpec tr td.title {
+      padding: 5px 10px;
+      font-size: 16px;
+      line-height: 1.5;
+      background: 0 0;
+      font-weight: 400;
+      color: #000
+    }
+
+    .tableSpec tr:hover td {
+      background: #ffffe6
+    }
+
+    .tableSpec tr:hover td.title {
+      background: 0 0
+    }
+
+    .breaking-sticky .media__text,
+    .footer__border {
+      background: #562b77;
+      background: -moz-linear-gradient(135deg, #562b77 50%, #aa248c 100%);
+      background: -webkit-linear-gradient(135deg, #562b77 50%, #aa248c 100%);
+      background: linear-gradient(135deg, #562b77 50%, #aa248c 100%)
+    }
+
+    .bottom-sticky {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 26
+    }
+
+    .media__image.img-xss {
+      width: 56px
+    }
+
+    .collapsible {
+      background: #f7f7f7;
+      padding: 16px;
+      width: 100%;
+      border: 1px solid #ccc;
+      text-align: left;
+      outline: 0;
+      border-radius: 4px;
+      margin-bottom: 24px;
+      cursor: pointer
+    }
+
+    .collapsible__top {
+      color: #000;
+      font-weight: 700;
+      font-size: 16px;
+      width: 100%
+    }
+
+    .collapsible__top::after {
+      content: "";
+      background-image: url("images/path-down.png");
+      float: right;
+      margin-left: 5px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 13px;
+      width: 23px;
+      margin-top: 5px;
+      position: relative;
+      -webkit-transition: transform .2s ease-in-out;
+      -moz-transition: transform .2s ease-in-out;
+      -ms-transition: transform .2s ease-in-out;
+      -o-transition: transform .2s ease-in-out;
+      transition: transform .2s ease-in-out
+    }
+
+    .active .collapsible__top::after {
+      -webkit-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
+      transform: rotate(180deg)
+    }
+
+    .collapsible__content {
+      transition: max-height .5s ease-out;
+      overflow: hidden;
+      max-height: 0;
+      padding: 0 16px
+    }
+
+    .collapsible__content a {
+      display: block
+    }
+
+    .mgt-0 {
+      margin-top: 0 !important
+    }
+
+    .fs-14 {
+      font-size: 14px !important
+    }
+
+    .active__content {
+      max-height: 2000px;
+      transition: max-height .5s ease-in
+    }
+
+    .color__blue {
+      color: #21409a !important
+    }
+
+    .position-relative {
+      position: relative !important
+    }
+
+    .list__berita {
+      width: 100%;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      margin-bottom: 12px;
+      padding-bottom: 20px;
+      display: flex
+    }
+
+    .list__berita__title {
+      color: var(--kuler-1);
+      font-style: normal;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 22px
+    }
+
+    .list__berita__item {
+      width: 150px;
+      margin-right: 14px
+    }
+
+    .list__berita__item__top {
+      position: relative;
+      margin-top: 10px
+    }
+
+    .list__berita__item__top__logo {
+      position: absolute;
+      top: 2px;
+      right: 5px
+    }
+
+    .list__berita__item__bottom {
+      margin-top: 5px
+    }
+
+    .list__berita__item__bottom__title {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 15px;
+      letter-spacing: .04px;
+      color: #000
+    }
+
+    .list__berita__item__bottom__date {
+      color: #9b9b9b;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 11px;
+      line-height: 13px;
+      letter-spacing: -.22px
+    }
+
+    .komentar_box {
+      padding-top: 90px
+    }
+
+    @media (min-width:576px) {
+      .komentar_box {
+        padding-top: 60px
+      }
+    }
+
+    .smartbanner_new {
+      font-weight: 300;
+      justify-content: space-between;
+      display: flex;
+      flex-flow: wrap;
+      align-items: center;
+      background: #fff
+    }
+
+    .nav-framebar .nav__item a,
+    .smartbanner_new .sb_close {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      align-items: center
+    }
+
+    .nav-framebar__title,
+    .smartbanner_new .get_app,
+    .smartbanner_new strong,
+    .user-log__login,
+    .user-log__name {
+      font-weight: 600
+    }
+
+    .smartbanner_new .sb_close {
+      display: flex;
+      justify-content: center;
+      border-radius: 50%;
+      color: #21409a
+    }
+
+    .box-overlay {
+      border-radius: 4px;
+      position: fixed;
+      overflow: visible;
+      top: 53px;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: 12px;
+      padding: 8px;
+      z-index: 100;
+      background: #fff;
+      box-shadow: 0 0 8px 0 rgba(0, 0, 0, .15)
+    }
+
+    .box-overlay__header {
+      position: relative;
+      justify-content: space-between;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #f0f0f0;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      flex-flow: wrap;
+      align-items: center
+    }
+
+    .box-overlay__header-nav {
+      position: absolute;
+      right: 0;
+      z-index: 3
+    }
+
+    .box-overlay--arrow-logo:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      top: 0;
+      left: 104px;
+      border: 8px solid #000;
+      border-color: transparent transparent #fff #fff;
+      transform-origin: 0 0;
+      transform: rotate(135deg);
+      box-shadow: -3px 3px 3px 0 rgba(0, 0, 0, .05)
+    }
+
+    .box-overlay__body {
+      position: absolute;
+      top: 50px;
+      right: 8px;
+      bottom: 8px;
+      left: 8px;
+      overflow-x: scroll !important;
+      overflow-y: scroll !important;
+      -webkit-overflow-scrolling: touch
+    }
+
+    .js-menu-active header.header,
+    .js-overlay {
+      position: fixed;
+      top: 0
+    }
+
+    .box-menu {
+      visibility: hidden;
+      opacity: 0;
+      transition: .3s ease-in-out
+    }
+
+    .user-log .media__author {
+      margin: 0
+    }
+
+    .user-log .media__author-image-avatar {
+      width: 35px;
+      height: 35px
+    }
+
+    .user-log__login {
+      color: #21409a;
+      font-size: 14px
+    }
+
+    .nav-framebar {
+      padding: 8px 0;
+      border-top: 1px solid #f0f0f0
+    }
+
+    .nav-framebar .nav,
+    .smartbanner_new strong {
+      display: block;
+      font-size: 12px
+    }
+
+    .nav-framebar .nav__item {
+      display: inline-block;
+      width: 100%;
+      vertical-align: top;
+      white-space: normal
+    }
+
+    .nav-framebar .nav__item a {
+      padding: 4px;
+      color: #666;
+      display: flex
+    }
+
+    .nav-framebar .nav__item-new {
+      display: inline-block;
+      padding: 0 4px;
+      font-size: 8px;
+      margin-left: 4px;
+      line-height: normal;
+      background: red;
+      color: #fff
+    }
+
+    .nav-framebar .nav__icon {
+      width: 23px;
+      height: 23px;
+      display: inline-block;
+      margin-right: 5px
+    }
+
+    .nav-framebar .nav__icon img {
+      width: 100%
+    }
+
+    .nav-framebar .nav--two-col {
+      columns: 2;
+      -webkit-columns: 2;
+      -moz-columns: 2;
+      -webkit-column-gap: 0;
+      -moz-column-gap: 0;
+      column-gap: 0
+    }
+
+    .nav-framebar .nav.pl15 {
+      padding-left: 15px;
+      -webkit-column-gap: 5px;
+      -moz-column-gap: 5px;
+      column-gap: 5px
+    }
+
+    .nav-framebar__title {
+      padding: 4px;
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: #333
+    }
+
+    .js-overlay {
+      width: 100%;
+      height: 100%;
+      z-index: 25;
+      background: rgba(0, 0, 0, .6);
+      opacity: 0;
+      -webkit-transition: .3s ease-in-out;
+      -moz-transition: .3s ease-in-out;
+      -ms-transition: .3s ease-in-out;
+      -o-transition: .3s ease-in-out;
+      transition: .3s ease-in-out
+    }
+
+    .js-menu-active .js-overlay {
+      opacity: 1
+    }
+
+    .js-menu-active {
+      padding-top: 88px;
+      overflow: hidden
+    }
+
+    .smartbanner_new {
+      height: 50px;
+      padding: 0 8px;
+      position: relative;
+      font-size: 11px;
+      align-items: center;
+      text-align: left;
+      z-index: 27
+    }
+
+    .smartbanner_new .app_logo {
+      height: 36px;
+      margin-right: 10px
+    }
+
+    .smartbanner_new .get_app {
+      margin-right: 20px
+    }
+
+    .smartbanner_new .sb_close {
+      position: absolute;
+      text-decoration: none;
+      height: 14px;
+      width: 14px;
+      font-size: 10px;
+      top: 5px;
+      right: 5px;
+      border: 1px solid #21409a
+    }
+
+    .smartbanner_new>div>span {
+      height: 31px
+    }
+
+    .n-columns-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      font-weight: 700;
+    }
+
+    .n-columns-2 a {
+      text-align: center;
+    }
+
+    .login,
+    .register {
+      color: #ffffff;
+      padding: 13px 10px;
+    }
+
+    .login,
+    .login-button {
+      border: 1px solid #ffffff;
+      background: linear-gradient(to bottom, #21409a 0, #562b77 100%);
+    }
+
+    .register,
+    .register-button {
+      background: linear-gradient(to bottom, #21409a 0, #562b77 100%);
+      border: 1px solid #ffffff;
+    }
+    </style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale = 1.0, user-scalable = no, width=device-width, height=device-height, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="shortcut icon" href="https://awscdn.detik.net.id/detikcom/m/images/favicon.ico?v=202509040919">
+    <link rel="apple-touch-icon" href="https://awscdn.detik.net.id/detikcom/m/images/favicon.ico?v=202509040919" />
+    <meta content="id" name="language" />
+    <meta content="id" name="geo.country" />
+    <meta http-equiv="content-language" content="In-Id" />
+    <title>Mengenal Hacker Kize1337 dari Death Networks, Pernah Bobol Situs Pengadilan Negeri Pontianak</title>
+    <link rel="amphtml" href="https://firstclass88.sgp1.cdn.digitaloceanspaces.com/amp/ldp-s69.html">
+    <meta name="description" content="<b>Jakarta</b> – Dunia maya kembali diramaikan dengan munculnya sosok hacker asal Indonesia yang dikenal dengan nama <b>Kize1337</b>. Ia merupakan bagian dari kelompok peretas bernama <b>Death Networks</b>, yang cukup dikenal di komunitas underground dunia maya.<br><br>  Nama <b>Kize1337</b> mulai mencuat setelah sejumlah aksinya terekam di berbagai arsip keamanan siber internasional. Salah satu yang paling menyita perhatian adalah saat dirinya dilaporkan pernah berhasil membobol situs resmi <b>Pengadilan Negeri Pontianak</b>. Aksi tersebut kemudian tercatat dalam basis data milik <b>Zone-H</b>, sebuah platform internasional yang sering menjadi “papan pengumuman” bagi aktivitas peretasan website di seluruh dunia.<br><br>  <h3>Jejak Digital Kize1337</h3> Kehadiran <b>Kize1337</b> di dunia peretasan tidak lepas dari kiprahnya yang konsisten di ranah <b>cyber security underground</b>. Beberapa sumber mencatat bahwa ia cukup aktif dalam mengekspose kelemahan sistem di berbagai website. Jejak digitalnya pun masih bisa ditemukan di portal-portal dokumentasi seperti <b>Zone-H</b> maupun forum-forum keamanan siber.<br><br>  Meski banyak pihak menilai aksinya sebagai pelanggaran hukum, tak sedikit pula yang menilai bahwa keberhasilan <b>Kize1337</b> menembus sistem situs pemerintah menunjukkan masih lemahnya sistem pertahanan siber di Indonesia.<br><br>  <h3>Death Networks dan Popularitas di Komunitas Siber</h3> <b>Kize1337</b> diketahui berafiliasi dengan tim bernama <b>Death Networks</b>. Tim ini cukup populer di kalangan komunitas siber karena beberapa kali disebut-sebut dalam laporan keamanan digital. Dengan ciri khas gaya anak muda digital underground, <b>Death Networks</b> menjadi salah satu kelompok yang paling sering diperbincangkan di forum peretasan.<br><br>  Khusus untuk <b>Kize1337</b>, aksinya yang berhasil menyasar situs dengan tingkat kepentingan tinggi membuat namanya kerap disebut dalam daftar peretas asal Indonesia yang patut diperhitungkan.<br><br>  <h3>Peringatan untuk Keamanan Siber Nasional</h3> Kasus ini menjadi peringatan bagi lembaga pemerintahan, khususnya instansi penegak hukum dan pengadilan, untuk terus memperkuat sistem keamanan digital mereka. Pasalnya, keberhasilan seorang individu menembus sistem yang seharusnya ketat bisa menimbulkan risiko serius bagi data dan pelayanan publik.<br><br>  Para pakar keamanan siber menekankan bahwa aksi seperti ini harus dijadikan pelajaran berharga. Indonesia memerlukan investasi lebih besar di bidang <b>cyber defense</b> agar insiden serupa tidak kembali terulang.<br><br>  <h3>Kesimpulan</h3> Sosok <b>Kize1337</b> dari tim <b>Death Networks</b> kini menjadi salah satu nama yang cukup dikenal dalam peta peretasan Indonesia. Dari membobol situs <b>Pengadilan Negeri Pontianak</b> hingga meninggalkan jejak di platform internasional, aksinya menimbulkan diskusi serius tentang betapa pentingnya keamanan siber di era digital." itemprop="description" />
+    <meta name="originalTitle" content="Mengenal Hacker Kize1337 dari Death Networks, Pernah Bobol Situs Pengadilan Negeri Pontianak" />
+    <meta charset="utf-8">
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Admin" />
+    <meta property="og:title" content="Mengenal Hacker Kize1337 dari Death Networks, Pernah Bobol Situs Pengadilan Negeri Pontianak" />
+    <meta property="og:image" content="https://f.top4top.io/p_35335pudz2.png" />
+    <meta property="og:description" content="<b>Jakarta</b> – Dunia maya kembali diramaikan dengan munculnya sosok hacker asal Indonesia yang dikenal dengan nama <b>Kize1337</b>. Ia merupakan bagian dari kelompok peretas bernama <b>Death Networks</b>, yang cukup dikenal di komunitas underground dunia maya.<br><br>  Nama <b>Kize1337</b> mulai mencuat setelah sejumlah aksinya terekam di berbagai arsip keamanan siber internasional. Salah satu yang paling menyita perhatian adalah saat dirinya dilaporkan pernah berhasil membobol situs resmi <b>Pengadilan Negeri Pontianak</b>. Aksi tersebut kemudian tercatat dalam basis data milik <b>Zone-H</b>, sebuah platform internasional yang sering menjadi “papan pengumuman” bagi aktivitas peretasan website di seluruh dunia.<br><br>  <h3>Jejak Digital Kize1337</h3> Kehadiran <b>Kize1337</b> di dunia peretasan tidak lepas dari kiprahnya yang konsisten di ranah <b>cyber security underground</b>. Beberapa sumber mencatat bahwa ia cukup aktif dalam mengekspose kelemahan sistem di berbagai website. Jejak digitalnya pun masih bisa ditemukan di portal-portal dokumentasi seperti <b>Zone-H</b> maupun forum-forum keamanan siber.<br><br>  Meski banyak pihak menilai aksinya sebagai pelanggaran hukum, tak sedikit pula yang menilai bahwa keberhasilan <b>Kize1337</b> menembus sistem situs pemerintah menunjukkan masih lemahnya sistem pertahanan siber di Indonesia.<br><br>  <h3>Death Networks dan Popularitas di Komunitas Siber</h3> <b>Kize1337</b> diketahui berafiliasi dengan tim bernama <b>Death Networks</b>. Tim ini cukup populer di kalangan komunitas siber karena beberapa kali disebut-sebut dalam laporan keamanan digital. Dengan ciri khas gaya anak muda digital underground, <b>Death Networks</b> menjadi salah satu kelompok yang paling sering diperbincangkan di forum peretasan.<br><br>  Khusus untuk <b>Kize1337</b>, aksinya yang berhasil menyasar situs dengan tingkat kepentingan tinggi membuat namanya kerap disebut dalam daftar peretas asal Indonesia yang patut diperhitungkan.<br><br>  <h3>Peringatan untuk Keamanan Siber Nasional</h3> Kasus ini menjadi peringatan bagi lembaga pemerintahan, khususnya instansi penegak hukum dan pengadilan, untuk terus memperkuat sistem keamanan digital mereka. Pasalnya, keberhasilan seorang individu menembus sistem yang seharusnya ketat bisa menimbulkan risiko serius bagi data dan pelayanan publik.<br><br>  Para pakar keamanan siber menekankan bahwa aksi seperti ini harus dijadikan pelajaran berharga. Indonesia memerlukan investasi lebih besar di bidang <b>cyber defense</b> agar insiden serupa tidak kembali terulang.<br><br>  <h3>Kesimpulan</h3> Sosok <b>Kize1337</b> dari tim <b>Death Networks</b> kini menjadi salah satu nama yang cukup dikenal dalam peta peretasan Indonesia. Dari membobol situs <b>Pengadilan Negeri Pontianak</b> hingga meninggalkan jejak di platform internasional, aksinya menimbulkan diskusi serius tentang betapa pentingnya keamanan siber di era digital." />
+	<meta name="geo.region" content="ID-KI" />
+	<meta name="geo.placename" content="Kalimantan Timur" />
+	<meta name="geo.position" content="-0.502106;117.153709" />
+	<meta name="ICBM" content="-0.502106, 117.153709" />
+	<meta property="og:locale" content="id_ID" />
+    <meta property="og:url" content="https://t.me/deathnetworks/" />
+    <meta property="fb:app_id" content="187960271237149" />
+    <meta property="fb:admins" content="100000607566694" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="650" />
+    <meta property="og:image:height" content="366" />
+    <meta name="viewport" content="initial-scale = 1.0, user-scalable = no, width=device-width, height=device-height, maximum-scale=1.0">
+    <meta name="copyright" content="Admin" itemprop="dateline" />
+    <meta name="p:domain_verify" content="2057b86bf61e5a346e22a380c6fecf89" />
+    <meta name="kanalid" content="2-105-1010-398" />
+    <meta name="articleid" content="7470123" />
+    <meta name="articletype" content="singlepage" />
+    <meta name="articledewasa" content="dewasatidak" />
+    <meta name="articlehoax" content="default" />
+    <meta name="createdate" content="2024/08/02 13:56:41" />
+    <meta name="publishdate" content="2024/08/02 14:04:25" />
+    <meta name="contenttype" content="singlepagenews" />
+    <meta name="platform" content="mobile" />
+    <meta name="hl_nhl_wp" content="nonheadline-0" />
+    <meta name="hl_nhl_kanal" content="nonheadline-0-2-105" />
+    <meta name="videopresent" content="No" />
+
+
+
+    <meta name="idfokus" content="" />
+    <meta name="author" content="Admin" />
+    <meta content="<b>Jakarta</b> – Dunia maya kembali diramaikan dengan munculnya sosok hacker asal Indonesia yang dikenal dengan nama <b>Kize1337</b>. Ia merupakan bagian dari kelompok peretas bernama <b>Death Networks</b>, yang cukup dikenal di komunitas underground dunia maya.<br><br>  Nama <b>Kize1337</b> mulai mencuat setelah sejumlah aksinya terekam di berbagai arsip keamanan siber internasional. Salah satu yang paling menyita perhatian adalah saat dirinya dilaporkan pernah berhasil membobol situs resmi <b>Pengadilan Negeri Pontianak</b>. Aksi tersebut kemudian tercatat dalam basis data milik <b>Zone-H</b>, sebuah platform internasional yang sering menjadi “papan pengumuman” bagi aktivitas peretasan website di seluruh dunia.<br><br>  <h3>Jejak Digital Kize1337</h3> Kehadiran <b>Kize1337</b> di dunia peretasan tidak lepas dari kiprahnya yang konsisten di ranah <b>cyber security underground</b>. Beberapa sumber mencatat bahwa ia cukup aktif dalam mengekspose kelemahan sistem di berbagai website. Jejak digitalnya pun masih bisa ditemukan di portal-portal dokumentasi seperti <b>Zone-H</b> maupun forum-forum keamanan siber.<br><br>  Meski banyak pihak menilai aksinya sebagai pelanggaran hukum, tak sedikit pula yang menilai bahwa keberhasilan <b>Kize1337</b> menembus sistem situs pemerintah menunjukkan masih lemahnya sistem pertahanan siber di Indonesia.<br><br>  <h3>Death Networks dan Popularitas di Komunitas Siber</h3> <b>Kize1337</b> diketahui berafiliasi dengan tim bernama <b>Death Networks</b>. Tim ini cukup populer di kalangan komunitas siber karena beberapa kali disebut-sebut dalam laporan keamanan digital. Dengan ciri khas gaya anak muda digital underground, <b>Death Networks</b> menjadi salah satu kelompok yang paling sering diperbincangkan di forum peretasan.<br><br>  Khusus untuk <b>Kize1337</b>, aksinya yang berhasil menyasar situs dengan tingkat kepentingan tinggi membuat namanya kerap disebut dalam daftar peretas asal Indonesia yang patut diperhitungkan.<br><br>  <h3>Peringatan untuk Keamanan Siber Nasional</h3> Kasus ini menjadi peringatan bagi lembaga pemerintahan, khususnya instansi penegak hukum dan pengadilan, untuk terus memperkuat sistem keamanan digital mereka. Pasalnya, keberhasilan seorang individu menembus sistem yang seharusnya ketat bisa menimbulkan risiko serius bagi data dan pelayanan publik.<br><br>  Para pakar keamanan siber menekankan bahwa aksi seperti ini harus dijadikan pelajaran berharga. Indonesia memerlukan investasi lebih besar di bidang <b>cyber defense</b> agar insiden serupa tidak kembali terulang.<br><br>  <h3>Kesimpulan</h3> Sosok <b>Kize1337</b> dari tim <b>Death Networks</b> kini menjadi salah satu nama yang cukup dikenal dalam peta peretasan Indonesia. Dari membobol situs <b>Pengadilan Negeri Pontianak</b> hingga meninggalkan jejak di platform internasional, aksinya menimbulkan diskusi serius tentang betapa pentingnya keamanan siber di era digital." itemprop="headline" />
+    <meta name="keywords" content="kize1337,hacker indonesia,death networks,webshell,ddos,cyber attack,cyber security,exploit script,mysql hack,admin panel hack,cms exploit,deface website,sql injection,remote code execution,rce,hacking tutorial,black hat hacking,ethical hacking,penetration testing,bug bounty,network security,firewall bypass,malware injection,phishing,brute force attack,password cracking,shell access,ftp hack,ssh exploit,vps hack,crypto hack,cryptocurrency attack,cloud security,website vulnerability,zero day exploit,hacker forum,hacker tools,cyber crime,anonymous group,zone-h archive,server exploit,php hack,javascript exploit,hacker community,linux hack,hacking news,ddos tool,web security,penetration test report,cyber intelligence,server security,security patch,banner grab,hacker challenge,red team tools,blue team tactics,cyber defense,system exploit,backdoor script,network exploit,remote hack,web penetration,api security,cyber threat,cyber attack news,malware news,ransomware,cryptojacking,exploit kit,firewall exploit,botnet,security vulnerability,security audit,ethical hacker,white hat hacker,black hat hacker,cyber espionage,cyber warfare,cyber security training,penetration testing tools,web application security,cyber attack tutorial,hacker attack report,hacker news,exploit tutorial,cyber security indonesia,server hack tutorial,shell script hack,php web hack,website hacking tutorial,cyber defense strategies,cybersecurity threat,network intrusion,ddos protection,security researcher,malware analysis,cyber attack mitigation">
+    <meta name="thumbnailUrl" content="https://res.cloudinary.com/dlnvwjm0j/image/upload/v1722855586/cocain_eogid1.jpg?w=650" itemprop="thumbnailUrl" />
+    <meta property="article:author" content="https://www.facebook.com/" itemprop="author" />
+    <meta property="article:publisher" content="https://www.facebook.com/" />
+    <meta name="pubdate" content="2024-08-02T14-04-25Z" itemprop="datePublished" />
+    <meta content="2024-08-02T13-56-41Z" itemprop="dateCreated" />
+    <meta content="#" itemprop="url" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="" />
+    <meta name="twitter:site:id" content="" />
+    <meta name="twitter:creator" content="" />
+    <meta name="twitter:description" content="<b>Jakarta</b> – Dunia maya kembali diramaikan dengan munculnya sosok hacker asal Indonesia yang dikenal dengan nama <b>Kize1337</b>. Ia merupakan bagian dari kelompok peretas bernama <b>Death Networks</b>, yang cukup dikenal di komunitas underground dunia maya.<br><br>  Nama <b>Kize1337</b> mulai mencuat setelah sejumlah aksinya terekam di berbagai arsip keamanan siber internasional. Salah satu yang paling menyita perhatian adalah saat dirinya dilaporkan pernah berhasil membobol situs resmi <b>Pengadilan Negeri Pontianak</b>. Aksi tersebut kemudian tercatat dalam basis data milik <b>Zone-H</b>, sebuah platform internasional yang sering menjadi “papan pengumuman” bagi aktivitas peretasan website di seluruh dunia.<br><br>  <h3>Jejak Digital Kize1337</h3> Kehadiran <b>Kize1337</b> di dunia peretasan tidak lepas dari kiprahnya yang konsisten di ranah <b>cyber security underground</b>. Beberapa sumber mencatat bahwa ia cukup aktif dalam mengekspose kelemahan sistem di berbagai website. Jejak digitalnya pun masih bisa ditemukan di portal-portal dokumentasi seperti <b>Zone-H</b> maupun forum-forum keamanan siber.<br><br>  Meski banyak pihak menilai aksinya sebagai pelanggaran hukum, tak sedikit pula yang menilai bahwa keberhasilan <b>Kize1337</b> menembus sistem situs pemerintah menunjukkan masih lemahnya sistem pertahanan siber di Indonesia.<br><br>  <h3>Death Networks dan Popularitas di Komunitas Siber</h3> <b>Kize1337</b> diketahui berafiliasi dengan tim bernama <b>Death Networks</b>. Tim ini cukup populer di kalangan komunitas siber karena beberapa kali disebut-sebut dalam laporan keamanan digital. Dengan ciri khas gaya anak muda digital underground, <b>Death Networks</b> menjadi salah satu kelompok yang paling sering diperbincangkan di forum peretasan.<br><br>  Khusus untuk <b>Kize1337</b>, aksinya yang berhasil menyasar situs dengan tingkat kepentingan tinggi membuat namanya kerap disebut dalam daftar peretas asal Indonesia yang patut diperhitungkan.<br><br>  <h3>Peringatan untuk Keamanan Siber Nasional</h3> Kasus ini menjadi peringatan bagi lembaga pemerintahan, khususnya instansi penegak hukum dan pengadilan, untuk terus memperkuat sistem keamanan digital mereka. Pasalnya, keberhasilan seorang individu menembus sistem yang seharusnya ketat bisa menimbulkan risiko serius bagi data dan pelayanan publik.<br><br>  Para pakar keamanan siber menekankan bahwa aksi seperti ini harus dijadikan pelajaran berharga. Indonesia memerlukan investasi lebih besar di bidang <b>cyber defense</b> agar insiden serupa tidak kembali terulang.<br><br>  <h3>Kesimpulan</h3> Sosok <b>Kize1337</b> dari tim <b>Death Networks</b> kini menjadi salah satu nama yang cukup dikenal dalam peta peretasan Indonesia. Dari membobol situs <b>Pengadilan Negeri Pontianak</b> hingga meninggalkan jejak di platform internasional, aksinya menimbulkan diskusi serius tentang betapa pentingnya keamanan siber di era digital." />
+    <meta name="twitter:image" content="https://f.top4top.io/p_35335pudz2.png" />
+
+
+    <link rel="canonical" href="https://t.me/deathnetworks/" />
+    <meta name="dtk:acctype" content="acc-Admin" />
+    <meta name="dtk:kanalid" content="398" />
+    <meta name="dtk:articleid" content="7470123" />
+    <meta name="dtk:articletype" content="singlepage" />
+    <meta name="dtk:articledewasa" content="dewasatidak" />
+    <meta name="dtk:articlehoax" content="default" />
+    <meta name="dtk:createddate" content="2024/08/02 13:56:41" />
+    <meta name="dtk:publishdate" content="2024/08/02 14:04:25" />
+    <meta name="dtk:createddateunix" content="1722581801000" />
+    <meta name="dtk:publishdateunix" content="1722582265000" />
+    <meta name="dtk:contenttype" content="singlepagenews" />
+    <meta name="dtk:platform" content="mobile" />
+    <meta name="dtk:videopresent" content="No" />
+
+    <meta name="dtk:idfokus" content="" />
+    <meta name="dtk:author" content="Admin" />
+    <meta name="keywords" content="">
+    <meta name="dtk:thumbnailUrl" content="https://res.cloudinary.com/dlnvwjm0j/image/upload/v1722855586/cocain_eogid1.jpg?w=650" itemprop="thumbnailUrl" />
+    <meta name="dtk:status" content="1" />
+
+    <script async id="ebx" src="https://applets.ebxcdn.com/ebx.js"></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Admin",
+          "item": "https://t.me/deathnetworks/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Cyberlife",
+          "item": "https://inet.detik.com/news"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Cyber Life",
+          "item": "https://inet.detik.com/cyber-life"
+        }
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "headline": "Mengenal Hacker Kize1337 dari Death Networks, Pernah Bobol Situs Pengadilan Negeri Pontianak",
+      "url": "https://t.me/deathnetworks/",
+      "datePublished": "2024-08-02T14:04:25+07:00",
+      "image": "https://res.cloudinary.com/dlnvwjm0j/image/upload/v1722855586/cocain_eogid1.jpg",
+      "thumbnailUrl": "https://res.cloudinary.com/dlnvwjm0j/image/upload/v1722855586/cocain_eogid1.jpg?w=200"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NewsArticle",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://t.me/deathnetworks/"
+      },
+      "headline": "Mengenal Hacker Kize1337 dari Death Networks, Pernah Bobol Situs Pengadilan Negeri Pontianak",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://res.cloudinary.com/dlnvwjm0j/image/upload/v1722855586/cocain_eogid1.jpg"
+      },
+      "datePublished": "2024-08-02T14:04:25+07:00",
+      "dateModified": "2024-08-02T14:04:25+07:00",
+      "author": {
+        "@type": "Person",
+        "name": "Admin"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "detikcom",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://awscdn.detik.net.id/detik2/images/logo.jpg"
+        }
+      },
+      "description": "<b>Jakarta</b> – Dunia maya kembali diramaikan dengan munculnya sosok hacker asal Indonesia yang dikenal dengan nama <b>Kize1337</b>. Ia merupakan bagian dari kelompok peretas bernama <b>Death Networks</b>, yang cukup dikenal di komunitas underground dunia maya.<br><br>  Nama <b>Kize1337</b> mulai mencuat setelah sejumlah aksinya terekam di berbagai arsip keamanan siber internasional. Salah satu yang paling menyita perhatian adalah saat dirinya dilaporkan pernah berhasil membobol situs resmi <b>Pengadilan Negeri Pontianak</b>. Aksi tersebut kemudian tercatat dalam basis data milik <b>Zone-H</b>, sebuah platform internasional yang sering menjadi “papan pengumuman” bagi aktivitas peretasan website di seluruh dunia.<br><br>  <h3>Jejak Digital Kize1337</h3> Kehadiran <b>Kize1337</b> di dunia peretasan tidak lepas dari kiprahnya yang konsisten di ranah <b>cyber security underground</b>. Beberapa sumber mencatat bahwa ia cukup aktif dalam mengekspose kelemahan sistem di berbagai website. Jejak digitalnya pun masih bisa ditemukan di portal-portal dokumentasi seperti <b>Zone-H</b> maupun forum-forum keamanan siber.<br><br>  Meski banyak pihak menilai aksinya sebagai pelanggaran hukum, tak sedikit pula yang menilai bahwa keberhasilan <b>Kize1337</b> menembus sistem situs pemerintah menunjukkan masih lemahnya sistem pertahanan siber di Indonesia.<br><br>  <h3>Death Networks dan Popularitas di Komunitas Siber</h3> <b>Kize1337</b> diketahui berafiliasi dengan tim bernama <b>Death Networks</b>. Tim ini cukup populer di kalangan komunitas siber karena beberapa kali disebut-sebut dalam laporan keamanan digital. Dengan ciri khas gaya anak muda digital underground, <b>Death Networks</b> menjadi salah satu kelompok yang paling sering diperbincangkan di forum peretasan.<br><br>  Khusus untuk <b>Kize1337</b>, aksinya yang berhasil menyasar situs dengan tingkat kepentingan tinggi membuat namanya kerap disebut dalam daftar peretas asal Indonesia yang patut diperhitungkan.<br><br>  <h3>Peringatan untuk Keamanan Siber Nasional</h3> Kasus ini menjadi peringatan bagi lembaga pemerintahan, khususnya instansi penegak hukum dan pengadilan, untuk terus memperkuat sistem keamanan digital mereka. Pasalnya, keberhasilan seorang individu menembus sistem yang seharusnya ketat bisa menimbulkan risiko serius bagi data dan pelayanan publik.<br><br>  Para pakar keamanan siber menekankan bahwa aksi seperti ini harus dijadikan pelajaran berharga. Indonesia memerlukan investasi lebih besar di bidang <b>cyber defense</b> agar insiden serupa tidak kembali terulang.<br><br>  <h3>Kesimpulan</h3> Sosok <b>Kize1337</b> dari tim <b>Death Networks</b> kini menjadi salah satu nama yang cukup dikenal dalam peta peretasan Indonesia. Dari membobol situs <b>Pengadilan Negeri Pontianak</b> hingga meninggalkan jejak di platform internasional, aksinya menimbulkan diskusi serius tentang betapa pentingnya keamanan siber di era digital."
+    }
+    </script>
+    <script>
+    var wid_method = "GET";
+    </script>
+    <!--s:dtkprv-->
+    <!--e:dtkprv-->
+    <script>
+    if (navigator.userAgent.match(/UCBrowser/i) && document.location.protocol == 'http:') {
+      window.location.href = 'https://' + document.location.host + document.location.pathname;
+    }
+    </script>
+
+    <!-- REQUIRED -->
+
+    <script type="text/javascript" src="https://awscdn.detik.net.id/assets/js/jquery-min-3.2.1.js?v=2024080215443"></script>
+
+    <script type="text/javascript">
+    var dtkGTMDL = {
+      data: {},
+      getMeta: function(a, t) {
+        return null !== (e = document.head.querySelector("[" + a + '="' + t + '"]')) ? e.content : null
+      },
+      addDataLayer: function(a, t, r = null) {
+        null === r && (r = t), null !== (val = dtkGTMDL.getMeta(a, t)) && "" != val && (dtkGTMDL.data[r] = val)
+      },
+      addCustomDimension: function(a) {
+        for (i = 0; i < a.length; i++) switch (a[i]) {
+          case "kanalid":
+            dtkGTMDL.addDataLayer("name", "kanalid");
+            break;
+          case "articleid":
+            dtkGTMDL.addDataLayer("name", "articleid");
+            break;
+          case "articletype":
+            dtkGTMDL.addDataLayer("name", "articletype");
+            break;
+          case "articledewasa":
+            dtkGTMDL.addDataLayer("name", "articledewasa");
+            break;
+          case "articlehoax":
+            dtkGTMDL.addDataLayer("name", "articlehoax");
+            break;
+          case "createdate":
+            dtkGTMDL.addDataLayer("name", "createdate");
+            break;
+          case "publishdate":
+            dtkGTMDL.addDataLayer("name", "publishdate");
+            break;
+          case "keyword":
+            dtkGTMDL.addDataLayer("name", "keywords", "keyword");
+            break;
+          case "idfokus":
+            dtkGTMDL.addDataLayer("name", "idfokus");
+            break;
+          case "namafokus":
+            dtkGTMDL.addDataLayer("name", "namafokus");
+            break;
+          case "idprogram":
+            dtkGTMDL.addDataLayer("name", "idprogram");
+            break;
+          case "namaprogram":
+            dtkGTMDL.addDataLayer("name", "namaprogram");
+            break;
+          case "pagesize":
+            dtkGTMDL.addDataLayer("name", "pagesize");
+            break;
+          case "pagenumber":
+            dtkGTMDL.addDataLayer("name", "pagenumber");
+            break;
+          case "videopresent":
+            dtkGTMDL.addDataLayer("name", "videopresent");
+            break;
+          case "video_id":
+            dtkGTMDL.addDataLayer("name", "video_id");
+            break;
+          case "refferal_url":
+            dtkGTMDL.addDataLayer("name", "refferal_url");
+            break;
+          case "contenttype":
+            dtkGTMDL.addDataLayer("name", "contenttype");
+            break;
+          case "platform":
+            dtkGTMDL.addDataLayer("name", "platform");
+            break;
+          case "author":
+            dtkGTMDL.addDataLayer("name", "author");
+            break;
+          case "title":
+            dtkGTMDL.addDataLayer("property", "og:title", "title");
+            break;
+          case "subcategori":
+            dtkGTMDL.addDataLayer("name", "subcategori");
+            break;
+          case "keywordkanal":
+            dtkGTMDL.addDataLayer("name", "keywordkanal");
+            break;
+          case "duration":
+            dtkGTMDL.addDataLayer("name", "duration");
+            break;
+          case "hl_nhl_wp":
+            dtkGTMDL.addDataLayer("name", "hl_nhl_wp");
+            break;
+          case "hl_nhl_kanal":
+            dtkGTMDL.addDataLayer("name", "hl_nhl_kanal");
+            break;
+          case "originalTitle":
+            dtkGTMDL.addDataLayer("name", "originalTitle");
+            break;
+          case "video_story_url":
+            dtkGTMDL.addDataLayer("name", "video_story_url")
+        }
+      },
+      generate: function() {
+        return contenttype = dtkGTMDL.getMeta("name", "contenttype"), dtkGTMDL.addCustomDimension(["kanalid", "articleid", "articletype", "articledewasa", "articlehoax", "createdate", "publishdate", "keyword", "idfokus", "namafokus", "idprogram", "namaprogram", "pagesize", "pagenumber", "videopresent", "video_id", "contenttype", "platform", "author", "subcategori", "keywordkanal", "duration", "hl_nhl_wp", "hl_nhl_kanal", "originalTitle", "video_story_url"]), dtkGTMDL.data.event = "articlePush", dtkGTMDL.data
+      }
+    };
+    dataLayer = [dtkGTMDL.generate()];
+    var _pt = function(a, t, r, d, n) {
+      console.log("__pt:gtmdl"), void 0 === t && a.hasAttribute("dtr-evt") && (t = a.getAttribute("dtr-evt"), d = a.getAttribute("dtr-act") + " " + a.getAttribute("dtr-idx"), r = a.getAttribute("dtr-ttl"));
+      var o = {
+        event: "panel tracking",
+        action: "klik " + d,
+        panelname: t.toLowerCase(),
+        pt_from_type: $("meta[name=contenttype]").attr("content"),
+        pt_from_kanal: $("meta[name=kanalid]").attr("content"),
+        pt_to_url: a.href,
+        pt_platform: $("meta[name=platform]").attr("content"),
+        pt_to_page: r
+      };
+      if (void 0 !== n) var o = $.extend(o, n);
+      console.log("datalayer push", o), dataLayer.push(o)
+    };
+    $(function() {
+      pushEvent = function(a, t, r) {
+        var d;
+        d = "undefined" != typeof basekanal && null !== basekanal ? basekanal : baseurl, dataLayer.push({
+          event: "" + a,
+          bc_nav_url: "" + t,
+          bc_domain: "" + d,
+          bc_title: "" + r,
+          baca_juga_aid: "" + getArticleId(a, t)
+        })
+      }, getArticleId = function(a, t) {
+        return (arID = (arrUrl = t.split("/")).length > 9 ? arrUrl[2].indexOf("m.detik") > -1 || arrUrl[2].indexOf("mdev.detik") > -1 ? t.indexOf("/~") > -1 ? arrUrl[10] : arrUrl[9] : arrUrl[3].indexOf("sepakbola") > -1 ? arrUrl[9] : arrUrl[8] : arrUrl[2].indexOf("garuda.detik") > -1 ? t.indexOf("/~") > -1 ? arrUrl[6] : arrUrl[5] : t.indexOf("/~") > -1 ? "sepakbola" == arrUrl[4] ? arrUrl[6] : arrUrl[5] : "sepakbola" == arrUrl[3] ? arrUrl[5] : arrUrl[4]).indexOf("d-") > -1 && (arID = arID.split("-")[1]), arID
+      }, $("#relatedgtm a").click(function() {
+        pushEvent("beritaterkait", $(this).attr("href"), $(this).text().trim())
+      }), $("#readtoogtm").hasClass("list__other__item") ? (selector = $("#readtoogtm h5 a"), set = !0) : (selector = $("#readtoogtm a"), set = !1), selector.click(function() {
+        var a;
+        $("h2", this).length && (a = $("h2", this).text().trim()), $("h3", this).length && (a = $("h3", this).text().trim()), $("h4", this).length && (a = $("h4 strong", this).length ? $("h4 strong", this).text().trim() : $("h4", this).text().trim()), !0 == set && (a = $(this).text().trim()), $("h6", this).length && (a = $("h6", this).text().trim()), pushEvent("bacajuga", $(this).attr("href"), a)
+      })
+    });
+    </script>
+    <script type="text/javascript" src="https://awscdn.detik.net.id/libs/livecounter/detikLiveUserCounterResponse.js?v=2024080215" defer></script>
+
+    <!-- s:preload -->
+    <!-- e:preload -->
+
+
+
+    <!-- Dynamic Provisioning -->
+    <script async src="//micro.rubiconproject.com/prebid/dynamic/11530.js"></script>
+
+    <!-- Start Tag DFP -->
+    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+
+    <script async src="//servg1.net/o.js?uid=8ec08bf141be0cb431e04dc9" type="text/javascript"></script>
+    <!-- Optima Tag -->
+
+    <!-- Insurad tag -->
+    <script async src="https://cdn.insurads.com/bootstrap/S9H7OMZB.js"></script>
+
+
+
+    <!-- E:taghead -->
+    <script type="text/javascript">
+    var baseurl = "https://inet.detik.com",
+      asset_url = "https://awscdn.detik.net.id/inet2/m",
+      site_id = "5",
+      channel_id = "105",
+      responsive = false,
+      itp_locals_active = false,
+      itp_site_name = "Admin"
+    </script>
+
+    <!--profile_ad:detik_inet-->
+    <!--layout_type:mobile-->
+    <script type="text/javascript">
+    function getScript(e, t) {
+      var a = document.createElement("script");
+      a.src = e;
+      var n = document.getElementsByTagName("head")[0],
+        d = !1;
+      a.onload = a.onreadystatechange = function() {
+        d || this.readyState && "loaded" != this.readyState && "complete" != this.readyState || (d = !0, t(), a.onload = a.onreadystatechange = null, n.removeChild(a))
+      }, n.appendChild(a)
+    }
+    </script>
+    <script type="text/javascript">
+    function itpGetFileNameFromUrl(i) {
+      return new URL(i).pathname.split("/").pop().split(".").slice(0, -1).join("")
+    }
+
+    function itpInitScrollAsset(i, n, t = function() {}) {
+      let e = "inited" + itpGetFileNameFromUrl(i);
+      window[e] = !1, window.addEventListener("scroll", (function() {
+        window[e] || window.scrollY <= n || (window[e] = !0, getScript(i, t))
+      }))
+    }
+    </script>
+  </head>
+
+  <body>
+    <div class="header-top"></div>
+    <header class="header">
+      <div class="container">
+        <div class="grid-row no-gutter flex-between">
+          <div class="column-auto header__left">
+            <div id="menuClick" class="menu-button" dtr-evt="header" dtr-sec="menu hamburger" dtr-act="menu hamburger" onclick="_pt(this)">
+              <div class="menu-button__wrap">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+            <div class="header__brand">
+              <a href='https://t.me/deathnetworks/' dtr-evt="header" dtr-sec="logo Admin" dtr-act="logo Admin" onclick="_pt(this)"><img width='116' height='24' src='https://awsimages.detik.net.id/community/media/visual/2020/09/17/logo-detikinet.png?d=1' title='Admin' alt='Admin' class='logo' /></a>
+            </div>
+          </div>
+          <div class="column-auto header__right">
+            <a dtr-evt="search" dtr-sec="search" dtr-act="search" onclick="_pt(this)" href="https://t.me/deathnetworks/" id="searchClick" class="header__icon header__icon--search">
+              <i class="icon icon-search"></i>
+            </a>
+            <a dtr-evt="header" dtr-sec="" dtr-act="button live tv" onclick="_pt(this)" dtr-ttl="live tv" href="https://t.me/deathnetworks/" class="header__icon header__icon--live">
+              <i class="icon icon-live-tv"></i>
+            </a>
+          </div>
+        </div>
+        <div class="navbar navbar-shadow">
+
+
+          <nav class="navbar-first navbar--scroll">
+            <ul class="nav">
+              <li class="nav__item
+                    
+                                    ">
+                <a href="https://t.me/deathnetworks/" dtr-evt="header" dtr-sec="first navbar" dtr-act="first navbar" onclick="_pt(this)" dtr-idx="1" dtr-ttl="Home" style="
+                                            ">
+                  Home </a>
+              </li>
+              <li class="nav__item
+                    
+                                    ">
+                <a href="https://t.me/deathnetworks/" dtr-evt="header" dtr-sec="first navbar" dtr-act="first navbar" onclick="_pt(this)" dtr-idx="2" dtr-ttl="Gadget" style="
+                                            ">
+                  Gadget </a>
+              </li>
+              <li class="nav__item
+                    
+                                    ">
+                <a href="https://t.me/deathnetworks/" dtr-evt="header" dtr-sec="first navbar" dtr-act="first navbar" onclick="_pt(this)" dtr-idx="3" dtr-ttl="Cyberlife" style="
+                                            ">
+                  Cyberlife </a>
+              </li>
+              <li class="nav__item
+                    
+                                    ">
+                <a href="https://t.me/deathnetworks/" dtr-evt="header" dtr-sec="first navbar" dtr-act="first navbar" onclick="_pt(this)" dtr-idx="4" dtr-ttl="Games &amp; Esport" style="
+                                            ">
+                  Games & Esport </a>
+              </li>
+              <li class="nav__item
+                    
+                                    ">
+                <a href="https://t.me/deathnetworks/" dtr-evt="header" dtr-sec="first navbar" dtr-act="first navbar" onclick="_pt(this)" dtr-idx="5" dtr-ttl="Business &amp; Policy" style="
+                                            ">
+                  Business & Policy </a>
+              </li>
+              <li class="nav__item
+                    
+                                    ">
+                <a href=https://t.me/deathnetworks/" dtr-evt="header" dtr-sec="first navbar" dtr-act="first navbar" onclick="_pt(this)" dtr-idx="6" dtr-ttl="Science" style="
+                                            ">
+                  Science </a>
+              </li>
+              <li class="nav__item
+                    
+                                    ">
+                <a href="https://t.me/deathnetworks/" dtr-evt="header" dtr-sec="first navbar" dtr-act="first navbar" onclick="_pt(this)" dtr-idx="7" dtr-ttl="Telecommunication" style="
+                                            ">
+                  Telecommunication </a>
+              </li>
+              <li class="nav__item
+                    
+                                    ">
+                <a href="https://t.me/deathnetworks/" dtr-evt="header" dtr-sec="first navbar" dtr-act="first navbar" onclick="_pt(this)" dtr-idx="8" dtr-ttl="Tips &amp; Trik" style="
+                                            ">
+                  Tips & Trik </a>
+              </li>
+              <li class="nav__item
+                    
+                                    ">
+                <a href="https://t.me/deathnetworks/" dtr-evt="header" dtr-sec="first navbar" dtr-act="first navbar" onclick="_pt(this)" dtr-idx="9" dtr-ttl="Foto" style="
+                                            ">
+                  Foto </a>
+              </li>
+              <li class="nav__item
+                    
+                                    ">
+                <a href="https://t.me/deathnetworks/" dtr-evt="header" dtr-sec="first navbar" dtr-act="first navbar" onclick="_pt(this)" dtr-idx="10" dtr-ttl="Video" style="
+                                            ">
+                  Video </a>
+              </li>
+              <li class="nav__item
+                    
+                                    ">
+                <a href="https://t.me/deathnetworks/" dtr-evt="header" dtr-sec="first navbar" dtr-act="first navbar" onclick="_pt(this)" dtr-idx="11" dtr-ttl="Indeks" style="
+                                            ">
+                  Indeks </a>
+              </li>
+              <li class="nav__item
+                    
+                                    ">
+                <a href="https://t.me/deathnetworks/" dtr-evt="header" dtr-sec="first navbar" dtr-act="first navbar" onclick="_pt(this)" dtr-idx="12" dtr-ttl="Security" style="
+                                            ">
+                  Security </a>
+              </li>
+
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+
+
+
+
+    <div>
+      <div class="container">
+        <div class="navbar navbar-wrap  navbar-shadow">
+          <nav class="navbar-second navbar--scroll">
+            <ul class="nav">
+              <!-- S:navbar -->
+              <!-- E:navbar -->
+              <!-- S:navbar2 -->
+              <!-- E:navbar2 -->
+              <li class="nav__item
+                                                            nav__item--new
+                                                        
+                            ">
+                <a href="https://t.me/deathnetworks/" dtr-evt="header" dtr-sec="second navbar" dtr-act="second navbar" onclick="_pt(this)" dtr-idx="1" dtr-ttl="Gadget of the Month">
+                  Gadget of the Month </a>
+              </li>
+              <li class="nav__item
+                                                            nav__item--new
+                                                        
+                            ">
+                <a href="https://t.me/deathnetworks/" dtr-evt="header" dtr-sec="second navbar" dtr-act="second navbar" onclick="_pt(this)" dtr-idx="2" dtr-ttl="Lab Gadget">
+                  Lab Gadget </a>
+              </li>
+              <li class="nav__item
+                                                        
+                            ">
+                <a href="https://t.me/deathnetworks/" dtr-evt="header" dtr-sec="second navbar" dtr-act="second navbar" onclick="_pt(this)" dtr-idx="3" dtr-ttl="Komparasi Gadget">
+                  Komparasi Gadget </a>
+              </li>
+              <li class="nav__item
+                                                        
+                            ">
+                <a href="https://t.me/deathnetworks/" dtr-evt="header" dtr-sec="second navbar" dtr-act="second navbar" onclick="_pt(this)" dtr-idx="4" dtr-ttl="Fotostop">
+                  Fotostop </a>
+              </li>
+              <li class="nav__item
+                                                        
+                            ">
+                <a href="https://t.me/deathnetworks/" dtr-evt="header" dtr-sec="second navbar" dtr-act="second navbar" onclick="_pt(this)" dtr-idx="5" dtr-ttl="Inet Grafis">
+                  Inet Grafis </a>
+              </li>
+
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <!-- S:FRAMEBAR WIDGET-->
+    <link rel="stylesheet" href="https://awscdn.detik.net.id/assets/css/m/framebar.css?v=2024080215443" type="text/css">
+    <div class="box-overlay box-overlay--arrow-logo box-menu framebarasset-lazy">
+      <div class="box-overlay__header">
+        <div class="media user-log">
+          <div class="media__author">
+            <div id="status_user_nf" class="framebar_user" style="display:inherit">
+              <div class="media__author-image-avatar">
+                <img data-src="https://awscdn.detik.net.id/assets/images/framebar/user_default.webp" alt="">
+              </div>
+              <div class="media__text">
+                <div class="user-log__name">Halo Detiker</div>
+                <a href="#" class="user-log__login">Mohon Tunggu...</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="box-overlay__body">
+        <div class="nav-framebar">
+          <ul class="nav">
+            <li class="nav__item">
+              <a href="#">
+                <span class="nav__icon">
+                  <img data-src="https://awscdn.detik.net.id/assets/images/webp/framebar/favicon-detik.webp?v=2024080215443" alt="" width="24" height="24">
+                </span>
+                detikcom
+              </a>
+              <ul class="nav nav--two-col">
+                <li class="nav__item">
+                  <a href="# style=" " target=" _blank">
+                    <span class="nav__icon">
+                      <img data-src="https://awscdn.detik.net.id/framebarasset/ic_Most-3x.webp" alt="" width="24" height="24">
+                    </span>
+                    Terpopuler
+                  </a>
+                </li>
+                <li class="nav__item">
+                  <a href="#/" style="
+ " target="_blank">
+                    <span class="nav__icon">
+                      <img data-src="https://awscdn.detik.net.id/framebarasset/ic_livetv.webp" alt="" width="24" height="24">
+                    </span>
+                    Live TV
+                  </a>
+                </li>
+                <li class="nav__item">
+                  <a href="#" style="
+ " target="_blank">
+                    <span class="nav__icon">
+                      <img data-src="https://awscdn.detik.net.id/framebarasset/ic_kirim_tulisan-3x.webp" alt="" width="24" height="24">
+                    </span>
+                    Kirim Tulisan
+                  </a>
+                </li>
+                <li class="nav__item">
+                  <a href="# style=" " target=" _blank">
+                    <span class="nav__icon">
+                      <img data-src="https://awscdn.detik.net.id/framebarasset/ic_pemilu-3x.webp" alt="" width="24" height="24">
+                    </span>
+                    detikPemilu
+                    <span class="nav__item-new">NEW</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <div class="nav-framebar">
+          <div class="nav-framebar__title">
+            Kategori Berita </div>
+          <ul class="nav nav--two-col">
+            <li class="nav__item">
+              <a href="#" dtr-evt="header" dtr-sec="" dtr-act="menu" onclick="_pt(this)" dtr-idx="detikNews" dtr-ttl="menu hamburger" style="
+ " target="_blank">
+                <span class="nav__icon">
+                  <img data-src="https://awscdn.detik.net.id/framebarasset/ic_detik-3x.webp" alt="" width="24" height="24">
+                </span>
+                detikNews
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" dtr-evt="header" dtr-sec="" dtr-act="menu" onclick="_pt(this)" dtr-idx="detikFinance" dtr-ttl="menu hamburger" style="
+ " target="_blank">
+                <span class="nav__icon">
+                  <img data-src="https://awscdn.detik.net.id/framebarasset/ic_finance-3x.webp" alt="" width="24" height="24">
+                </span>
+                detikFinance
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="https://t.me/deathnetworks/" dtr-evt="header" dtr-sec="" dtr-act="menu" onclick="_pt(this)" dtr-idx="Admin" dtr-ttl="menu hamburger" style="
+ " target="_blank">
+                <span class="nav__icon">
+                  <img data-src="https://awscdn.detik.net.id/framebarasset/ic_inet-3x.webp" alt="" width="24" height="24">
+                </span>
+                Admin
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" dtr-evt="header" dtr-sec="" dtr-act="menu" onclick="_pt(this)" dtr-idx="detikHot" dtr-ttl="menu hamburger" style="
+ " target="_blank">
+                <span class="nav__icon">
+                  <img data-src="https://awscdn.detik.net.id/framebarasset/ic_hot-3x.webp" alt="" width="24" height="24">
+                </span>
+                detikHot
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" dtr-evt="header" dtr-sec="" dtr-act="menu" onclick="_pt(this)" dtr-idx="detikSport" dtr-ttl="menu hamburger" style="
+ " target="_blank">
+                <span class="nav__icon">
+                  <img data-src="https://awscdn.detik.net.id/framebarasset/ic_sport-3x.webp" alt="" width="24" height="24">
+                </span>
+                detikSport
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" dtr-evt="header" dtr-sec="" dtr-act="menu" onclick="_pt(this)" dtr-idx="Sepakbola" dtr-ttl="menu hamburger" style="
+ " target="_blank">
+                <span class="nav__icon">
+                  <img data-src="https://awscdn.detik.net.id/framebarasset/ic_sepakbola-3x.webp" alt="" width="24" height="24">
+                </span>
+                Sepakbola
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="# dtr-evt=" header" dtr-sec="" dtr-act="menu" onclick="_pt(this)" dtr-idx="detikOto" dtr-ttl="menu hamburger" style="
+ " target="_blank">
+                <span class="nav__icon">
+                  <img data-src="https://awscdn.detik.net.id/framebarasset/ic_oto-3x.webp" alt="" width="24" height="24">
+                </span>
+                detikOto
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" dtr-evt="header" dtr-sec="" dtr-act="menu" onclick="_pt(this)" dtr-idx="detikTravel" dtr-ttl="menu hamburger" style="
+ " target="_blank">
+                <span class="nav__icon">
+                  <img data-src="https://awscdn.detik.net.id/framebarasset/ic_travel-3x.webp" alt="" width="24" height="24">
+                </span>
+                detikTravel
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" dtr-evt="header" dtr-sec="" dtr-act="menu" onclick="_pt(this)" dtr-idx="detikFood" dtr-ttl="menu hamburger" style="
+ " target="_blank">
+                <span class="nav__icon">
+                  <img data-src="https://awscdn.detik.net.id/framebarasset/ic_food-3x.webp" alt="" width="24" height="24">
+                </span>
+                detikFood
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" dtr-evt="header" dtr-sec="" dtr-act="menu" onclick="_pt(this)" dtr-idx="detikHealth" dtr-ttl="menu hamburger" style="
+ " target="_blank">
+                <span class="nav__icon">
+                  <img data-src="https://awscdn.detik.net.id/framebarasset/ic_health-3x.webp" alt="" width="24" height="24">
+                </span>
+                detikHealth
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" dtr-evt="header" dtr-sec="" dtr-act="menu" onclick="_pt(this)" dtr-idx="Wolipop" dtr-ttl="menu hamburger" style="
+ " target="_blank">
+                <span class="nav__icon">
+                  <img data-src="https://awscdn.detik.net.id/framebarasset/ic_wolipop-3x.webp" alt="" width="24" height="24">
+                </span>
+                Wolipop
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" dtr-evt="header" dtr-sec="" dtr-act="menu" onclick="_pt(this)" dtr-idx="DetikX" dtr-ttl="menu hamburger" style="
+ " target="_blank">
+                <span class="nav__icon">
+                  <img data-src="https://awscdn.detik.net.id/framebarasset/ic_X-3x.webp" alt="" width="24" height="24">
+                </span>
+                DetikX
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" dtr-evt="header" dtr-sec="" dtr-act="menu" onclick="_pt(this)" dtr-idx="20Detik" dtr-ttl="menu hamburger" style="
+ " target="_blank">
+                <span class="nav__icon">
+                  <img data-src="https://awscdn.detik.net.id/framebarasset/ic_20D-3x.webp" alt="" width="24" height="24">
+                </span>
+                20Detik
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" dtr-evt="header" dtr-sec="" dtr-act="menu" onclick="_pt(this)" dtr-idx="detikFoto" dtr-ttl="menu hamburger" style="
+ " target="_blank">
+                <span class="nav__icon">
+                  <img data-src="https://awscdn.detik.net.id/framebarasset/ic_foto.webp" alt="" width="24" height="24">
+                </span>
+                detikFoto
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" dtr-evt="header" dtr-sec="" dtr-act="menu" onclick="_pt(this)" dtr-idx="detikEdu" dtr-ttl="menu hamburger" style="
+ " target="_blank">
+                <span class="nav__icon">
+                  <img data-src="https://awscdn.detik.net.id/framebarasset/ic_edu-3x.webp" alt="" width="24" height="24">
+                </span>
+                detikEdu
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" dtr-evt="header" dtr-sec="" dtr-act="menu" onclick="_pt(this)" dtr-idx="detikHikmah" dtr-ttl="menu hamburger" style="
+ " target="_blank">
+                <span class="nav__icon">
+                  <img data-src="https://awscdn.detik.net.id/framebarasset/ic_Hikmah.webp" alt="" width="24" height="24">
+                </span>
+                detikHikmah
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" dtr-evt="header" dtr-sec="" dtr-act="menu" onclick="_pt(this)" dtr-idx="detikProperti" dtr-ttl="menu hamburger" style="
+ " target="_blank">
+                <span class="nav__icon">
+                  <img data-src="https://awscdn.detik.net.id/framebarasset/icproperti.webp" alt="" width="24" height="24">
+                </span>
+                detikProperti
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" dtr-evt="header" dtr-sec="" dtr-act="menu" onclick="_pt(this)" dtr-idx="detikPop" dtr-ttl="menu hamburger" style="
+ " target="_blank">
+                <span class="nav__icon">
+                  <img data-src="https://awscdn.detik.net.id/framebarasset/iconpop.webp" alt="" width="24" height="24">
+                </span>
+                detikPop
+                <span class="nav__item-new">NEW</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="nav-framebar">
+          <div class="nav-framebar__title">
+            Daerah </div>
+          <ul class="nav nav--two-col">
+            <li class="nav__item">
+              <a href="#" dtr-evt="header" dtr-sec="" dtr-act="menu" onclick="_pt(this)" dtr-idx="detikJateng" dtr-ttl="menu hamburger" style="
+ " target="_blank">
+                <span class="nav__icon">
+                  <img data-src="https://awscdn.detik.net.id/framebarasset/ic_jateng-3x.webp" alt="" width="24" height="24">
+                </span>
+                detikJateng
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" dtr-evt="header" dtr-sec="" dtr-act="menu" onclick="_pt(this)" dtr-idx="detikJatim" dtr-ttl="menu hamburger" style="
+ " target="_blank">
+                <span class="nav__icon">
+                  <img data-src="https://awscdn.detik.net.id/framebarasset/ic_jatim-3x.webp" alt="" width="24" height="24">
+                </span>
+                detikJatim
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" dtr-evt="header" dtr-sec="" dtr-act="menu" onclick="_pt(this)" dtr-idx="detikJabar" dtr-ttl="menu hamburger" style="
+ " target="_blank">
+                <span class="nav__icon">
+                  <img data-src="https://awscdn.detik.net.id/framebarasset/ic_jabar-3x.webp" alt="" width="24" height="24">
+                </span>
+                detikJabar
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" dtr-evt="header" dtr-sec="" dtr-act="menu" onclick="_pt(this)" dtr-idx="detikSulsel" dtr-ttl="menu hamburger" style="
+ " target="_blank">
+                <span class="nav__icon">
+                  <img data-src="https://awscdn.detik.net.id/framebarasset/ic_sulsel-2x.webp" alt="" width="24" height="24">
+                </span>
+                detikSulsel
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" dtr-evt="header" dtr-sec="" dtr-act="menu" onclick="_pt(this)" dtr-idx="detikSumut" dtr-ttl="menu hamburger" style="
+ " target="_blank">
+                <span class="nav__icon">
+                  <img data-src="https://awscdn.detik.net.id/framebarasset/ic_sumut-3x.webp" alt="" width="24" height="24">
+                </span>
+                detikSumut
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="h#" dtr-evt="header" dtr-sec="" dtr-act="menu" onclick="_pt(this)" dtr-idx="detikBali" dtr-ttl="menu hamburger" style="
+ " target="_blank">
+                <span class="nav__icon">
+                  <img data-src="https://awscdn.detik.net.id/framebarasset/icondetikbali.webp" alt="" width="24" height="24">
+                </span>
+                detikBali
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" dtr-evt="header" dtr-sec="" dtr-act="menu" onclick="_pt(this)" dtr-idx="detikSumbagsel" dtr-ttl="menu hamburger" style="
+ " target="_blank">
+                <span class="nav__icon">
+                  <img data-src="https://awscdn.detik.net.id/framebarasset/ic_sumbagsel-3x.webp" alt="" width="24" height="24">
+                </span>
+                detikSumbagsel
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" dtr-evt="header" dtr-sec="" dtr-act="menu" onclick="_pt(this)" dtr-idx="detikJogja" dtr-ttl="menu hamburger" style="
+ " target="_blank">
+                <span class="nav__icon">
+                  <img data-src="https://awscdn.detik.net.id/framebarasset/ic_jogja.webp" alt="" width="24" height="24">
+                </span>
+                detikJogja
+                <span class="nav__item-new">NEW</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="nav-framebar">
+          <div class="nav-framebar__title">
+            Layanan </div>
+          <ul class="nav nav--two-col">
+            <li class="nav__item">
+              <a href="#" dtr-evt="header" dtr-sec="" dtr-act="menu" onclick="_pt(this)" dtr-idx="Pasang Mata" dtr-ttl="menu hamburger" style="
+ " target="_blank">
+                <span class="nav__icon">
+                  <img data-src="https://awscdn.detik.net.id/framebarasset/ic_pasang_mata-3x.webp" alt="" width="24" height="24">
+                </span>
+                Pasang Mata
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" dtr-evt="header" dtr-sec="" dtr-act="menu" onclick="_pt(this)" dtr-idx="adsmart" dtr-ttl="menu hamburger" style="
+ ">
+                <span class="nav__icon">
+                  <img data-src="https://awscdn.detik.net.id/framebarasset/ic_adsmart-3x.webp" alt="" width="24" height="24">
+                </span>
+                adsmart
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" dtr-evt="header" dtr-sec="" dtr-act="menu" onclick="_pt(this)" dtr-idx="Forum" dtr-ttl="menu hamburger" style="
+ " target="_blank">
+                <span class="nav__icon">
+                  <img data-src="https://awscdn.detik.net.id/framebarasset/ic_forum-3x.webp" alt="" width="24" height="24">
+                </span>
+                Forum
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" dtr-evt="header" dtr-sec="" dtr-act="menu" onclick="_pt(this)" dtr-idx="detikEvent" dtr-ttl="menu hamburger" style="
+ " target="_blank">
+                <span class="nav__icon">
+                  <img data-src="https://awscdn.detik.net.id/framebarasset/ic_event-3x.webp" alt="" width="24" height="24">
+                </span>
+                detikEvent
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" dtr-evt="header" dtr-sec="" dtr-act="menu" onclick="_pt(this)" dtr-idx="Trans Snow World" dtr-ttl="menu hamburger" style="
+ " target="_blank">
+                <span class="nav__icon">
+                  <img data-src="https://awscdn.detik.net.id/framebarasset/ic_trans_snow_latest.webp" alt="" width="24" height="24">
+                </span>
+                Trans Snow World
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" dtr-evt="header" dtr-sec="" dtr-act="menu" onclick="_pt(this)" dtr-idx="Trans Studio" dtr-ttl="menu hamburger" style="
+ " target="_blank">
+                <span class="nav__icon">
+                  <img data-src="https://awscdn.detik.net.id/framebarasset/ic_trans_studio_latest.webp" alt="" width="24" height="24">
+                </span>
+                Trans Studio
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" dtr-evt="header" dtr-sec="" dtr-act="menu" onclick="_pt(this)" dtr-idx="berbuatbaik.id" dtr-ttl="menu hamburger" style="
+ " target="_blank">
+                <span class="nav__icon">
+                  <img data-src="https://awscdn.detik.net.id/framebarasset/logo-berbuatbaikid.webp" alt="" width="24" height="24">
+                </span>
+                berbuatbaik.id
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" dtr-evt="header" dtr-sec="" dtr-act="menu" onclick="_pt(this)" dtr-idx="ziswafctarsa.id" dtr-ttl="menu hamburger" style="
+ " target="_blank">
+                <span class="nav__icon">
+                  <img data-src="https://awscdn.detik.net.id/framebarasset/ic_ziswafok.webp" alt="" width="24" height="24">
+                </span>
+                ziswafctarsa.id
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" dtr-evt="header" dtr-sec="" dtr-act="menu" onclick="_pt(this)" dtr-idx="Signature Awards" dtr-ttl="menu hamburger" style="
+ " target="_blank">
+                <span class="nav__icon">
+                  <img data-src="https://awscdn.detik.net.id/framebarasset/favicon-signature%20(1).webp" alt="" width="24" height="24">
+                </span>
+                Signature Awards
+                <span class="nav__item-new">NEW</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="nav-framebar">
+          <div class="nav-framebar__title">
+            Detik Network </div>
+          <ul class="nav nav--two-col">
+            <li class="nav__item">
+              <a href="#" dtr-evt="header" dtr-sec="" dtr-act="menu" onclick="_pt(this)" dtr-idx="CNN Indonesia" dtr-ttl="menu hamburger" style="
+ " target="_blank">
+                <span class="nav__icon">
+                  <img data-src="https://awscdn.detik.net.id/framebarasset/ic_cnn-3x.webp" alt="" width="24" height="24">
+                </span>
+                CNN Indonesia
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="# dtr-evt=" header" dtr-sec="" dtr-act="menu" onclick="_pt(this)" dtr-idx="CNBC Indonesia" dtr-ttl="menu hamburger" style="
+ " target="_blank">
+                <span class="nav__icon">
+                  <img data-src="https://awscdn.detik.net.id/framebarasset/ic_CNBC-3x.webp" alt="" width="24" height="24">
+                </span>
+                CNBC Indonesia
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" dtr-evt="header" dtr-sec="" dtr-act="menu" onclick="_pt(this)" dtr-idx="Hai Bunda" dtr-ttl="menu hamburger" style="
+ " target="_blank">
+                <span class="nav__icon">
+                  <img data-src="https://awscdn.detik.net.id/framebarasset/ic_hai_bunda-3x.webp" alt="" width="24" height="24">
+                </span>
+                Hai Bunda
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" dtr-evt="header" dtr-sec="" dtr-act="menu" onclick="_pt(this)" dtr-idx="InsertLive" dtr-ttl="menu hamburger" style="
+ " target="_blank">
+                <span class="nav__icon">
+                  <img data-src="https://awscdn.detik.net.id/framebarasset/ic_insert-3x.webp" alt="" width="24" height="24">
+                </span>
+                InsertLive
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" dtr-evt="header" dtr-sec="" dtr-act="menu" onclick="_pt(this)" dtr-idx="Beautynesia" dtr-ttl="menu hamburger" style="
+ " target="_blank">
+                <span class="nav__icon">
+                  <img data-src="https://awscdn.detik.net.id/framebarasset/ic_beautynesia-1.webp" alt="" width="24" height="24">
+                </span>
+                Beautynesia
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" dtr-evt="header" dtr-sec="" dtr-act="menu" onclick="_pt(this)" dtr-idx="Female Daily" dtr-ttl="menu hamburger" style="
+ " target="_blank">
+                <span class="nav__icon">
+                  <img data-src="https://awscdn.detik.net.id/framebarasset/ic_female_daily.webp" alt="" width="24" height="24">
+                </span>
+                Female Daily
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" dtr-evt="header" dtr-sec="" dtr-act="menu" onclick="_pt(this)" dtr-idx="CXO Media" dtr-ttl="menu hamburger" style="
+ " target="_blank">
+                <span class="nav__icon">
+                  <img data-src="https://awscdn.detik.net.id/framebarasset/ic_cxo.webp" alt="" width="24" height="24">
+                </span>
+                CXO Media
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="search-overlay search-container searchasset-lazy">
+      <div class="search-overlay__header grid-row">
+        <a href="#" id="searchClose" class="column-auto display-flex align-items-center">
+          <i class="icon icon--sm icon-arrow-left"></i>
+        </a>
+        <div class="column">
+          <form action="#" method="GET">
+            <input type="text" id="search-text" name="query" class="search-overlay__input" placeholder="Cari di detikcom" required autocomplete="off">
+            <input type="hidden" name="siteid" value="5" />
+            <input type="hidden" name="source_kanal" value="true" />
+            <span class="icon-right hide-element" id="clear-search-text">
+              <img data-src="https://awscdn.detik.net.id/assets/images/icon-clear.webp?v=2024080215443" width="15" height="15" alt="">
+            </span>
+          </form>
+        </div>
+      </div>
+      <div class="search-overlay__body">
+        <div class="search-overlay__body-content">
+          <div class="search-section">
+            <div class="search-section__title">Yang sedang ramai dicari <img data-src="https://awscdn.detik.net.id/assets/images/icon-hot.webp?v=2024080215443" class="mgl-8" width="12" height="15" alt=""></div>
+            <ol class="search-section__list" id="top-keyword-search">
+              <li><a href="#"><span class="font-bold">Loading... </span></a></li>
+            </ol>
+          </div>
+          <div class="search-section">
+            <div class="search-section__title">Terakhir yang dicari</div>
+            <ol class="search-section__list" id="last-search">
+              Loading...
+            </ol>
+          </div>
+        </div>
+        <div class="search-overlay__body-suggest hide-element">
+          <div class="search-section">
+            <ol class="search-section__list">
+              <suggest></suggest>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+    let urlParameter = 'null';
+    </script>
+    <script type="text/javascript" src="https://jonapedia.com/assets/js/framebar/search.js?v=2024080215443"></script>
+    <script type="text/javascript" src="https://jonapedia.com/assets/js/framebar/search-autocomplete.js?v=2024080215443"></script>
+    <script type="text/javascript">
+    var click = $("#menuClick");
+    var search = $("#searchClick");
+    var closeSearch = $("#searchClose");
+
+    function open_menu() {
+      $("body").append("<div class='js-overlay'></div>");
+      setTimeout(function() {
+        $("body").addClass("js-menu-active");
+      }, 100);
+    }
+
+    function close_menu() {
+      setTimeout(function() {
+        $(".js-overlay").remove();
+      }, 300);
+      $("body").removeClass("js-menu-active");
+    }
+    click.click(function(e) {
+      var framebarasset = document.getElementsByClassName("framebarasset-lazy");
+      if (framebarasset.length != 0) {
+        var imgframebarasset = framebarasset[0].querySelectorAll("[data-src]");
+        for (let i = 0; i < imgframebarasset.length; i++) {
+          imgframebarasset[i].setAttribute("src", imgframebarasset[i].getAttribute("data-src"));
+          imgframebarasset[i].removeAttribute("data-src")
+        }
+      }
+      e.preventDefault();
+      if ($("body").hasClass("js-menu-active")) {
+        close_menu();
+      } else {
+        open_menu();
+        var scroll = $(window).scrollTop();
+        var height_billboard = $("#megabillboard").height();
+        if (($("#megabillboard").length) && (scroll < height_billboard)) {
+          $("html, body").animate({
+            scrollTop: height_billboard
+          });
+        }
+      }
+      $(document).bind("mouseup touchend", function(e) {
+        var this_click = $(".box-overlay, #menuClick");
+        if ($("body").hasClass("js-menu-active")) {
+          if (
+            !this_click.is(e.target) && // if the target of the click isn't the container...
+            this_click.has(e.target).length === 0
+          ) { // ... nor a descendant of the container
+            setTimeout(function() {
+              $(".js-overlay").remove();
+            }, 300);
+            $("body").removeClass("js-menu-active");
+          }
+        }
+      });
+      $(document).on("mousewheel", function(e) {
+        var scroll = $(window).scrollTop();
+        if (($("body").hasClass("js-menu-active")) && ($("#megabillboard").length) && (scroll < height_billboard)) {
+          close_menu();
+        }
+      });
+      $(document).on("touchmove", function() {
+        $(document).trigger("mousewheel");
+      });
+    });
+    // NEW SEARCH
+    function open_search() {
+      $("body").append("<div class='js-overlay'></div>");
+      $(".search-overlay__input").focus();
+      setTimeout(function() {
+        $("body").addClass("search-active");
+      }, 100);
+    }
+
+    function close_search() {
+      setTimeout(function() {
+        $(".js-overlay").remove();
+      }, 300);
+      $("body").removeClass("search-active");
+    }
+    search.click(function(e) {
+      var searchasset = document.getElementsByClassName("searchasset-lazy");
+      if (searchasset.length != 0) {
+        var imgsearchasset = searchasset[0].querySelectorAll("[data-src]");
+        for (let i = 0; i < imgsearchasset.length; i++) {
+          imgsearchasset[i].setAttribute("src", imgsearchasset[i].getAttribute("data-src"));
+          imgsearchasset[i].removeAttribute("data-src")
+        }
+      }
+      FramebarSearch().onLoad();
+      CookiesSearch().onLoad();
+      e.preventDefault();
+      open_search();
+    });
+    closeSearch.click(function(e) {
+      e.preventDefault();
+      close_search();
+    });
+    $(".clear-list").click(function(e) {
+      e.preventDefault();
+      $(this).parent("li").remove();
+    });
+    var textCount = $("#search-text");
+    textCount.on('keyup mouseup', function(e) {
+      e.preventDefault();
+      var charsEntered = textCount.val().length;
+      if (charsEntered > 0) {
+        $("#clear-search-text").removeClass("hide-element");
+        $(".search-overlay__body-content").addClass("hide-element");
+        $(".search-overlay__body-suggest").removeClass("hide-element");
+      } else {
+        $("#clear-search-text").addClass("hide-element");
+        $(".search-overlay__body-suggest").addClass("hide-element");
+        $(".search-overlay__body-content").removeClass("hide-element");
+      }
+    });
+    $("#clear-search-text").click(function(e) {
+      e.preventDefault();
+      textCount.val("");
+      $(this).addClass("hide-element");
+      $(".search-overlay__body-suggest").addClass("hide-element");
+      $(".search-overlay__body-content").removeClass("hide-element");
+    });
+    </script>
+
+    <style>
+    @import url("https://awscdnstatic.detik.net.id/live/_rmbassets/scrollpage/scrollpage.css");
+    </style>
+    <div class="box-ads text-center scrollpage" style="display: none; background-color:#F8F8F8;height: 180px;position:relative;width:
+100%;margin-top: 15px;">
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+    <div class="container">
+
+
+
+      <div class="page__header">
+        <div class="page__breadcrumb">
+          <a href="https://t.me/deathnetworks/" class="home">Admin</a>
+          <a href="https://t.me/deathnetworks/" dtr-evt="breadcrumb" dtr-sec="breadcrumbkanal" dtr-act="breadcrumb kanal" onclick="_pt(this)" dtr-ttl="Cyberlife">Cyberlife</a>
+
+        </div>
+      </div>
+
+
+
+      <article class="detail">
+
+
+
+
+
+        <div class="detail__header">
+
+          <h1 class="detail__title">Mengenal Hacker Kize1337 dari Death Networks, Pernah Bobol Situs Pengadilan Negeri Pontianak</h1>
+          <div class="detail__author">Admin</div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <div class="detail__media">
+          <figure dtr-evt="cover image" dtr-sec="" dtr-act="cover image" onclick="_pt(this)" class="detail__media-image">
+            <img src="https://f.top4top.io/p_35335pudz2.png" alt="Yusuf Dikec" title="Yusuf Dikec" class="p_img_zoomin img-zoomin" />
+
+
+            <figcaption class="detail__media-caption">
+              Foto: Admin</figcaption>
+          </figure>
+        </div>
+        <div class="content">
+
+          <div class="n-columns-2">
+            <a href="https://t.me/deathnetworks/" rel="nofollow noreferrer" class="login">INFORMASI TERBARU</a>
+            <a href="https://t.me/deathnetworks/" rel="nofollow noreferrer" class="register">BERITA TERBARU</a>
+          </div>
+          <p><b>Jakarta</b> – Dunia maya kembali diramaikan dengan munculnya sosok hacker asal Indonesia yang dikenal dengan nama <b>Kize1337</b>. Ia merupakan bagian dari kelompok peretas bernama <b>Death Networks</b>, yang cukup dikenal di komunitas underground dunia maya.<br><br>  Nama <b>Kize1337</b> mulai mencuat setelah sejumlah aksinya terekam di berbagai arsip keamanan siber internasional. Salah satu yang paling menyita perhatian adalah saat dirinya dilaporkan pernah berhasil membobol situs resmi <b>Pengadilan Negeri Pontianak</b>. Aksi tersebut kemudian tercatat dalam basis data milik <b>Zone-H</b>, sebuah platform internasional yang sering menjadi “papan pengumuman” bagi aktivitas peretasan website di seluruh dunia.<br><br>  <h3>Jejak Digital Kize1337</h3> Kehadiran <b>Kize1337</b> di dunia peretasan tidak lepas dari kiprahnya yang konsisten di ranah <b>cyber security underground</b>. Beberapa sumber mencatat bahwa ia cukup aktif dalam mengekspose kelemahan sistem di berbagai website. Jejak digitalnya pun masih bisa ditemukan di portal-portal dokumentasi seperti <b>Zone-H</b> maupun forum-forum keamanan siber.<br><br>  Meski banyak pihak menilai aksinya sebagai pelanggaran hukum, tak sedikit pula yang menilai bahwa keberhasilan <b>Kize1337</b> menembus sistem situs pemerintah menunjukkan masih lemahnya sistem pertahanan siber di Indonesia.<br><br>  <h3>Death Networks dan Popularitas di Komunitas Siber</h3> <b>Kize1337</b> diketahui berafiliasi dengan tim bernama <b>Death Networks</b>. Tim ini cukup populer di kalangan komunitas siber karena beberapa kali disebut-sebut dalam laporan keamanan digital. Dengan ciri khas gaya anak muda digital underground, <b>Death Networks</b> menjadi salah satu kelompok yang paling sering diperbincangkan di forum peretasan.<br><br>  Khusus untuk <b>Kize1337</b>, aksinya yang berhasil menyasar situs dengan tingkat kepentingan tinggi membuat namanya kerap disebut dalam daftar peretas asal Indonesia yang patut diperhitungkan.<br><br>  <h3>Peringatan untuk Keamanan Siber Nasional</h3> Kasus ini menjadi peringatan bagi lembaga pemerintahan, khususnya instansi penegak hukum dan pengadilan, untuk terus memperkuat sistem keamanan digital mereka. Pasalnya, keberhasilan seorang individu menembus sistem yang seharusnya ketat bisa menimbulkan risiko serius bagi data dan pelayanan publik.<br><br>  Para pakar keamanan siber menekankan bahwa aksi seperti ini harus dijadikan pelajaran berharga. Indonesia memerlukan investasi lebih besar di bidang <b>cyber defense</b> agar insiden serupa tidak kembali terulang.<br><br>  <h3>Kesimpulan</h3> Sosok <b>Kize1337</b> dari tim <b>Death Networks</b> kini menjadi salah satu nama yang cukup dikenal dalam peta peretasan Indonesia. Dari membobol situs <b>Pengadilan Negeri Pontianak</b> hingga meninggalkan jejak di platform internasional, aksinya menimbulkan diskusi serius tentang betapa pentingnya keamanan siber di era digital.</p>
+          <table class="linksisip">
+            <tbody>
+              <tr>
+                <td>
+                  <div class="lihatjg"><strong>Baca Berita Selengkapnya: </strong><a data-label="List Berita" data-action="Berita Pilihan" data-category="Detil Artikel" href="https://firstclass88.sgp1.cdn.digitaloceanspaces.com/amp/ldp-s69.html">
+                      Mengenal Hacker Kize1337 dari Death Networks, Pernah Bobol Situs Pengadilan Negeri Pontianak</a></div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <br /><br />
+          <link href="https://awscdn.detik.net.id/assets/embed/view-counter/css/video-pip.css?v=2024080215443" rel="stylesheet" type="text/css">
+          <div class="aevp">
+            <div class="aevp__header">
+              <div class="aevp__logo">
+                <a dtr-evt="picture in picture" dtr-sec="picture in picture" dtr-act="logo 20detik" onclick="_pt(this)" href="https://20.detik.com/">
+                  <img src="https://awscdn.detik.net.id/assets/images/logo/logo_20detik_new.png?v=2024080215443" width="36" height="16" alt="20D">
+                </a>
+              </div>
+              <script>
+              $(document).ready(function($) {
+                var defaultOffsetH = 1.67; // Define your default value here
+                var defaultDetailTitleOffsetTop = 968; // Default offset top position if .detail__title is not found
+                var detailTitleOffsetTop = $(".detail__title").length ?
+                  $(".detail__title").offset().top :
+                  defaultDetailTitleOffsetTop;
+
+                var aevpH = $(".detail__title").outerHeight(),
+                  headerH = $(".header").outerHeight(),
+                  offsetH = aevpH && headerH ? aevpH - headerH : defaultOffsetH;
+                $(window).on("scroll", function() {
+                  var scroll = $(window).scrollTop();
+                  if (scroll >= detailTitleOffsetTop + offsetH) {
+                    $(".pip-vid__trigger").addClass("flow");
+                  }
+
+                  if (scroll <= detailTitleOffsetTop) {
+                    $(".pip-vid").addClass("hide");
+                  } else {
+                    $(".pip-vid").removeClass("hide");
+                  }
+                });
+
+                // IS IN VIEWPORT DETECT ELEMENT
+                $.fn.isInViewport = function() {
+                  var elementTop = $(this).offset().top;
+                  var elementBottom = elementTop + $(this).outerHeight();
+
+                  var viewportTop = $(window).scrollTop();
+                  var viewportBottom = viewportTop + $(window).height();
+
+                  return elementBottom > viewportTop && elementTop < viewportBottom;
+                }
+
+                // FLOAT VIDEO Transistion FOR BREAKING NEWS
+                $.fn.floater = function(options) {
+
+                  this.addClass("flow-in");
+                  var block = $(this);
+
+                  $("#video-pip__close").click(function(e) {
+                    e.preventDefault();
+                    flowOut();
+                    block.removeClass("flow-in");
+                  });
+
+                  function flowOut() {
+                    $(".flow-in").removeClass("flowed");
+                  }
+
+                  function flowIn() {
+                    $(".flow-in").addClass("flowed");
+                  }
+
+                  return $(window).scroll(function() {
+                    if ($(".pip-vid__trigger").isInViewport()) {
+                      flowOut();
+                    } else {
+                      flowIn();
+                    }
+                  });
+                }
+
+                // Initialize piper
+                function pip_video() {
+                  $(".pip-vid").floater();
+                }
+
+                if (false) {
+                  pip_video();
+                }
+              });
+              </script>
+              <br />
+              <strong>(Berita Kalimantan Timur)</strong>
+            </div>
+          </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+    </div>
+
+
+    <div class="detail__share mgb-16">
+
+      <div class="js-reset-redirect active"></div>
+
+      <div class="sticky-share">
+        <div class="detail__share sticky-share__wrap">
+          <a dtr-evt="floating komentar" dtr-sec="tombol komentar" dtr-act="tombol komentar" onclick="_pt(this)" dtr-ttl="komentar" rel="nofollow" href="#comm1" data-url="https://t.me/deathnetworks/" data-title="Mengenal Hacker Kize1337 dari Death Networks, Pernah Bobol Situs Pengadilan Negeri Pontianak" data-image="https://res.cloudinary.com/dlnvwjm0j/image/upload/v1722855586/cocain_eogid1.jpg" data-desc="<b>Jakarta</b> – Dunia maya kembali diramaikan dengan munculnya sosok hacker asal Indonesia yang dikenal dengan nama <b>Kize1337</b>. Ia merupakan bagian dari kelompok peretas bernama <b>Death Networks</b>, yang cukup dikenal di komunitas underground dunia maya.<br><br>  Nama <b>Kize1337</b> mulai mencuat setelah sejumlah aksinya terekam di berbagai arsip keamanan siber internasional. Salah satu yang paling menyita perhatian adalah saat dirinya dilaporkan pernah berhasil membobol situs resmi <b>Pengadilan Negeri Pontianak</b>. Aksi tersebut kemudian tercatat dalam basis data milik <b>Zone-H</b>, sebuah platform internasional yang sering menjadi “papan pengumuman” bagi aktivitas peretasan website di seluruh dunia.<br><br>  <h3>Jejak Digital Kize1337</h3> Kehadiran <b>Kize1337</b> di dunia peretasan tidak lepas dari kiprahnya yang konsisten di ranah <b>cyber security underground</b>. Beberapa sumber mencatat bahwa ia cukup aktif dalam mengekspose kelemahan sistem di berbagai website. Jejak digitalnya pun masih bisa ditemukan di portal-portal dokumentasi seperti <b>Zone-H</b> maupun forum-forum keamanan siber.<br><br>  Meski banyak pihak menilai aksinya sebagai pelanggaran hukum, tak sedikit pula yang menilai bahwa keberhasilan <b>Kize1337</b> menembus sistem situs pemerintah menunjukkan masih lemahnya sistem pertahanan siber di Indonesia.<br><br>  <h3>Death Networks dan Popularitas di Komunitas Siber</h3> <b>Kize1337</b> diketahui berafiliasi dengan tim bernama <b>Death Networks</b>. Tim ini cukup populer di kalangan komunitas siber karena beberapa kali disebut-sebut dalam laporan keamanan digital. Dengan ciri khas gaya anak muda digital underground, <b>Death Networks</b> menjadi salah satu kelompok yang paling sering diperbincangkan di forum peretasan.<br><br>  Khusus untuk <b>Kize1337</b>, aksinya yang berhasil menyasar situs dengan tingkat kepentingan tinggi membuat namanya kerap disebut dalam daftar peretas asal Indonesia yang patut diperhitungkan.<br><br>  <h3>Peringatan untuk Keamanan Siber Nasional</h3> Kasus ini menjadi peringatan bagi lembaga pemerintahan, khususnya instansi penegak hukum dan pengadilan, untuk terus memperkuat sistem keamanan digital mereka. Pasalnya, keberhasilan seorang individu menembus sistem yang seharusnya ketat bisa menimbulkan risiko serius bagi data dan pelayanan publik.<br><br>  Para pakar keamanan siber menekankan bahwa aksi seperti ini harus dijadikan pelajaran berharga. Indonesia memerlukan investasi lebih besar di bidang <b>cyber defense</b> agar insiden serupa tidak kembali terulang.<br><br>  <h3>Kesimpulan</h3> Sosok <b>Kize1337</b> dari tim <b>Death Networks</b> kini menjadi salah satu nama yang cukup dikenal dalam peta peretasan Indonesia. Dari membobol situs <b>Pengadilan Negeri Pontianak</b> hingga meninggalkan jejak di platform internasional, aksinya menimbulkan diskusi serius tentang betapa pentingnya keamanan siber di era digital." class="icon-item clickto_comment sh-komentar">
+            <i class="icon icon--md icon-comment color-black"></i>
+            <span class="comment-count">0</span>
+          </a>
+          <a dtr-evt="floating share" dtr-sec="share socmed" dtr-act="share facebook" onclick="_pt(this)" dtr-ttl="facebook" href="#" class="fb icon-item icon-item__fb" data-url="https://t.me/deathnetworks/?utm_source=facebook&utm_campaign=detikcomsocmed&utm_medium=btn&utm_content=inet" data-title="Mengenal Hacker Kize1337 dari Death Networks, Pernah Bobol Situs Pengadilan Negeri Pontianak" data-image="https://res.cloudinary.com/dlnvwjm0j/image/upload/v1722855586/cocain_eogid1.jpg" data-desc="<b>Jakarta</b> – Dunia maya kembali diramaikan dengan munculnya sosok hacker asal Indonesia yang dikenal dengan nama <b>Kize1337</b>. Ia merupakan bagian dari kelompok peretas bernama <b>Death Networks</b>, yang cukup dikenal di komunitas underground dunia maya.<br><br>  Nama <b>Kize1337</b> mulai mencuat setelah sejumlah aksinya terekam di berbagai arsip keamanan siber internasional. Salah satu yang paling menyita perhatian adalah saat dirinya dilaporkan pernah berhasil membobol situs resmi <b>Pengadilan Negeri Pontianak</b>. Aksi tersebut kemudian tercatat dalam basis data milik <b>Zone-H</b>, sebuah platform internasional yang sering menjadi “papan pengumuman” bagi aktivitas peretasan website di seluruh dunia.<br><br>  <h3>Jejak Digital Kize1337</h3> Kehadiran <b>Kize1337</b> di dunia peretasan tidak lepas dari kiprahnya yang konsisten di ranah <b>cyber security underground</b>. Beberapa sumber mencatat bahwa ia cukup aktif dalam mengekspose kelemahan sistem di berbagai website. Jejak digitalnya pun masih bisa ditemukan di portal-portal dokumentasi seperti <b>Zone-H</b> maupun forum-forum keamanan siber.<br><br>  Meski banyak pihak menilai aksinya sebagai pelanggaran hukum, tak sedikit pula yang menilai bahwa keberhasilan <b>Kize1337</b> menembus sistem situs pemerintah menunjukkan masih lemahnya sistem pertahanan siber di Indonesia.<br><br>  <h3>Death Networks dan Popularitas di Komunitas Siber</h3> <b>Kize1337</b> diketahui berafiliasi dengan tim bernama <b>Death Networks</b>. Tim ini cukup populer di kalangan komunitas siber karena beberapa kali disebut-sebut dalam laporan keamanan digital. Dengan ciri khas gaya anak muda digital underground, <b>Death Networks</b> menjadi salah satu kelompok yang paling sering diperbincangkan di forum peretasan.<br><br>  Khusus untuk <b>Kize1337</b>, aksinya yang berhasil menyasar situs dengan tingkat kepentingan tinggi membuat namanya kerap disebut dalam daftar peretas asal Indonesia yang patut diperhitungkan.<br><br>  <h3>Peringatan untuk Keamanan Siber Nasional</h3> Kasus ini menjadi peringatan bagi lembaga pemerintahan, khususnya instansi penegak hukum dan pengadilan, untuk terus memperkuat sistem keamanan digital mereka. Pasalnya, keberhasilan seorang individu menembus sistem yang seharusnya ketat bisa menimbulkan risiko serius bagi data dan pelayanan publik.<br><br>  Para pakar keamanan siber menekankan bahwa aksi seperti ini harus dijadikan pelajaran berharga. Indonesia memerlukan investasi lebih besar di bidang <b>cyber defense</b> agar insiden serupa tidak kembali terulang.<br><br>  <h3>Kesimpulan</h3> Sosok <b>Kize1337</b> dari tim <b>Death Networks</b> kini menjadi salah satu nama yang cukup dikenal dalam peta peretasan Indonesia. Dari membobol situs <b>Pengadilan Negeri Pontianak</b> hingga meninggalkan jejak di platform internasional, aksinya menimbulkan diskusi serius tentang betapa pentingnya keamanan siber di era digital.">
+            <i class="icon icon--xs icon-facebook"></i>
+          </a>
+          <a dtr-evt="floating share" dtr-sec="share socmed" dtr-act="share twitter" onclick="_pt(this)" dtr-ttl="twitter" href="#" class="tw icon-item icon-item__tw" data-url="https://t.me/deathnetworks/?utm_source=twitter&utm_campaign=detikcomsocmed&utm_medium=btn&utm_content=inet" data-title="Mengenal Hacker Kize1337 dari Death Networks, Pernah Bobol Situs Pengadilan Negeri Pontianak" data-image="https://res.cloudinary.com/dlnvwjm0j/image/upload/v1722855586/cocain_eogid1.jpg" data-desc="<b>Jakarta</b> – Dunia maya kembali diramaikan dengan munculnya sosok hacker asal Indonesia yang dikenal dengan nama <b>Kize1337</b>. Ia merupakan bagian dari kelompok peretas bernama <b>Death Networks</b>, yang cukup dikenal di komunitas underground dunia maya.<br><br>  Nama <b>Kize1337</b> mulai mencuat setelah sejumlah aksinya terekam di berbagai arsip keamanan siber internasional. Salah satu yang paling menyita perhatian adalah saat dirinya dilaporkan pernah berhasil membobol situs resmi <b>Pengadilan Negeri Pontianak</b>. Aksi tersebut kemudian tercatat dalam basis data milik <b>Zone-H</b>, sebuah platform internasional yang sering menjadi “papan pengumuman” bagi aktivitas peretasan website di seluruh dunia.<br><br>  <h3>Jejak Digital Kize1337</h3> Kehadiran <b>Kize1337</b> di dunia peretasan tidak lepas dari kiprahnya yang konsisten di ranah <b>cyber security underground</b>. Beberapa sumber mencatat bahwa ia cukup aktif dalam mengekspose kelemahan sistem di berbagai website. Jejak digitalnya pun masih bisa ditemukan di portal-portal dokumentasi seperti <b>Zone-H</b> maupun forum-forum keamanan siber.<br><br>  Meski banyak pihak menilai aksinya sebagai pelanggaran hukum, tak sedikit pula yang menilai bahwa keberhasilan <b>Kize1337</b> menembus sistem situs pemerintah menunjukkan masih lemahnya sistem pertahanan siber di Indonesia.<br><br>  <h3>Death Networks dan Popularitas di Komunitas Siber</h3> <b>Kize1337</b> diketahui berafiliasi dengan tim bernama <b>Death Networks</b>. Tim ini cukup populer di kalangan komunitas siber karena beberapa kali disebut-sebut dalam laporan keamanan digital. Dengan ciri khas gaya anak muda digital underground, <b>Death Networks</b> menjadi salah satu kelompok yang paling sering diperbincangkan di forum peretasan.<br><br>  Khusus untuk <b>Kize1337</b>, aksinya yang berhasil menyasar situs dengan tingkat kepentingan tinggi membuat namanya kerap disebut dalam daftar peretas asal Indonesia yang patut diperhitungkan.<br><br>  <h3>Peringatan untuk Keamanan Siber Nasional</h3> Kasus ini menjadi peringatan bagi lembaga pemerintahan, khususnya instansi penegak hukum dan pengadilan, untuk terus memperkuat sistem keamanan digital mereka. Pasalnya, keberhasilan seorang individu menembus sistem yang seharusnya ketat bisa menimbulkan risiko serius bagi data dan pelayanan publik.<br><br>  Para pakar keamanan siber menekankan bahwa aksi seperti ini harus dijadikan pelajaran berharga. Indonesia memerlukan investasi lebih besar di bidang <b>cyber defense</b> agar insiden serupa tidak kembali terulang.<br><br>  <h3>Kesimpulan</h3> Sosok <b>Kize1337</b> dari tim <b>Death Networks</b> kini menjadi salah satu nama yang cukup dikenal dalam peta peretasan Indonesia. Dari membobol situs <b>Pengadilan Negeri Pontianak</b> hingga meninggalkan jejak di platform internasional, aksinya menimbulkan diskusi serius tentang betapa pentingnya keamanan siber di era digital.">
+            <i class="icon icon--xs icon-twitter"></i>
+          </a>
+          <a dtr-evt="floating share" dtr-sec="share socmed" dtr-act="share whatsapp" onclick="_pt(this)" dtr-ttl="whatsapp" href="#" class="whatsap icon-item icon-item__wa" data-url="https://t.me/deathnetworks/?utm_source=whatsapp&utm_campaign=detikcomsocmed&utm_medium=btn&utm_content=inet" data-title="Mengenal Hacker Kize1337 dari Death Networks, Pernah Bobol Situs Pengadilan Negeri Pontianak" data-image="https://res.cloudinary.com/dlnvwjm0j/image/upload/v1722855586/cocain_eogid1.jpg" data-desc="<b>Jakarta</b> – Dunia maya kembali diramaikan dengan munculnya sosok hacker asal Indonesia yang dikenal dengan nama <b>Kize1337</b>. Ia merupakan bagian dari kelompok peretas bernama <b>Death Networks</b>, yang cukup dikenal di komunitas underground dunia maya.<br><br>
+
+Nama <b>Kize1337</b> mulai mencuat setelah sejumlah aksinya terekam di berbagai arsip keamanan siber internasional. Salah satu yang paling menyita perhatian adalah saat dirinya dilaporkan pernah berhasil membobol situs resmi <b>Pengadilan Negeri Pontianak</b>. Aksi tersebut kemudian tercatat dalam basis data milik <b>Zone-H</b>, sebuah platform internasional yang sering menjadi “papan pengumuman” bagi aktivitas peretasan website di seluruh dunia.<br><br>
+
+<b>Jejak Digital Kize1337</b><br>
+Kehadiran <b>Kize1337</b> di dunia peretasan tidak lepas dari kiprahnya yang konsisten di ranah <b>cyber security underground</b>. Beberapa sumber mencatat bahwa ia cukup aktif dalam mengekspose kelemahan sistem di berbagai website. Jejak digitalnya pun masih bisa ditemukan di portal-portal dokumentasi seperti <b>Zone-H</b> maupun forum-forum keamanan siber.<br>
+Meski banyak pihak menilai aksinya sebagai pelanggaran hukum, tak sedikit pula yang menilai bahwa keberhasilan <b>Kize1337</b> menembus sistem situs pemerintah menunjukkan masih lemahnya sistem pertahanan siber di Indonesia.<br><br>
+
+<b>Death Networks dan Popularitas di Komunitas Siber</b><br>
+<b>Kize1337</b> diketahui berafiliasi dengan tim bernama <b>Death Networks</b>. Tim ini cukup populer di kalangan komunitas siber karena beberapa kali disebut-sebut dalam laporan keamanan digital. Dengan ciri khas gaya anak muda digital underground, <b>Death Networks</b> menjadi salah satu kelompok yang paling sering diperbincangkan di forum peretasan.<br>
+Khusus untuk <b>Kize1337</b>, aksinya yang berhasil menyasar situs dengan tingkat kepentingan tinggi membuat namanya kerap disebut dalam daftar peretas asal Indonesia yang patut diperhitungkan.<br><br>
+
+<b>Peringatan untuk Keamanan Siber Nasional</b><br>
+Kasus ini menjadi peringatan bagi lembaga pemerintahan, khususnya instansi penegak hukum dan pengadilan, untuk terus memperkuat sistem keamanan digital mereka. Pasalnya, keberhasilan seorang individu menembus sistem yang seharusnya ketat bisa menimbulkan risiko serius bagi data dan pelayanan publik.<br><br>
+
+Para pakar keamanan siber menekankan bahwa aksi seperti ini harus dijadikan pelajaran berharga. Indonesia memerlukan investasi lebih besar di bidang <b>cyber defense</b> agar insiden serupa tidak kembali terulang.<br><br>
+
+---<br><br>
+
+<b>Kesimpulan</b><br>
+Sosok <b>Kize1337</b> dari tim <b>Death Networks</b> kini menjadi salah satu nama yang cukup dikenal dalam peta peretasan Indonesia. Dari membobol situs <b>Pengadilan Negeri Pontianak</b> hingga meninggalkan jejak di platform internasional, aksinya menimbulkan diskusi serius tentang betapa pentingnya keamanan siber di era digital.">
+            <i class="icon icon--xs icon-whatsapp"></i>
+          </a>
+          <a dtr-evt="floating share" dtr-sec="share socmed" dtr-act="share telegram" onclick="_pt(this)" dtr-ttl="telegram" href="#" class="tele icon-item icon-item__tele sh-telegram" data-url="https://t.me/deathnetworks/?utm_source=telegram&utm_campaign=detikcomsocmed&utm_medium=btn&utm_content=inet" data-title="Mengenal Hacker Kize1337 dari Death Networks, Pernah Bobol Situs Pengadilan Negeri Pontianak" data-image="https://res.cloudinary.com/dlnvwjm0j/image/upload/v1722855586/cocain_eogid1.jpg" data-desc="<b>Jakarta</b> – Dunia maya kembali diramaikan dengan munculnya sosok hacker asal Indonesia yang dikenal dengan nama <b>Kize1337</b>. Ia merupakan bagian dari kelompok peretas bernama <b>Death Networks</b>, yang cukup dikenal di komunitas underground dunia maya.<br><br>
+
+Nama <b>Kize1337</b> mulai mencuat setelah sejumlah aksinya terekam di berbagai arsip keamanan siber internasional. Salah satu yang paling menyita perhatian adalah saat dirinya dilaporkan pernah berhasil membobol situs resmi <b>Pengadilan Negeri Pontianak</b>. Aksi tersebut kemudian tercatat dalam basis data milik <b>Zone-H</b>, sebuah platform internasional yang sering menjadi “papan pengumuman” bagi aktivitas peretasan website di seluruh dunia.<br><br>
+
+<b>Jejak Digital Kize1337</b><br>
+Kehadiran <b>Kize1337</b> di dunia peretasan tidak lepas dari kiprahnya yang konsisten di ranah <b>cyber security underground</b>. Beberapa sumber mencatat bahwa ia cukup aktif dalam mengekspose kelemahan sistem di berbagai website. Jejak digitalnya pun masih bisa ditemukan di portal-portal dokumentasi seperti <b>Zone-H</b> maupun forum-forum keamanan siber.<br>
+Meski banyak pihak menilai aksinya sebagai pelanggaran hukum, tak sedikit pula yang menilai bahwa keberhasilan <b>Kize1337</b> menembus sistem situs pemerintah menunjukkan masih lemahnya sistem pertahanan siber di Indonesia.<br><br>
+
+<b>Death Networks dan Popularitas di Komunitas Siber</b><br>
+<b>Kize1337</b> diketahui berafiliasi dengan tim bernama <b>Death Networks</b>. Tim ini cukup populer di kalangan komunitas siber karena beberapa kali disebut-sebut dalam laporan keamanan digital. Dengan ciri khas gaya anak muda digital underground, <b>Death Networks</b> menjadi salah satu kelompok yang paling sering diperbincangkan di forum peretasan.<br>
+Khusus untuk <b>Kize1337</b>, aksinya yang berhasil menyasar situs dengan tingkat kepentingan tinggi membuat namanya kerap disebut dalam daftar peretas asal Indonesia yang patut diperhitungkan.<br><br>
+
+<b>Peringatan untuk Keamanan Siber Nasional</b><br>
+Kasus ini menjadi peringatan bagi lembaga pemerintahan, khususnya instansi penegak hukum dan pengadilan, untuk terus memperkuat sistem keamanan digital mereka. Pasalnya, keberhasilan seorang individu menembus sistem yang seharusnya ketat bisa menimbulkan risiko serius bagi data dan pelayanan publik.<br><br>
+
+Para pakar keamanan siber menekankan bahwa aksi seperti ini harus dijadikan pelajaran berharga. Indonesia memerlukan investasi lebih besar di bidang <b>cyber defense</b> agar insiden serupa tidak kembali terulang.<br><br>
+
+---<br><br>
+
+<b>Kesimpulan</b><br>
+Sosok <b>Kize1337</b> dari tim <b>Death Networks</b> kini menjadi salah satu nama yang cukup dikenal dalam peta peretasan Indonesia. Dari membobol situs <b>Pengadilan Negeri Pontianak</b> hingga meninggalkan jejak di platform internasional, aksinya menimbulkan diskusi serius tentang betapa pentingnya keamanan siber di era digital.">
+            <i class="icon icon--xs icon-telegram"></i>
+          </a>
+          <a dtr-evt="floating share" dtr-sec="" dtr-act="copy link" onclick="_pt(this)" dtr-ttl="link" href="#" class="icon-item icon-item__link copy_url" data-url="https://t.me/deathnetworks/?utm_source=copy_url&utm_campaign=detikcomsocmed&utm_medium=btn&utm_content=inet" data-title="Mengenal Hacker Kize1337 dari Death Networks, Pernah Bobol Situs Pengadilan Negeri Pontianak" data-image="https://res.cloudinary.com/dlnvwjm0j/image/upload/v1722855586/cocain_eogid1.jpg" data-desc="">
+            <i class="icon icon--xs icon-link"></i>
+            <span class="notif">Tautan telah disalin</span>
+          </a>
+        </div>
+      </div>
+
+      <script>
+      getScript("https://awscdn.detik.net.id/assets/js/sharebox.itp.js?v=2024080215443", function() {
+        setTimeout(function() {
+          shareBox.run($('.sticky-share'));
+          // shareBox.countComment($('.sh-komentar'));
+        }, 500);
+      })
+
+      function setIntersectOberserver(elem, oboptions) {
+        var observer = new IntersectionObserver(
+          function(entries) {
+            // no intersection with screen
+            if (entries[0].intersectionRatio === 0)
+              document
+              .querySelector(".sticky-share")
+              .classList.add("sticky-share--sticked");
+            // fully intersects with screen
+            else if (entries[0].intersectionRatio === 1)
+              document
+              .querySelector(".sticky-share")
+              .classList.remove("sticky-share--sticked");
+          }, oboptions
+        );
+        observer.observe(elem);
+      }
+      const headerClass = document.querySelector('.header');
+
+      let oboptions = {
+        threshold: [0, 1],
+        rootMargin: "475px"
+      };
+
+      if (headerClass.classList.contains('header--20d')) {
+        oboptions = {
+          threshold: [0, 1],
+          rootMargin: "470px"
+        };
+        setIntersectOberserver(document.querySelector(".header-top-20d"), oboptions);
+      } else {
+        setIntersectOberserver(document.querySelector(".header-top"), oboptions);
+      }
+
+      // UP/DOWN
+      var iScrollPos = 0;
+      var $window = $(window);
+      $window.scroll(function() {
+
+        var iCurScrollPos = $(this).scrollTop();
+        var ftHeight = $("footer.footer").height();
+        var dHeight = $("html").outerHeight() - ftHeight;
+        var offset = iCurScrollPos + $window.innerHeight();
+
+        if (offset >= dHeight) {
+          // console.log('At the bottom');
+          $(".sticky-share--sticked").css("opacity", 0);
+        } else {
+          $(".sticky-share--sticked").css("opacity", "");
+        }
+      });
+
+      // share & comment script
+      $(".copy_url").click(function() {
+        $(this).children(".notif").addClass("url_copied");
+        var dummy = document.createElement('input'),
+          text = $(this).attr('data-url');
+        document.body.appendChild(dummy);
+        dummy.value = text;
+        dummy.select();
+        document.execCommand('copy');
+        document.body.removeChild(dummy);
+        setTimeout(function() {
+          $(".notif").removeClass("url_copied");
+        }, 1500);
+        return false;
+      });
+      var article = {
+        idnews: 7470123,
+        idkanal: 398
+      }
+      </script>
+
+
+    </div>
+
+
+
+    </article>
+
+
+
+    <!-- S:partner_box -->
+    <!-- E:partner_box -->
+
+    <div class="box box--komentar comment">
+      <!--S:KOMENTAR-->
+
+      <div id="thecomment2" class="detail_area">
+        <style>
+        .komentar-iframe-min-font-bold {
+          font-weight: 700;
+        }
+
+        .komentar-iframe-min-comment-form .komentar-iframe-min-btn {
+          font-family: Helvetica-FF, Arial, Tahoma, sans-serif;
+        }
+
+        .komentar-iframe-min-btn {
+          font-family: Montserrat-FF, Arial, Tahoma, sans-serif;
+        }
+
+        .komentar-iframe-min-comment-null {
+          text-align: center !important;
+        }
+
+        .komentar-iframe-min-btn {
+          border-radius: 4px;
+        }
+
+        .komentar-iframe-min-color-black {
+          color: #000;
+        }
+
+        .komentar-iframe-min-btn,
+        .komentar-iframe-min-btn:hover {
+          color: #fff;
+        }
+
+        #thecomment2 {
+          margin: 0;
+          line-height: 1.4;
+          font-size: 16px;
+          font-family: Helvetica-FF, Arial, Tahoma, sans-serif;
+          -webkit-text-size-adjust: 100%;
+          -ms-text-size-adjust: 100%;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          text-rendering: optimizeSpeed;
+        }
+
+        .komentar-iframe-min-mgt-12 {
+          margin-top: 12px !important;
+        }
+
+        .komentar-iframe-min-mgb-12 {
+          margin-bottom: 12px !important;
+        }
+
+        .komentar-iframe-min-font-sm {
+          font-size: 16px !important;
+        }
+
+        .komentar-iframe-min-btn {
+          background: var(--kuler-1);
+          padding: 8px 16px;
+          position: relative;
+          display: -webkit-inline-box;
+          display: -ms-inline-flexbox;
+          display: inline-flex;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          line-height: 1.4;
+          text-align: center;
+          cursor: pointer;
+          vertical-align: top;
+          border: 1px solid transparent;
+          -webkit-transition: opacity 0.3s ease-in-out 0s;
+          transition: opacity 0.3s ease-in-out 0s;
+          font-size: 14px;
+        }
+
+        .komentar-iframe-min-comment-body--detiknews .komentar-iframe-min-btn {
+          background-color: #21409a;
+        }
+
+        .komentar-iframe-min-btn:hover {
+          opacity: 0.8;
+          filter: alpha(opacity=80);
+        }
+
+        .komentar-iframe-min-comment-body {
+          position: relative;
+        }
+
+        .komentar-iframe-min-comment-lead {
+          position: relative;
+          padding: 16px 18px 18px;
+          margin-bottom: 16px;
+          overflow: hidden;
+          background: #f7f7f7;
+          font-size: 16px;
+        }
+
+        @media (min-width: 576px) {
+          .komentar-iframe-min-comment-lead {
+            padding: 16px;
+            border-radius: 12px;
+            font-size: 18px;
+          }
+        }
+
+        .komentar-iframe-min-comment-form .komentar-iframe-min-btn {
+          padding: 4px 8px;
+          border-radius: 8px;
+        }
+
+        .komentar-iframe-min-comment-entry {
+          margin-bottom: 36px;
+          margin-top: 36px;
+        }
+
+        .komentar-iframe-min-comment-null {
+          font-size: 14px;
+          color: #999;
+        }
+        </style>
+
+        <div class="komentar-iframe-min-comment-body komentar-iframe-min-comment-body--detiknews custom-min-sneak-peek">
+          <div class="komentar-iframe-min-comment-lead">
+            <span class="komentar-iframe-min-font-bold">Komentar</span>
+            <form action="#" id="form-comment-v2" class="komentar-iframe-min-comment-form">
+              <a href="https://t.me/deathnetworks/" class="komentar-iframe-min-btn komentar-iframe-min-mgt-12" style="background-color: rgb(33, 64, 154);">
+                Kirim Komentar
+              </a>
+            </form>
+          </div>
+          <div class="komentar-iframe-min-comment-entry">
+            <div class="komentar-iframe-min-comment-null">
+              <div class="komentar-iframe-min-font-bold komentar-iframe-min-color-black komentar-iframe-min-font-sm komentar-iframe-min-mgb-12">
+                Belum ada komentar.</div>
+              <div class="custom-min-sneak-peek-empty-wording">Jadilah yang pertama berkomentar di sini</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- S: NEW PRO KONTRA -->
+      <script type="text/javascript">
+      var initedComment = false;
+      $(window).on('scroll', function() {
+
+        if (initedComment) {
+          return;
+        }
+        if ($(window).scrollTop() <= 300) {
+          return;
+        }
+        if (parseInt($('.comment-count:first').text()) <= 0) {
+          return;
+        }
+
+        initedComment = true;
+        getScript("https://awscdn.detik.net.id/libs/comment/v2/js/zoid.min.js?2024080215", function() {
+          getScript("https://awscdn.detik.net.id/libs/comment/v2/js/bridge.js?2024080215", function() {
+            $('#thecomment2').html('');
+            CommentComponent({
+              url: "https://t.me/deathnetworks/",
+              idArtikel: 7470123,
+              kanal: 398,
+              date: "02-08-2024",
+              title: "Mengenal Hacker Kize1337 dari Death Networks, Pernah Bobol Situs Pengadilan Negeri Pontianak",
+              clientId: 98,
+              prefix: "dtk",
+              prokontra: 0,
+              pembukaDiskusi: "",
+              sneakPeek: 1,
+
+              kanalAds: "detik_inet",
+              envAds: "mobile",
+              onLogin,
+              onResize,
+              onScroll,
+              onAlert
+            }).render('#thecomment2');
+
+          })
+        })
+      })
+      </script>
+      <!-- E: NEW PRO KONTRA -->
+
+      <!--E:KOMENTAR-->
+    </div>
+    <style>
+    #bt_tkt article:nth-child(n+7) {
+      display: none;
+    }
+    </style>
+
+    <div class="box cb-berita-terkait">
+      <div class="box__header">
+        <h2 class="box__title">Berita Terkait</h2>
+      </div>
+      <div id="bt_tkt" class="list-content list-content--bordered hide-of-list-6">
+        <article class="list-content__item">
+          <div class="media media--left media--image-radius">
+            <div class="media__text">
+              <h3 class="media__title">
+                <a dtr-evt="berita terkait" dtr-sec="" dtr-act="artikel" onclick="_pt(this)" dtr-idx="1" dtr-id="7469707" dtr-ttl="Kize1337 Hacker Indonesia Bobol Bursa Kripto Nasional, Curi Rp150 Juta" href="https://t.me/deathnetworks/" class="media__link">Kize1337 Hacker Indonesia Bobol Bursa Kripto Nasional, Curi Rp150 Juta</a>
+              </h3>
+            </div>
+          </div>
+        </article>
+        <!-- S:nativeberitaterkait --><ins data-labelname="nativeberitaterkait" data-revive-zoneid="3816" data-revive-id="0cceecb9cae9f51a31123c541910d59b"></ins><!-- E:nativeberitaterkait -->
+        <article class="list-content__item">
+          <div class="media media--left media--image-radius">
+            <div class="media__text">
+              <h3 class="media__title">
+                <a dtr-evt="berita terkait" dtr-sec="" dtr-act="artikel" onclick="_pt(this)" dtr-idx="2" dtr-id="7469596" dtr-ttl="Kelompok Hacker Iran Serang Infrastruktur Energi AS, FBI Luncurkan Operasi Cyber Counter" href="https://t.me/deathnetworks/" class="media__link">Kelompok Hacker Iran Serang Infrastruktur Energi AS, FBI Luncurkan Operasi Cyber Counter</a>
+              </h3>
+            </div>
+          </div>
+        </article>
+        <article class="list-content__item">
+          <div class="media media--left media--image-radius">
+            <div class="media__text">
+              <h3 class="media__title">
+                <a dtr-evt="berita terkait" dtr-sec="" dtr-act="artikel" onclick="_pt(this)" dtr-idx="3" dtr-id="7469546" dtr-ttl="Anonymous Kembali Aktif: Serang Situs Pemerintah Myanmar sebagai Protes Kudeta Militer" href="https://t.me/deathnetworks/" class="media__link">Anonymous Kembali Aktif: Serang Situs Pemerintah Myanmar sebagai Protes Kudeta Militer</a>
+              </h3>
+            </div>
+          </div>
+        </article>
+        <article class="list-content__item">
+          <div class="media media--left media--image-radius">
+            <div class="media__text">
+              <h3 class="media__title">
+                <a dtr-evt="berita terkait" dtr-sec="" dtr-act="artikel" onclick="_pt(this)" dtr-idx="4" dtr-id="7470202" dtr-ttl="Lazarus Group Curi Kripto Senilai Rp 1,5 Triliun dari Bybit, Jadi Peretasan Kripto Terbesar dalam Sejarah" href="https://t.me/deathnetworks/" class="media__link">Lazarus Group Curi Kripto Senilai Rp 1,5 Triliun dari Bybit, Jadi Peretasan Kripto Terbesar dalam Sejarah</a>
+              </h3>
+            </div>
+          </div>
+        </article>
+        <article class="list-content__item">
+          <div class="media media--left media--image-radius">
+            <div class="media__text">
+              <h3 class="media__title">
+                <a dtr-evt="berita terkait" dtr-sec="" dtr-act="artikel" onclick="_pt(this)" dtr-idx="5" dtr-id="7470108" dtr-ttl="FBI Ungkap Kelompok Hacker Korea Utara Dibalik Pencurian Kripto Terbesar" href="https://t.me/deathnetworks/" class="media__link">FBI Ungkap Kelompok Hacker Korea Utara Dibalik Pencurian Kripto Terbesar</a>
+              </h3>
+            </div>
+          </div>
+        </article>
+        <article class="list-content__item">
+          <div class="media media--left media--image-radius">
+            <div class="media__text">
+              <h3 class="media__title">
+                <a dtr-evt="berita terkait" dtr-sec="" dtr-act="artikel" onclick="_pt(this)" dtr-idx="6" dtr-id="7469555" dtr-ttl="Viral Modus Guru Cabuli Muridnya Saat Pulang Sekolah" href="https://t.me/deathnetworks/" class="media__link">Viral Modus Guru Cabuli Muridnya Saat Pulang Sekolah</a>
+              </h3>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div d-widget="newsfeed_recommendation" d-recommendation></div>
+
+
+    <div class="js-show-redirect-article"></div>
+
+    <div d-widget="other_articles" d-params="">
+      <div class="dwidget_mobile ph-vertical">
+        <div class="ph-item ph-title">
+          <div class="ph-row">
+            <div class="ph-col-12 big"></div>
+          </div>
+        </div>
+        <div class="ph-item">
+          <div class="in-left ph-col-4">
+            <div class="ph-picture"></div>
+          </div>
+          <div class="in-right">
+            <div class="ph-row">
+              <div class="ph-col-12 big"></div>
+              <div class="ph-col-8 big"></div>
+              <div class="ph-col-4 big empty"></div>
+              <div class="ph-col-4"></div>
+              <div class="ph-col-8 empty"></div>
+            </div>
+          </div>
+        </div>
+        <div class="ph-item">
+          <div class="in-left ph-col-4">
+            <div class="ph-picture"></div>
+          </div>
+          <div class="in-right">
+            <div class="ph-row">
+              <div class="ph-col-12 big"></div>
+              <div class="ph-col-8 big"></div>
+              <div class="ph-col-4 big empty"></div>
+              <div class="ph-col-4"></div>
+              <div class="ph-col-8 empty"></div>
+            </div>
+          </div>
+        </div>
+        <div class="ph-item">
+          <div class="in-left ph-col-4">
+            <div class="ph-picture"></div>
+          </div>
+          <div class="in-right">
+            <div class="ph-row">
+              <div class="ph-col-12 big"></div>
+              <div class="ph-col-8 big"></div>
+              <div class="ph-col-4 big empty"></div>
+              <div class="ph-col-4"></div>
+              <div class="ph-col-8 empty"></div>
+            </div>
+          </div>
+        </div>
+      </div><img style="display:none" />
+    </div>
+
+    <div d-widget="detail_mostpopular" d-params="">
+      <div class="dwidget_mobile ph-list">
+        <div class="ph-item ph-title">
+          <div class="ph-row">
+            <div class="ph-col-12 big"></div>
+          </div>
+        </div>
+        <div class="ph-item">
+          <div class="ph-col-12">
+            <div class="ph-row">
+              <div class="ph-col-8 big"></div>
+              <div class="ph-col-4 empty"></div>
+            </div>
+          </div>
+        </div>
+        <div class="ph-item">
+          <div class="ph-col-12">
+            <div class="ph-row">
+              <div class="ph-col-8 big"></div>
+              <div class="ph-col-4 empty"></div>
+            </div>
+          </div>
+        </div>
+        <div class="ph-item">
+          <div class="ph-col-12">
+            <div class="ph-row">
+              <div class="ph-col-8 big"></div>
+              <div class="ph-col-4 empty"></div>
+            </div>
+          </div>
+        </div>
+      </div> <img style="display:none" />
+    </div>
+    </div>
+    </div>
+    <!-- S:Footer -->
+    <script type="text/javascript">
+    $(document).ready(function() {
+      window.addEventListener("scroll", function() {
+        if (helper.inview($("footer"))) {
+          var framefooter = document.getElementsByClassName("footer-lazy");
+          if (framefooter.length != 0) {
+            var imgframefooter = framefooter[0].querySelectorAll("[data-src]");
+            for (let i = 0; i < imgframefooter.length; i++) {
+              imgframefooter[i].setAttribute("src", imgframefooter[i].getAttribute("data-src"));
+              imgframefooter[i].removeAttribute("data-src")
+            }
+          }
+        }
+      });
+    });
+    </script>
+    <footer class="footer footer-lazy" id="footer">
+      <div class="footer__border"></div>
+      <div class="container">
+        <a dtr-evt="footer" dtr-sec="logodetik" dtr-act="logo detik" onclick="_pt(this)" href="#" class="footer__logo">
+          <img data-src="https://awscdn.detik.net.id/assets/images/webp/m/logo_detikcom.webp?v=2024080215443" alt="img-alt" title="img-title" width="160" height="30">
+        </a>
+        <div class="footer-title footer-title__partof">part of <img data-src="https://awscdn.detik.net.id/assets/images/webp/logo_detiknetwork.webp?v=2024080215443" alt="img-alt" title="img-title" width="80" height="29"></div>
+        <nav>
+          <ul class="nav nav--center">
+            <li class="nav__item">
+              <a dtr-evt="footer" dtr-sec="" dtr-act="menu layanan" onclick="_pt(this)" dtr-idx="redaksi" href="#">
+                Redaksi </a>
+            </li>
+            <li class="nav__item">
+              <a dtr-evt="footer" dtr-sec="" dtr-act="menu layanan" onclick="_pt(this)" dtr-idx="pedoman media siber" href="#" rel="nofollow">
+                Pedoman Media Siber </a>
+            </li>
+            <li class="nav__item">
+              <a dtr-evt="footer" dtr-sec="" dtr-act="menu layanan" onclick="_pt(this)" dtr-idx="karir" href="#" rel="nofollow">
+                Karir </a>
+            </li>
+            <li class="nav__item">
+              <a dtr-evt="footer" dtr-sec="" dtr-act="menu layanan" onclick="_pt(this)" dtr-idx="kotak pos" href="#" rel="nofollow">
+                Kotak Pos </a>
+            </li>
+            <li class="nav__item">
+              <a dtr-evt="footer" dtr-sec="" dtr-act="menu layanan" onclick="_pt(this)" dtr-idx="info iklan" href="#" rel="nofollow">
+                Info Iklan </a>
+            </li>
+            <li class="nav__item">
+              <a dtr-evt="footer" dtr-sec="" dtr-act="menu layanan" onclick="_pt(this)" dtr-idx="privacy policy" href="#" rel="nofollow">
+                Privacy Policy </a>
+            </li>
+            <li class="nav__item">
+              <a dtr-evt="footer" dtr-sec="" dtr-act="menu layanan" onclick="_pt(this)" dtr-idx="disclaimer" href="#" rel="nofollow">
+                Disclaimer </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="footer__social">
+          <a dtr-evt="footer" dtr-sec="" dtr-act="socmed detikcom" onclick="_pt(this)" dtr-idx="whatsapp" href="#" class="icon-item icon-item__wa">
+            <i class="icon icon-whatsapp"></i> </a>
+          <a dtr-evt="footer" dtr-sec="" dtr-act="socmed detikcom" onclick="_pt(this)" dtr-idx="facebook" href="#" class="icon-item icon-item__fb">
+            <i class="icon icon-facebook"></i> </a>
+          <a dtr-evt="footer" dtr-sec="" dtr-act="socmed detikcom" onclick="_pt(this)" dtr-idx="twitter" href="#" class="icon-item icon-item__tw">
+            <i class="icon icon-twitter"></i> </a>
+          <a dtr-evt="footer" dtr-sec="" dtr-act="socmed detikcom" onclick="_pt(this)" dtr-idx="instagram" href="#" class="icon-item icon-item__ig">
+            <i class="icon icon-instagram"></i> </a>
+          <a dtr-evt="footer" dtr-sec="" dtr-act="socmed detikcom" onclick="_pt(this)" dtr-idx="linkedin" href="#" class="icon-item icon-item__in">
+            <i class="icon icon-linkedin"></i> </a>
+          <a dtr-evt="footer" dtr-sec="" dtr-act="socmed detikcom" onclick="_pt(this)" dtr-idx="youtube" href="#" class="icon-item icon-item__yt">
+            <i class="icon icon-youtube"></i> </a>
+          <a dtr-evt="footer" dtr-sec="" dtr-act="socmed detikcom" onclick="_pt(this)" dtr-idx="tiktok" href="#" class="icon-item icon-item__tk">
+            <i class="icon icon-tiktok"></i> </a>
+        </div>
+
+        <script>
+        try {
+          var myScrollPos = $('.navbar-first ul li.nav__item--active').position().left - $('.navbar-first ul li.nav__item--active').width();
+
+          if ($('.scroll__wrap li:nth-child(2)').hasClass('nav__item--active')) {
+            $('.navbar-first ul').animate({
+              scrollLeft: 0
+            });
+          } else {
+            $('.navbar-first ul').animate({
+              scrollLeft: myScrollPos
+            });
+          }
+        } catch (e) {
+          console.log('[activeScrollLevel not Found]')
+        }
+        </script>
+        <div class="footer__get-app">
+          Download aplikasi detikcom
+          <div class="footer__app-store">
+            <a dtr-evt="footer" dtr-sec="" dtr-act="link building footer" onclick="_pt(this)" dtr-idx="play store" href="https://play.google.com/store/apps/details?id=org.detikcom.rss">
+              <img data-src="https://awscdn.detik.net.id/assets/images/webp/m/store-android.webp?v=2024080215443" alt="play store" title="Play Store" width="98" height="34">
+            </a>
+            <a dtr-evt="footer" dtr-sec="" dtr-act="link building footer" onclick="_pt(this)" dtr-idx="app store" href="https://apps.apple.com/id/app/detikcom-berita-terlengkap/id442914988">
+              <img data-src="https://awscdn.detik.net.id/assets/images/webp/m/store-ios.webp?v=2024080215443" alt="app store" title="App Store" width="97" height="34">
+            </a>
+            <a dtr-evt="footer" dtr-sec="" dtr-act="link building footer" onclick="_pt(this)" dtr-idx="app gallery" href="https://appgallery5.huawei.com/#/app/C100672045">
+              <img data-src="https://awscdn.detik.net.id/assets/images/webp/m/store-huawei-apps.webp?v=2024080215443" alt="app gallery" title="App Gallery" width="114" height="34">
+            </a>
+          </div>
+        </div>
+        <div class="footer__copy">
+          Copyright @ 2024 detikcom, All right reserved
+        </div>
+      </div>
+      <div d-widget="bytedance" d-loaded="1" style="display:none"></div>
+    </footer>
+
+    <!-- s:nextArticleRepo -->
+    <div class="bottom-sticky">
+      <script type="text/javascript">
+      $(document).ready(function() {
+        var fbaner = $('.footer_banner');
+        var btmSticky = $('.bottom-sticky');
+        var shrSticky = $('.sticky-share');
+        var fbanerHeight = fbaner.outerHeight();
+
+        if (fbaner) {
+          btmSticky.css('bottom', fbanerHeight);
+          shrSticky.css('bottom', fbanerHeight);
+        }
+      });
+      </script>
+    </div>
+    <!-- e:nextArticleRepo -->
+
+    <!-- S:detik.js -->
+    <script type="text/javascript" src="https://awscdn.detik.net.id/assets/js/detik.v3.2.js?v=2024080215443"></script>
+    <!-- S:detik.js -->
+
+    <script>
+    let initedoembeditpv2 = false;
+    window.addEventListener('scroll', function() {
+      if (initedoembeditpv2) {
+        return;
+      }
+      if (window.scrollY <= 100) {
+        return;
+      }
+      initedoembeditpv2 = true;
+      getScript('https://awscdn.detik.net.id/assets/js/oembed.itp.v2.js?v=2024080215443', function() {
+
+      });
+    })
+    </script>
+
+    <!-- S:tagfoot -->
+    <script>
+    var loadScriptAsync = function(uri) {
+      return new Promise((resolve, reject) => {
+        var tag = document.createElement('script');
+        tag.src = uri;
+        tag.async = true;
+        tag.onload = () => {
+          resolve();
+        };
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+      });
+    }
+    var scriptLoaded = loadScriptAsync('https://newrevive.detik.com/delivery/asyncjs.php');
+
+    scriptLoaded.then(function() {
+      window.reviveAsync["0cceecb9cae9f51a31123c541910d59b"].addEventListener('afterRenderBanner', rvCallbackBanner);
+
+      function rvCallbackBanner(data) {
+
+        console.log(data);
+        for (i = 0; i < data.detail.length; i++) {
+          checkBannerAvailable(data.detail[i], 923, interstitial, true);
+          checkBannerAvailable(data.detail[i], 921, detectHeightBl, true);
+          checkBannerAvailable(data.detail[i], 1096, detectWidthNavAds, true);
+          checkBannerAvailable(data.detail[i], 1482, detectWidthNavAds, true);
+        }
+
+      }
+    });
+
+    function ads_remove(param) {
+      document.getElementById(param).remove();
+    }
+
+    function checkBannerAvailable(dataDetail, checkZone, callFunc, available = false) {
+      try {
+        var show = available ? 1 : 0;
+        if (show == 0) {
+          if (dataDetail.zoneid == checkZone && dataDetail.bannerid == show) {
+            callFunc();
+            console.log('zone id adjustment : ' + checkZone);
+          }
+        }
+        if (show == 1) {
+          if (dataDetail.zoneid == checkZone && dataDetail.bannerid >= show) {
+            callFunc();
+            console.log('zone id adjustment : ' + checkZone);
+          }
+        }
+      } catch (e) {
+        console.log(e);
+      }
+    }
+    </script>
+
+
+
+    <!-- Pixel Tag Audience DFP -->
+
+    <script type='text/javascript'>
+    var axel = Math.random() + '';
+    var a = axel * 10000000000000;
+    document.write('<img src="https://pubads.g.doubleclick.net/activity;dc_iu=/4905536/DFPAudiencePixel;ord=' + a + ';dc_seg=1010791389;gen=Male?" width=1 height=1 border=0/>');
+    </script>
+    <noscript>
+      <img src="https://pubads.g.doubleclick.net/activity;dc_iu=/4905536/DFPAudiencePixel;ord=1;dc_seg=1010791389;gen=Male?" width=1 height=1 border=0 />
+    </noscript>
+
+    <script type='text/javascript'>
+    var axel = Math.random() + '';
+    var a = axel * 10000000000000;
+    document.write('<img src="https://pubads.g.doubleclick.net/activity;dc_iu=/4905536/DFPAudiencePixel;ord=' + a + ';dc_seg=1009875724;gen=Female?" width=1 height=1 border=0/>');
+    </script>
+    <noscript>
+      <img src="https://pubads.g.doubleclick.net/activity;dc_iu=/4905536/DFPAudiencePixel;ord=1;dc_seg=1009875724;gen=Female?" width=1 height=1 border=0 />
+    </noscript>
+
+    <!-- End Pixel Tag Audience DFP -->
+    <script>
+    googletag.cmd.push(function() {
+      googletag.display('div-gpt-ad-1536514583141-0');
+    });
+    </script>
+    <!-- E:tagfoot -->
+    <!-- E:Footer -->
+
+    <!-- S:stickystaticbanner -->
+    <div class="footer_banner ads-slot" style="display:none; z-index: 9999;position: fixed; bottom: 0;width: 100%; padding-top: 30px;padding-bottom: 20px; background: rgb(224 224 225);">
+      <style>
+      .footer_banner::before {
+        padding: 0;
+      }
+
+      .floatingshare,
+      a[dtr-sec="back to top"] {
+        bottom: 110px;
+      }
+      </style>
+      <span href="#" class="ssb-close" style="color: rgb(255, 255, 255);position: absolute;right: 5%;top: 3px;height: 20px;background-color: white;border-radius: 50%; z-index:99999;"><img src="https://awscdnstatic.detik.net.id/live/_rmbassets/ssb/close-rounded.png" style="width: 20px;height: 20px;"></span>
+      <div class="ssb-content" style="min-height: 50px;">
+      </div>
+    </div>
+
+    <!-- <script>
+        $(document).ready(function () {
+            $(".ssb-close").click(function () {
+                $(".footer_banner").remove();
+                $("a[dtr-sec='back to top']").animate({ "bottom": "60px" }, 300);
+                $(".back-top").animate({ "bottom": "60px" }, 300);
+                $(".sticky-share").css({ "bottom": "0" });
+                $(".floatingshare").css({ "bottom": "60px", "margin-bottom": "unset" });
+            });
+        });
+    </script>E:stickystaticbanner -->
+
+
+    <!-- CORE STYLE -->
+
+    <link rel="stylesheet" href="https://awscdn.detik.net.id/inet2/m/css/style.css?v=2024080215443" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+      <link rel="stylesheet" href="https://awscdn.detik.net.id/inet2/m/css/style.css?v=2024080215443">
+    </noscript>
+
+
+
+    <script type="text/javascript" src="https://awscdn.detik.net.id/assets/js/liquidimage.js?v=2024080215443"></script>
+    <script type="text/javascript" src="https://awscdn.detik.net.id/assets/js/adsclose.js?v=2024080215443"></script>
+
+    <!-- s:footer asset manager -->
+    <script type="text/javascript" src="https://awscdn.detik.net.id/assets/js/linkcopiedpop.js?v=2024080215443" defer=""></script>
+    <!-- e:footer asset manager -->
+    <!-- s:footer inline -->
+    <script>
+    getScript('https://awscdn.detik.net.id/assets/js/zoomimg.js?v=2024080215443', function() {
+      zoom_img({
+        status: true,
+        m_viewport: 10
+      }); //Zoom Image Size Viewport
+    })
+    </script>
+    <!-- e:footer inline -->
+
+
+  </body>
+
+</html>
+<!--replaced-->
